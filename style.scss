@@ -71,6 +71,7 @@ body {
 }
 
 .mode-toggle{
+    z-index: 10000;
     position: fixed;
     bottom: 0;
     right: 0;
@@ -87,7 +88,7 @@ body {
     position: fixed; 
     height: $nav-height;
     width: 100%; 
-    z-index: 100000;
+    z-index: 10000;
     background-color: var(--background-color);
     padding: 20px 20px;
     border-bottom: 1px solid var(--border);
@@ -258,4 +259,67 @@ body {
             }
         }
     }
+}
+
+
+
+
+#loading-screen {
+    position: fixed;
+    z-index: 100000;
+    height: 100vh;
+    width: 100vw;
+    background-color: #DD4083;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+$dot-count: 20;  // You can increase this number to add more dots
+$dot-size: 10px;
+$dot-space: 15px;
+
+$animation-time: 2s;
+$animation-distance: 25px;
+
+.loader {
+  display: flex;
+  justify-content: center; /* Align dots horizontally in one row */
+  gap: $dot-space; /* Adds space between the dots */
+
+  .dot {
+    animation-name: movement;
+    animation-duration: $animation-time;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    height: $dot-size;
+    width: $dot-size;
+    background-color: white; /* Dots are white */
+    border-radius: 50%;
+    
+    /* Stagger the delay for each dot */
+    animation-delay: -0.1s;
+    
+    // Automatically apply staggered delays for the dots
+    @for $i from 1 through $dot-count {
+      $delay: -#{$i * 0.1}s;
+      &:nth-of-type(#{$i}) {
+        animation-delay: $delay;
+      }
+    }
+  }
+}
+
+@keyframes movement {
+  0% {
+    transform: translateY(-#{$animation-distance});
+  }
+  50% {
+    transform: translateY(#{$animation-distance});
+  }
+  100% {
+    transform: translateY(-#{$animation-distance});
+  }
 }
