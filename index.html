@@ -31,17 +31,33 @@
 
             </div>
         </div>
-        <header class="navbar">
-            <div class="nav-content">
-                <a class="logo text" href="#">adris.</a>
-                <div class="nav-links">
-                    <a href="#aboutme-section">about me</a>
-                    <a href="#languages">languages</a>
-                    <a href="#projects-section">projects</a>
+        <nav class="navbar">
+            <div class="nav-holder">
+                <div class="nav-content">
+                    <a class="logo text" href="#">adris.</a>
+                    <div class="nav-links">
+                        <a href="#aboutme-section">about me</a>
+                        <a href="#languages">languages</a>
+                        <a href="#projects-section">projects</a>
+                    </div>
+                    <a href="#contact" class="contact-link">contact.</a>
                 </div>
-                <a href="#contact" class="contact-link">contact.</a>
+                <div class="nav-content-scrolled disabled">
+                    <span>you are here -> 
+                        <span>
+                            <button class="pos-anchor-holder">
+                                <a href="#" class="pos-anchor home-pos"><span>h</span><span>o</span><span>m</span><span>e</span></a>
+                                <a href="#" class="pos-anchor-2 home-pos"><span>h</span><span>o</span><span>m</span><span>e</span></a>
+                            </button>
+                            <!--<a href="#" class="pos-anchor aboutme-pos">about me</a> -->
+                        </span>
+                    </span>
+                    <!--
+                    basically - you are here (section) e.g. home it will automatically change depeneding in which section user is
+                    -->
+                </div>
             </div>
-        </header>
+        </nav>
         <button class="mode-toggle">
             dark mode
         </button>

@@ -40,9 +40,9 @@ window.addEventListener("scroll", function() {
     const currentPosition = window.scrollY;
     if (currentPosition > targetPosition){
         doThis();
-        navBar.classList.add("disabled");
+        navBar.classList.add("scrolled");
     } else {
-        navBar.classList.remove("disabled");
+        navBar.classList.remove("scrolled");
     }
 })
 

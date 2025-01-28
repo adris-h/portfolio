@@ -65,9 +65,18 @@ body {
   width: 100%;
   z-index: 10000;
   background-color: var(--background-color);
-  padding: 20px 20px;
   border-bottom: 1px solid var(--border);
   box-sizing: border-box;
+}
+.navbar .nav-holder {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 20px 20px;
+  position: relative;
 }
 .navbar .nav-content {
   display: flex;
@@ -98,9 +107,121 @@ body {
 .navbar .nav-content .nav-links a {
   margin: -6px;
 }
+.navbar .nav-content-scrolled {
+  position: absolute;
+  visibility: hidden;
+  left: 5vh;
+  opacity: 0;
+  transform: translateX(-20vw);
+}
+.navbar .nav-content-scrolled a {
+  color: black;
+  text-decoration: none;
+}
+.navbar .nav-content-scrolled > span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navbar .nav-content-scrolled > span button {
+  color: white;
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 1rem;
+  font-family: monospace;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.navbar .nav-content-scrolled > span button:hover .pos-anchor span {
+  transform: translateY(-1.2em);
+}
+.navbar .nav-content-scrolled > span button .pos-anchor {
+  display: flex;
+  overflow: hidden;
+  /*
+  &::after{
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: #DD4083;
+      width: 0%;
+      height: 3px;
+      border-radius: 75px;
+      transition: 500ms;
+  }
+  &:hover::after{
+      width: 100%;
+  } */
+}
+.navbar .nav-content-scrolled > span button .pos-anchor:hover {
+  position: absolute;
+}
+.navbar .nav-content-scrolled > span button .pos-anchor span {
+  transform: translateY(0);
+}
+.navbar .nav-content-scrolled > span button .pos-anchor span:nth-child(1) {
+  transition: 0.2s;
+}
+.navbar .nav-content-scrolled > span button .pos-anchor span:nth-child(2) {
+  transition: 0.3s;
+}
+.navbar .nav-content-scrolled > span button .pos-anchor span:nth-child(3) {
+  transition: 0.4s;
+}
+.navbar .nav-content-scrolled > span button .pos-anchor span:nth-child(4) {
+  transition: 0.5s;
+}
+.navbar .nav-content-scrolled > span button .pos-anchor span:nth-child(5) {
+  transition: 0.6s;
+}
+.navbar .nav-content-scrolled > span button .pos-anchor span:nth-child(6) {
+  transition: 0.7s;
+}
+.navbar .nav-content-scrolled > span button .pos-anchor-2 {
+  display: flex;
+  position: absolute;
+  overflow: hidden;
+}
+.navbar .nav-content-scrolled > span button .pos-anchor-2 span {
+  transform: translateY(1.2em);
+}
+.navbar .nav-content-scrolled > span button .pos-anchor-2 span:nth-child(1) {
+  transition: 0.2s;
+}
+.navbar .nav-content-scrolled > span button .pos-anchor-2 span:nth-child(2) {
+  transition: 0.3s;
+}
+.navbar .nav-content-scrolled > span button .pos-anchor-2 span:nth-child(3) {
+  transition: 0.4s;
+}
+.navbar .nav-content-scrolled > span button .pos-anchor-2 span:nth-child(4) {
+  transition: 0.5s;
+}
+.navbar .nav-content-scrolled > span button .pos-anchor-2 span:nth-child(5) {
+  transition: 0.6s;
+}
+.navbar .nav-content-scrolled > span button .pos-anchor-2 span:nth-child(6) {
+  transition: 0.7s;
+}
+.navbar .nav-content-scrolled > span button .pos-anchor-2:hover span {
+  transform: translateY(0);
+}
 
-.navbar.disabled {
+.navbar.scrolled {
+  height: 6vh;
+}
+.navbar.scrolled .nav-content {
   transform: translateY(-13vh);
+}
+.navbar.scrolled .nav-content-scrolled {
+  display: flex;
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(0);
 }
 
 #hero-section {
@@ -192,9 +313,11 @@ body {
   position: absolute;
   bottom: -30%;
   right: 0;
-  color: var(--main-color);
   font-size: 3rem;
   text-shadow: 2px 0px 0px white;
+}
+#hero-section .hero-right .hero-photo .photo-text h2 {
+  color: var(--main-color);
 }
 
 #aboutme-section {
