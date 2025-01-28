@@ -1,16 +1,18 @@
 const modeToggleButton = document.querySelector('.mode-toggle');
 const bodyElement = document.body;
+const darkButton = document.querySelector("#dark")
+const lightButton = document.querySelector("#dark")
 
 modeToggleButton.addEventListener('click', () => {
     // Toggle between light-mode and dark-mode classes
     if (bodyElement.classList.contains('light-mode')) {
         bodyElement.classList.remove('light-mode');
         bodyElement.classList.add('dark-mode');
-        modeToggleButton.textContent = 'LIGHT MODE';
+        modeToggleButton.textContent = 'light mode';
     } else {
         bodyElement.classList.remove('dark-mode');
         bodyElement.classList.add('light-mode');
-        modeToggleButton.textContent = 'DARK MODE';
+        modeToggleButton.textContent = 'dark mode';
     }
 });
 
@@ -27,7 +29,25 @@ function updateText() {
 updateText();
 setInterval(updateText, intervalTime);
 
-const loadingScreen = document.querySelector("#loading-screen")
+const loadingScreen = document.querySelector("#loading-screen");
 window.addEventListener('load', function() {
     loadingScreen.style.display = 'none';
 })
+
+const navBar = document.querySelector(".navbar");
+const targetPosition = 200;
+window.addEventListener("scroll", function() {
+    const currentPosition = window.scrollY;
+    if (currentPosition > targetPosition){
+        doThis();
+        navBar.classList.add("disabled");
+    } else {
+        navBar.classList.remove("disabled");
+    }
+})
+
+function doThis(){
+    console.log("You scrolled to target position!");
+}
+
+console.log(window.scrollY);

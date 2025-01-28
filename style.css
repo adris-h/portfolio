@@ -10,15 +10,16 @@
   --background-color: white;
   --text-color: black;
   --border: black;
-  --pink: #DD4083;
+  --main-color: #DD4083;
   --title: black;
 }
 
 .dark-mode {
-  --background-color: rgb(48, 44, 44);
+  --background-color: rgb(29, 29, 29);
   --text-color: rgb(189, 188, 188);
   --border: rgb(179, 175, 175);
-  --pink: rgb(189, 188, 188);
+  --main-color: rgb(89, 136, 183);
+  --divider: rgb(179, 175, 175);
 }
 
 @font-face {
@@ -35,6 +36,7 @@ body {
   background-color: var(--background-color);
   color: black;
   width: 100vw;
+  height: 2000px;
 }
 
 .mode-toggle {
@@ -49,6 +51,8 @@ body {
   color: var(--text-color);
   border: 1px solid var(--text-color);
   cursor: pointer;
+  font-size: 0.6rem;
+  font-family: monospace;
 }
 
 .navbar {
@@ -57,7 +61,7 @@ body {
   justify-content: center;
   align-items: center;
   position: fixed;
-  height: 5rem;
+  height: 12vh;
   width: 100%;
   z-index: 10000;
   background-color: var(--background-color);
@@ -93,6 +97,10 @@ body {
 }
 .navbar .nav-content .nav-links a {
   margin: -6px;
+}
+
+.navbar.disabled {
+  transform: translateY(-13vh);
 }
 
 #hero-section {
@@ -159,7 +167,7 @@ body {
   height: 200%;
   width: 25vw;
   z-index: -1;
-  background-color: var(--pink);
+  background-color: var(--main-color);
   transform: rotate(45deg);
   translate: 25% 25%;
 }
@@ -168,12 +176,13 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(29, 28, 28);
+  background-color: rgb(29, 29, 29);
   width: 50vw;
   height: 100%;
+  border-left: var(--divider) solid 1px;
 }
 #hero-section .hero-right .hero-photo {
-  margin-top: 5rem;
+  margin-top: 12vh;
   position: relative;
   width: 50%;
   height: 60%;
@@ -183,7 +192,7 @@ body {
   position: absolute;
   bottom: -30%;
   right: 0;
-  color: var(--pink);
+  color: var(--main-color);
   font-size: 3rem;
   text-shadow: 2px 0px 0px white;
 }
@@ -255,19 +264,15 @@ body {
 
 .loader {
   display: flex;
-  justify-content: center; /* Align dots horizontally in one row */
-  gap: 15px; /* Adds space between the dots */
+  justify-content: center;
+  gap: 15px;
 }
 .loader .dot {
-  animation-name: movement;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
+  animation: movement 2s infinite ease-in-out;
   height: 10px;
   width: 10px;
-  background-color: white; /* Dots are white */
+  background-color: white;
   border-radius: 50%;
-  /* Stagger the delay for each dot */
   animation-delay: -0.1s;
 }
 .loader .dot:nth-of-type(1) {

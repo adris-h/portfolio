@@ -6,27 +6,29 @@
 *{
     transition: 500ms;
 }
-$pink: #{#DD4083};
+$pink: #DD4083;
+$blue: rgb(89, 136, 183);
 $text-b: black;
 $text-w: white;
 $background: white;
-$nav-height: 5rem;
+$nav-height: 12vh;
 
 
 $light-background: white;
 $light-text: black;
 $light-border: black;
 
-$dark-background: rgb(48, 44, 44);
+$dark-background: rgb(29, 29, 29);
 $dark-text: rgb(189, 188, 188);
 $dark-border: rgb(179, 175, 175);
+
 
 
 .light-mode {
     --background-color: #{$light-background};
     --text-color: #{$light-text};
     --border: #{$light-border};
-    --pink: #{$pink};
+    --main-color: #{$pink};
     --title: #{$light-text};
 }
 
@@ -34,7 +36,8 @@ $dark-border: rgb(179, 175, 175);
     --background-color: #{$dark-background};
     --text-color: #{$dark-text};
     --border: #{$dark-border};
-    --pink: #{$dark-text};
+    --main-color: #{$blue};
+    --divider: #{$dark-border};
 }   
 
 @font-face {
@@ -67,6 +70,7 @@ body {
     background-color: var(--background-color);
     color: black;
     width: 100vw;
+    height: 2000px;
     
 }
 
@@ -82,6 +86,8 @@ body {
     color: var(--text-color);
     border: 1px solid var(--text-color);
     cursor: pointer;
+    font-size: .6rem;
+    font-family: monospace;
 }
 .navbar {
     @include center-flex(row);
@@ -127,6 +133,10 @@ body {
             }
         }
     }
+}
+
+.navbar.disabled{
+    transform: translateY(-$nav-height - 1vh);
 }
 
 #hero-section{
@@ -186,16 +196,17 @@ body {
             height: 200%;
             width: 25vw;
             z-index: -1;
-            background-color: var(--pink);
+            background-color: var(--main-color);
             transform: rotate(45deg);
             translate: 25% 25%;
         }
     }
     .hero-right{
         @include center-flex(column);
-        background-color: rgb(29, 28, 28);
+        background-color: rgb(29, 29, 29);
         width: 50vw;
         height: 100%;
+        border-left: var(--divider) solid 1px;
 
         .hero-photo{
             margin-top: $nav-height;
@@ -208,7 +219,7 @@ body {
                 position: absolute;
                 bottom: -30%;
                 right: 0;
-                color: var(--pink);
+                color: var(--main-color);
                 font-size: 3rem;
                 text-shadow: 2px 0px 0px white;
 
@@ -277,39 +288,31 @@ body {
     gap: 0.5rem;
 }
 
-$dot-count: 20;  // You can increase this number to add more dots
+$dot-count: 20;
 $dot-size: 10px;
 $dot-space: 15px;
-
 $animation-time: 2s;
 $animation-distance: 25px;
 
 .loader {
-  display: flex;
-  justify-content: center; /* Align dots horizontally in one row */
-  gap: $dot-space; /* Adds space between the dots */
+    display: flex;
+    justify-content: center;
+    gap: $dot-space; 
 
-  .dot {
-    animation-name: movement;
-    animation-duration: $animation-time;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
+    .dot {
+    animation: movement $animation-time infinite ease-in-out;
     height: $dot-size;
     width: $dot-size;
-    background-color: white; /* Dots are white */
+    background-color: white;
     border-radius: 50%;
-    
-    /* Stagger the delay for each dot */
     animation-delay: -0.1s;
-    
-    // Automatically apply staggered delays for the dots
     @for $i from 1 through $dot-count {
       $delay: -#{$i * 0.1}s;
-      &:nth-of-type(#{$i}) {
+        &:nth-of-type(#{$i}) {
         animation-delay: $delay;
-      }
+        }
     }
-  }
+    }
 }
 
 @keyframes movement {
