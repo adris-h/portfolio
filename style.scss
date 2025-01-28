@@ -124,7 +124,7 @@ body {
             padding: .5rem;
         }
         a:hover{
-            background-color: $pink;
+            background-color: var(--main-color);
             color: white;
         }
         a:not(.contact-link){
@@ -149,9 +149,9 @@ body {
         left: 5vh;
         opacity: 0;
         transform: translateX(-20vw);
+        color: var(--text-color);
 
         a{
-            color: $light-text;
             text-decoration: none;
         }
         & > span{
@@ -160,7 +160,7 @@ body {
             align-items: center;
 
             button{
-                color: white;
+                
                 background-color: rgba(0, 0, 0, 0);
                 font-size: 1rem;
                 font-family: monospace;
@@ -185,6 +185,7 @@ body {
                     position: absolute;
                     }
                     span{
+                        color: var(--text-color);
                         transform: translateY(0);
                         &:nth-child(1) {
                             transition: 0.2s;
@@ -223,6 +224,7 @@ body {
                 }
         
                 .pos-anchor-2{
+                    color: var(--text-color);
                     display: flex;
                     position: absolute;
                     overflow: hidden;
