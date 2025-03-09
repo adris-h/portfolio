@@ -5,13 +5,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
 
-        <link rel="icon" type="image/x-icon" href="logo.ico">
+        <link rel="icon" type="image/x-icon" href="favicon_io-2/favicon.ico">
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/fontawesome.min.css        ">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/solid.min.css">
         <title>adris han</title>
     </head>
     <body class="light-mode">
+        <div class="menu-popup">
+            about me 
+        </div>
         <div id="loading-screen">
             <img src="loading-anim.gif" alt="">
             <!--
@@ -31,10 +34,8 @@
                     <div class="dot"></div>
                     <div class="dot"></div>
                     <div class="dot"></div>
-
             </div>
             -->
-            
         </div>
         <nav class="navbar">
             <div class="nav-holder">
@@ -48,34 +49,37 @@
                     <a href="#contact" class="contact-link">contact.</a>
                 </div>
                 <div class="nav-content-scrolled disabled">
-                    <span>you are here -> 
-                        <span>
-                            <button class="pos-anchor-holder">
-                                <a href="#" class="pos-anchor home-pos"><span>h</span><span>o</span><span>m</span><span>e</span></a>
-                                <a href="#" class="pos-anchor-2 home-pos"><span>h</span><span>o</span><span>m</span><span>e</span></a>
-                            </button>
-                            <!--<a href="#" class="pos-anchor aboutme-pos">about me</a> -->
+                    <span>you are here: 
+                        <span class="pos-span">
+                            home
                         </span>
                     </span>
+                    <span>
+                        <button class="menu-holder">
+                            <a  class="menu-button menu-1"><span>m</span><span>e</span><span>n</span><span>u</span></a>
+                            <a  class="menu-button menu-2"><span>m</span><span>e</span><span>n</span><span>u</span></a>
+                        </button>
+                    </span>
                     <!--
-                    basically - you are here (section) e.g. home it will automatically change depeneding in which section user is
-                    -->
+                        basically - you are here (section) e.g. home it will automatically change depeneding in which section user is
+                        -->
+                    </div>
                 </div>
-            </div>
-        </nav>
-        <button class="mode-toggle">
-            dark mode
-        </button>
-        <section id="hero-section" >
-            <div class="hero-left">
-                <div class="hero-title">
-                    <h1>
-                        <span>port</span>
-                        <span>folio</span>
-                    </h1>
-                </div>
-                <div class="hero-paragraph">
-                    <p class="text"> Proident anim aliquip tempor ad et velit non irure culpa ut Lorem. Cillum duis magna duis occaecat labore duis cillum reprehenderit commodo eiusmod.</p>
+            </nav>
+
+            <button class="mode-toggle">
+                dark mode
+            </button>
+            <section id="hero-section" >
+                <div class="hero-left">
+                    <div class="hero-title">
+                        <h1>
+                            <span>port</span>
+                            <span>folio</span>
+                        </h1>
+                    </div>
+                    <div class="hero-paragraph">
+                        <p class="text"> Proident anim aliquip tempor ad et velit non irure culpa ut Lorem. Cillum duis magna duis occaecat labore duis cillum reprehenderit commodo eiusmod.</p>
                 </div>
             </div>
             <div class="hero-right">
@@ -87,11 +91,14 @@
                 
             </div>
         </section>
+        
+        
+        
         <section id="aboutme-section">
             <div class="a-content">
                 <div class="a-top">
                     <div class="a-photo">
-                        photo
+                        
                     </div>
                     <div class="a-bio">
                         <h2>Adriana "Adris" Hanousková</h2>

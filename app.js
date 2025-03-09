@@ -4,7 +4,6 @@ const darkButton = document.querySelector("#dark")
 const lightButton = document.querySelector("#dark")
 
 modeToggleButton.addEventListener('click', () => {
-    // Toggle between light-mode and dark-mode classes
     if (bodyElement.classList.contains('light-mode')) {
         bodyElement.classList.remove('light-mode');
         bodyElement.classList.add('dark-mode');
@@ -15,6 +14,7 @@ modeToggleButton.addEventListener('click', () => {
         modeToggleButton.textContent = 'dark mode';
     }
 });
+
 
 
 const changingText = document.querySelector('.changing-text');
@@ -51,3 +51,10 @@ function doThis(){
 }
 
 console.log(window.scrollY);
+
+const menuButton = document.querySelector('.menu-2')
+const menuPopUp = document.querySelector('.menu-popup')
+
+menuButton.addEventListener('click', () => {
+    menuPopUp.classList.toggle('active')
+})
