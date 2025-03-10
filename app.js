@@ -29,10 +29,20 @@ function updateText() {
 updateText();
 setInterval(updateText, intervalTime);
 
-const loadingScreen = document.querySelector("#loading-screen");
+/* const loadingScreen = document.querySelector("#loading-screen");
 window.addEventListener('load', function() {
     loadingScreen.style.display = 'none';
-})
+}) */
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.body.classList.add("no-scroll");
+    setTimeout(() => {
+        document.getElementById("loading-screen").classList.add("hidden");
+        document.body.classList.remove("no-scroll");
+    }, 3000);
+});
+
+
 
 const navBar = document.querySelector(".navbar");
 const targetPosition = 200;
@@ -49,8 +59,6 @@ window.addEventListener("scroll", function() {
 function doThis(){
     console.log("You scrolled to target position!");
 }
-
-console.log(window.scrollY);
 
 const menuButton = document.querySelector('.menu-2')
 const menuPopUp = document.querySelector('.menu-popup')
