@@ -35,20 +35,32 @@ window.addEventListener('load', function() {
 }) */
 
 document.addEventListener("DOMContentLoaded", function () {
-    document.body.classList.add("no-scroll");
+    const loadingScreen = document.getElementById("loading-screen");
+    
+    document.body.classList.add("loading");
+    
+    const img = document.createElement("img");
+    img.src = `loading-anim.gif?cacheBust=${Date.now()}`;
+    img.alt = "";
+    loadingScreen.appendChild(img);
+    
     setTimeout(() => {
-        document.getElementById("loading-screen").classList.add("hidden");
-        document.body.classList.remove("no-scroll");
+        loadingScreen.classList.add("hidden");
+    
+
+        loadingScreen.innerHTML = "";
+    
+
+        document.body.classList.remove("loading");
     }, 3000);
 });
 
 
-
 const navBar = document.querySelector(".navbar");
-const targetPosition = 200;
+const aboutmePosition = 700;
 window.addEventListener("scroll", function() {
     const currentPosition = window.scrollY;
-    if (currentPosition > targetPosition){
+    if (currentPosition > aboutmePosition){
         doThis();
         navBar.classList.add("scrolled");
     } else {
@@ -56,9 +68,14 @@ window.addEventListener("scroll", function() {
     }
 })
 
+window.addEventListener("scroll", () => {
+    console.log("Current position:", window.scrollY);
+});
+
 function doThis(){
     console.log("You scrolled to target position!");
 }
+
 
 const menuButton = document.querySelector('.menu-2')
 const menuPopUp = document.querySelector('.menu-popup')
@@ -66,3 +83,4 @@ const menuPopUp = document.querySelector('.menu-popup')
 menuButton.addEventListener('click', () => {
     menuPopUp.classList.toggle('active')
 })
+

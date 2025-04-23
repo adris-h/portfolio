@@ -1,11 +1,17 @@
+body{
+    overflow-x: hidden;
+}
 
+body.loading{
+    overflow: hidden;
+}
 
 :root{
     font-size: 20px;
 }
-*{
-    transition: 500ms;
-}
+
+
+
 
 $pink: #DD4083;
 $blue: rgb(89, 136, 183);
@@ -22,6 +28,7 @@ $light-border: black;
 $dark-background: rgb(29, 29, 29);
 $dark-text: rgb(189, 188, 188);
 $dark-border: rgb(179, 175, 175);
+
 
 
 
@@ -46,6 +53,12 @@ $dark-border: rgb(179, 175, 175);
     src: url(fonts/moon_get/moon_get-Heavy.ttf);
 }
 
+@mixin font-bagel(){
+    font-family: "bagel-fat-one", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
 @mixin center-flex($dir){
     display: flex;
     flex-direction: $dir;
@@ -60,6 +73,20 @@ $dark-border: rgb(179, 175, 175);
     align-items: $align;
     gap: $gap;
 }
+
+.cherry-bomb-one-regular {
+    font-family: "Cherry Bomb One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.bagel-fat-one-regular {
+    font-family: "Bagel Fat One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
 
 html{
     scroll-behavior: smooth;
@@ -76,12 +103,16 @@ body {
     &.no-scroll {
         overflow: hidden;
     }
+
+    section{
+        min-height: 100vh - $nav-height;
+    }
 }
 
 
 
 .mode-toggle{
-    z-index: 10000;
+    z-index: 90;
     position: fixed;
     bottom: 0;
     right: 0;
@@ -95,8 +126,12 @@ body {
     font-size: .6rem;
     font-family: monospace;
 }
+
+
 .navbar {
     @include center-flex(row);
+    
+    top: 0;
     position: fixed; 
     height: $nav-height;
     width: 100%; 
@@ -104,6 +139,8 @@ body {
     background-color: var(--background-color);
     border-bottom: 1px solid var(--border);
     box-sizing: border-box;
+    transition: 500ms;
+
 
     .nav-holder{
         @include center-flex(row);
@@ -114,6 +151,7 @@ body {
     }
     
     .nav-content{
+        transition: 500ms;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -148,7 +186,7 @@ body {
     }
 
     .nav-content-scrolled{
-
+        transition: 500ms;
         position: absolute;
         visibility: hidden;
 
@@ -278,7 +316,7 @@ body {
 }
 
 .navbar.scrolled{
-    height: $nav-height - 6vh;
+    height: $nav-height - 8vh;
     .nav-content{
         transform: translateY(-$nav-height - 1vh);  
     }
@@ -295,6 +333,41 @@ body {
 }
 
 
+#intro-section{
+    @include center-flex(column);
+    background-color: var(--background-color);
+    height: 100vh;
+    
+    h1{
+        z-index: 2;
+        font-size: 8rem;
+        line-height: 80%;
+        text-shadow: 2px 0px 0px white;
+        margin: 0;
+    }
+
+    h2{
+        z-index: 2;
+        margin: 1rem;
+        text-align: right;
+        width: 60%;
+    }
+
+    &::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        height: 220%;
+        width: 25vw;
+        z-index: 1;
+        background-color: var(--main-color);
+        transform: rotate(60deg);
+        translate: 0% -25%;
+    }
+}
+
+
+
 #hero-section{
     display: flex;
     height: 100vh;
@@ -307,20 +380,17 @@ body {
         justify-content: flex-end;
         align-items: center;
         .hero-title{
-            height: 30%;
-            width: 50%;
-            @include center-flex(row);
+            height: 25%;
+            width: 80%;
+            @include center-flex(column);
 
             h1{
                 text-transform: uppercase;
-                
+                margin: 0;
                 text-shadow: 2px 0px 0px white;
-                font-family: moonget;
-                font-weight: 2000;
                 line-height: 3.6rem;
-
                 @include center-flex(column);
-                gap: .8rem;
+                gap: 5px;
                 span{
                     color: var(--title);
                 }
@@ -330,6 +400,11 @@ body {
                 span:nth-child(2){
                     font-size: 4rem;
                 }
+            }
+            h2{
+                margin: 0;
+                width: 100%;
+                text-align: center
             }
         }
         .hero-paragraph{
@@ -404,26 +479,33 @@ body {
         height: 100%;
         
         .a-top{
-            @include flexbox-layout(row, flex-start, center, 1rem );
+            @include flexbox-layout(row, flex-start, flex-start, 4rem );
             height: 80%;
             width: 100%;
             .a-photo{
                 @include center-flex(row);
-                width: 25%;
-                height: 50%;
-                border: var(--border) solid 1px;
-                background-image: url(img/a1ada58a46fc46fe62562e7b098d2e33.jpg); 
-                background-size: cover;
+                width: 25rem;
+                height: 30rem;
+                background-color: #DD4083;
             }
             .a-bio{
                 @include flexbox-layout(column, flex-start, flex-start, 1rem);
+                margin-top: 4rem;
+                font-size: 25px;
                 *{
                     margin: 0;
                     color: var(--text-color);
                 }
+                p{
+                    font-size: .8em;
+                }
                 div{
-                    span{
-                        width: 10rem;
+                    @include flexbox-layout(column, center, flex-start, 1rem);
+                    width: 100%;
+                    & > span{
+                        margin-left: 5rem;
+                        font-size: 1.2em;
+                        
                         height: 5rem;
                     }
                 }
@@ -433,26 +515,31 @@ body {
 }
 
 
-
+#loading-screen.hidden{
+    display: none;
+}
 
 #loading-screen {
     position: fixed;
     z-index: 100000;
     height: 100vh;
     width: 100vw;
-    background-color: #DD4083;
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
+    overflow: hidden;
 
     img{
         width: 100%;
     }
 
     &.hidden {
+        display: none;
         opacity: 0;
         visibility: hidden;
+        
     }
 }
 
@@ -509,3 +596,98 @@ $animation-distance: 25px;
     transform: translateY(-#{$animation-distance});
     }
 };
+
+
+
+
+
+
+#skills-section{
+    @include center-flex(row);
+    .s-container{
+        width: 80vw;
+        height: 80vh;
+    }
+    
+    .skills-title h2{
+        font-size: 5rem;
+        margin: 0;
+    }
+    
+    .skills-container{
+        @include center-flex(row);
+        width: 100%;
+        height: 50%;
+        gap: 3rem;
+    
+        .skill{
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 10rem;
+            width: 10rem;
+        }
+        .skill:nth-child(1){
+            background-image: url(img/html-logo.svg);
+        }
+        .skill:nth-child(2){
+            background-image: url(img/css-logo.svg);
+        }
+        .skill:nth-child(3){
+            background-image: url(img/python.svg);
+        }
+        .skill:nth-child(4){
+            background-image: url(img/Figma-Icon.svg);
+        }
+    }
+}
+
+
+#projects-section{
+        max-width: 100%;
+        overflow: hidden;
+        height: 100vh;
+    .p-moving{
+        height: 3rem;
+        white-space: nowrap;
+        overflow: hidden;
+        display: inline-block;
+        animation: infinitemove 20s linear infinite;
+
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        & > span{
+            display: inline-block;
+            text-transform: uppercase;
+            padding: 1rem;
+        }
+    }
+
+    .p-main{
+        @include center-flex(column);
+        height: 80%;
+        .projects-anchor{
+            text-decoration: none;
+            color: black;
+            font-size: 1.2rem;
+            position: relative;
+            height: 1rem;
+        }
+
+        .projects-anchor::after{
+            position: absolute;
+            content: "";
+            bottom: 0;
+            height: 2px;
+            width: 10px;
+        }
+    }
+}
+
+@keyframes infinitemove {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
