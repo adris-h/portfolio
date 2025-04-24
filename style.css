@@ -487,80 +487,6 @@ body section {
   visibility: hidden;
 }
 
-.loader {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-}
-.loader .dot {
-  animation: movement 2s infinite ease-in-out;
-  height: 10px;
-  width: 10px;
-  background-color: white;
-  border-radius: 50%;
-  animation-delay: -0.1s;
-}
-.loader .dot:nth-of-type(1) {
-  animation-delay: -0.1s;
-}
-.loader .dot:nth-of-type(2) {
-  animation-delay: -0.2s;
-}
-.loader .dot:nth-of-type(3) {
-  animation-delay: -0.3s;
-}
-.loader .dot:nth-of-type(4) {
-  animation-delay: -0.4s;
-}
-.loader .dot:nth-of-type(5) {
-  animation-delay: -0.5s;
-}
-.loader .dot:nth-of-type(6) {
-  animation-delay: -0.6s;
-}
-.loader .dot:nth-of-type(7) {
-  animation-delay: -0.7s;
-}
-.loader .dot:nth-of-type(8) {
-  animation-delay: -0.8s;
-}
-.loader .dot:nth-of-type(9) {
-  animation-delay: -0.9s;
-}
-.loader .dot:nth-of-type(10) {
-  animation-delay: -1s;
-}
-.loader .dot:nth-of-type(11) {
-  animation-delay: -1.1s;
-}
-.loader .dot:nth-of-type(12) {
-  animation-delay: -1.2s;
-}
-.loader .dot:nth-of-type(13) {
-  animation-delay: -1.3s;
-}
-.loader .dot:nth-of-type(14) {
-  animation-delay: -1.4s;
-}
-.loader .dot:nth-of-type(15) {
-  animation-delay: -1.5s;
-}
-.loader .dot:nth-of-type(16) {
-  animation-delay: -1.6s;
-}
-.loader .dot:nth-of-type(17) {
-  animation-delay: -1.7s;
-}
-.loader .dot:nth-of-type(18) {
-  animation-delay: -1.8s;
-}
-.loader .dot:nth-of-type(19) {
-  animation-delay: -1.9s;
-}
-.loader .dot:nth-of-type(20) {
-  animation-delay: -2s;
-}
-
 .menu-popup {
   z-index: 1000;
   height: 100vh;
@@ -588,6 +514,7 @@ body section {
   }
 }
 #skills-section {
+  scroll-margin-top: 15vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -633,13 +560,14 @@ body section {
   max-width: 100%;
   overflow: hidden;
   height: 100vh;
+  position: relative;
 }
 #projects-section .p-moving {
   height: 3rem;
   white-space: nowrap;
   overflow: hidden;
   display: inline-block;
-  animation: infinitemove 20s linear infinite;
+  animation: infinitemove 40s linear infinite;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
 }
@@ -661,13 +589,62 @@ body section {
   font-size: 1.2rem;
   position: relative;
   height: 1rem;
+  transition: 300ms;
 }
-#projects-section .p-main .projects-anchor::after {
+#projects-section .p-main a:hover {
+  transform: scale(1.1);
+}
+#projects-section .p-main a:hover::after {
+  width: 8em;
+}
+#projects-section .p-main a::after {
   position: absolute;
   content: "";
-  bottom: 0;
+  bottom: -16px;
+  left: 0;
   height: 2px;
-  width: 10px;
+  width: 0;
+  background-color: black;
+  transition: 300ms;
+}
+#projects-section .background-projects {
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
+}
+#projects-section .background-projects .projects-wrapper {
+  height: 50%;
+  width: 100%;
+  gap: 1rem;
+}
+#projects-section .background-projects .projects-wrapper > div {
+  width: 25%;
+  height: 50%;
+  background-color: #DD4083;
+  border: solid 1px black;
+}
+#projects-section .background-projects > div:nth-child(1) {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  margin-right: 2rem;
+}
+#projects-section .background-projects > div:nth-child(2) {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 2rem;
 }
 
 @keyframes infinitemove {
@@ -677,4 +654,44 @@ body section {
   100% {
     transform: translate3d(-50%, 0, 0);
   }
+}
+#contact-section {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+#contact-section .contact-container {
+  background-color: #DD4083;
+  height: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#contact-section .contact-container > div {
+  height: 50%;
+}
+#contact-section .contact-container > div > div {
+  width: 50%;
+  height: 100%;
+}
+#contact-section p {
+  margin: 0;
+}
+
+footer {
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7rem;
+}
+footer a {
+  color: #DD4083;
 }

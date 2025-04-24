@@ -29,53 +29,54 @@ function updateText() {
 updateText();
 setInterval(updateText, intervalTime);
 
-/* const loadingScreen = document.querySelector("#loading-screen");
-window.addEventListener('load', function() {
-    loadingScreen.style.display = 'none';
-}) */
-
 document.addEventListener("DOMContentLoaded", function () {
     const loadingScreen = document.getElementById("loading-screen");
     
     document.body.classList.add("loading");
-    
     const img = document.createElement("img");
     img.src = `loading-anim.gif?cacheBust=${Date.now()}`;
     img.alt = "";
     loadingScreen.appendChild(img);
-    
     setTimeout(() => {
         loadingScreen.classList.add("hidden");
-    
-
         loadingScreen.innerHTML = "";
-    
-
         document.body.classList.remove("loading");
     }, 3000);
 });
 
 
 const navBar = document.querySelector(".navbar");
-const aboutmePosition = 700;
+const posSpan = document.querySelector('.pos-span');
+const aboutmePosition = 1400;
+const skillsPosition = 2000;
+const projectsPosition = 3000
 window.addEventListener("scroll", function() {
     const currentPosition = window.scrollY;
-    if (currentPosition > aboutmePosition){
-        doThis();
+    
+    if (currentPosition > aboutmePosition) {
         navBar.classList.add("scrolled");
+        
+        if (currentPosition < skillsPosition) {
+            posSpan.textContent = 'about me';
+        } else if (currentPosition < projectsPosition) {
+            posSpan.textContent = 'skills';
+        } else {
+            posSpan.textContent = 'projects';
+        }
+        
     } else {
         navBar.classList.remove("scrolled");
+        posSpan.textContent = 'home';
     }
-})
+});
+
+function doThis() {
+    console.log("You scrolled to target position!");
+}
 
 window.addEventListener("scroll", () => {
     console.log("Current position:", window.scrollY);
 });
-
-function doThis(){
-    console.log("You scrolled to target position!");
-}
-
 
 const menuButton = document.querySelector('.menu-2')
 const menuPopUp = document.querySelector('.menu-popup')
@@ -83,4 +84,3 @@ const menuPopUp = document.querySelector('.menu-popup')
 menuButton.addEventListener('click', () => {
     menuPopUp.classList.toggle('active')
 })
-
