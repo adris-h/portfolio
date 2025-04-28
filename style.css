@@ -1,5 +1,6 @@
 body {
   overflow-x: hidden;
+  width: 100vw;
 }
 
 body.loading {
@@ -446,7 +447,7 @@ body section {
   color: var(--text-color);
 }
 #aboutme-section .a-content .a-top .a-bio p {
-  font-size: 0.8em;
+  font-size: 1em;
 }
 #aboutme-section .a-content .a-top .a-bio div {
   display: flex;
@@ -460,6 +461,48 @@ body section {
   margin-left: 5rem;
   font-size: 1.2em;
   height: 5rem;
+}
+#aboutme-section .a-content .a-top .a-bio div:nth-child(4) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0;
+  text-align: right;
+}
+#aboutme-section .a-content .a-top .a-bio div:nth-child(4) a {
+  position: relative;
+  text-decoration: none;
+  transition: 300ms;
+}
+#aboutme-section .a-content .a-top .a-bio div:nth-child(4) a div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0;
+  color: rgba(0, 0, 0, 0.327);
+  transition: 300ms;
+}
+#aboutme-section .a-content .a-top .a-bio div:nth-child(4) a::after {
+  content: "";
+  position: absolute;
+  top: 55%;
+  left: 0;
+  width: 0;
+  height: 2px;
+  border-radius: 40px;
+  background-color: black;
+  transition: 300ms;
+}
+#aboutme-section .a-content .a-top .a-bio div:nth-child(4) a:hover {
+  transform: scale(1.1);
+}
+#aboutme-section .a-content .a-top .a-bio div:nth-child(4) a:hover div {
+  color: black;
+}
+#aboutme-section .a-content .a-top .a-bio div:nth-child(4) a:hover::after {
+  width: 8.5rem;
 }
 
 #loading-screen.hidden {
@@ -491,7 +534,8 @@ body section {
   z-index: 1000;
   height: 100vh;
   width: 100vw;
-  background-color: #DD4083;
+  background-color: white;
+  border-bottom: 1px solid black;
   position: fixed;
   transition: 400ms;
   transform: translateY(-110vh);
@@ -658,6 +702,8 @@ body section {
 #contact-section {
   height: 100vh;
   width: 100%;
+  font-size: 1.5rem;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -665,23 +711,197 @@ body section {
   gap: 1rem;
 }
 #contact-section .contact-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #DD4083;
   height: 80%;
   width: 100%;
+  color: white;
+}
+#contact-section .contact-container .info-wrapper {
+  transition: 300ms;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+  width: 100%;
+}
+#contact-section .contact-container .info-wrapper .iw2:hover .email-button, #contact-section .contact-container .info-wrapper .iw2:hover .info.i3 p:nth-child(1) {
+  transform: scale(1.3);
+}
+#contact-section .contact-container .info-wrapper .iw2:hover .info.i1, #contact-section .contact-container .info-wrapper .iw2:hover .info.i1 {
+  opacity: 0.7;
+}
+#contact-section .contact-container .info-wrapper .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  gap: 0.8rem;
+}
+#contact-section .contact-container .info-wrapper .info img {
+  height: 2rem;
+}
+#contact-section .contact-container .info-wrapper .info.i3 {
+  position: relative;
+  height: 60%;
+  width: 60%;
+}
+#contact-section .contact-container .info-wrapper .info.i3 .abs-text {
+  position: absolute;
+  opacity: 0;
+  cursor: default;
+  font-size: 1rem;
+  top: 20px;
+  right: 0;
+  transform: rotate(10deg);
+  transition: 300ms;
+}
+#contact-section .contact-container .info-wrapper .info.i3 .abs-text.hovered {
+  opacity: 1;
+}
+#contact-section .contact-container .info-wrapper .info.i3 .email-button {
+  transition: 300ms;
+  cursor: pointer;
+  font-size: 1.4rem;
+}
+#contact-section .contact-container .info-wrapper .info.i3 p {
+  font-size: 1rem;
+}
+#contact-section .contact-container .info-wrapper .info.i3 p:nth-child(1) {
+  transition: 300ms;
+}
+#contact-section .contact-container .info-wrapper .info.i1, #contact-section .contact-container .info-wrapper .info.i2 {
+  box-sizing: border-box;
+  justify-content: flex-end;
+  padding-bottom: 4rem;
+}
+#contact-section .contact-container .iw2 {
+  align-items: flex-start;
+}
+#contact-section .contact-container .info-wrapper.unselected {
+  opacity: 0.7;
+}
+#contact-section .contact-container .iw2.selected p:nth-child(1), #contact-section .contact-container .iw2.selected .email-button {
+  transform: scale(1.3);
+}
+#contact-section .contact-container #cf-button {
+  border: 2px solid white;
+  border-radius: 50px;
+  background-color: transparent;
+  color: white;
+  padding: 0.8rem;
+  font-size: 1rem;
+  font-family: monospace;
+  cursor: pointer;
+  transition: 100ms;
+  z-index: 100001;
+}
+#contact-section .contact-container #cf-button:hover {
+  background-color: white;
+  color: black;
+}
+#contact-section p {
+  margin: 0;
+}
+#contact-section .contact-form {
+  transform: translateX(-110vw);
+  transition: 300ms;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  background-color: #DD4083;
+  z-index: 100000;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#contact-section .contact-form.active {
+  transform: translateX(0);
+}
+#contact-section .contact-form .cf-title-holder {
+  height: 20%;
+  color: white;
+  font-size: 1rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
-#contact-section .contact-container > div {
+#contact-section .contact-form .cf-input-holder {
   height: 50%;
 }
-#contact-section .contact-container > div > div {
-  width: 50%;
+#contact-section .contact-form .cf-input-holder form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 1rem;
+  width: 100%;
   height: 100%;
 }
-#contact-section p {
-  margin: 0;
+#contact-section .contact-form .cf-input-holder form input:not(#input-submit), #contact-section .contact-form .cf-input-holder form textarea {
+  width: 70vw;
+  color: white;
+  font-family: monospace;
+  border-bottom: 2px solid white;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  background-color: transparent;
+}
+#contact-section .contact-form .cf-input-holder form input:not(#input-submit)::placeholder, #contact-section .contact-form .cf-input-holder form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  text-align: start;
+}
+#contact-section .contact-form .cf-input-holder form input:not(#input-submit):focus, #contact-section .contact-form .cf-input-holder form textarea:focus {
+  outline: none;
+  border-bottom: 2px solid white;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+}
+#contact-section .contact-form .cf-input-holder form input:not(#input-submit):focus::placeholder, #contact-section .contact-form .cf-input-holder form textarea:focus::placeholder {
+  color: white;
+}
+#contact-section .contact-form .cf-input-holder form input:not(#input-submit, #input-message) {
+  height: 4rem;
+  display: flex;
+  align-items: flex-end;
+}
+#contact-section .contact-form .cf-input-holder form #input-message {
+  height: 10rem;
+  width: 70vw;
+  display: flex;
+  box-sizing: border-box;
+  align-items: flex-start;
+  resize: none;
+  padding-top: 1rem;
+}
+#contact-section .contact-form .cf-input-holder form #input-submit {
+  font-family: monospace;
+  height: 2rem;
+  width: 3rem;
+  cursor: pointer;
+  border: 2px solid white;
+  border-radius: 30px;
+  background-color: transparent;
+  color: white;
+  margin-top: 1rem;
+  right: 0;
+  transition: 100ms;
+}
+#contact-section .contact-form .cf-input-holder form #input-submit:hover {
+  background-color: white;
+  color: #DD4083;
 }
 
 footer {
