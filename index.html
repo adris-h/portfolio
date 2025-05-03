@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
 
@@ -14,40 +14,63 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Cherry+Bomb+One&display=swap" rel="stylesheet">
         
-        
-        <title>adris han</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+        <title>Adriana Hanousková - Portfolio</title>
         <script src="app.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     </head>
     <body class="light-mode body">
-        <div class="menu-popup">
-            about me 
-        </div>
-        <div id="loading-screen">
+        <div id="menu">
+            <div class="menu_left">
+            </div>
+            <div class="menu_right">
+                <div class="menu__items">
+                    <div class="menu___number"> 1 </div>
+                    <div class="menu___link"> <a href="#">HOME</a> </div>
+                </div>
+                <div class="menu__items">
+                    <div class="menu___number"> 2 </div>
+                    <div class="menu___link"> <a href="#">MORE ABOUT ME</a> </div>
+                </div>
+                <div class="menu__items">
+                    <div class="menu___number"> 3 </div>
+                    <div class="menu___link"> <a href="#">ALL MY PROJECTS</a> </div>
+                </div> 
+                <div class="menu__items">
+                    <div class="menu___number"> 4 </div>
+                    <div class="menu___link"> <a href="#">CONTACT</a> </div>
+                </div> 
+            </div>
+        </div> 
 
-        </div>
+        <div id="loading-screen"></div>
         <nav class="navbar">
-            <div class="nav-holder">
-                <div class="nav-content">
-                    <a class="logo text" href="#">adris.</a>
-                    <div class="nav-links">
-                        <a href="#aboutme-section">about me</a>
-                        <a href="#skills-section">skills</a>
+            <div class="navbar_container">
+                <div class="navbar__content">
+                    <a class="navbar___logo text" href="#">adris.</a>
+                    <div class="navbar____links">
+                        <a href="#aboutme-section">about me</a> 
+                        <a href="#skills-section">skills</a> 
                         <a href="#projects-section">projects</a>
                     </div>
-                    <a href="#contact-section" class="contact-link">contact.</a>
+                    <a href="#contact-section" class="navbar___contact-link">contact.</a>
                 </div>
-                <div class="nav-content-scrolled disabled">
+                <div class="navbar__scroll-info disabled">
                     <span>you are here: 
-                        <span class="pos-span">
-                            about me
-                        </span>
+                        <span class="navbar___position-span"> about me </span>
                     </span>
                     <span>
-                        <button class="menu-holder">
-                            <a  class="menu-button menu-1"><span>m</span><span>e</span><span>n</span><span>u</span></a>
-                            <a  class="menu-button menu-2"><span>m</span><span>e</span><span>n</span><span>u</span></a>
+                        <button class="navbar___menu-button">
+                            <a  class="navbar__menu-toggle navbar__menu-toggle--1"><span>m</span><span>e</span><span>n</span><span>u</span></a>
+                            <a  class="navbar__menu-toggle navbar__menu-toggle--2"><span>m</span><span>e</span><span>n</span><span>u</span></a>
                         </button>
                     </span>
                     <!--
@@ -56,54 +79,48 @@
                     </div>
                 </div>
             </nav>
-
+            
             <section id="intro-section">
                 <h1 class="bagel-fat-one-regular">Adriana <br> Hanousková</h1>
                 <h2> Front-End Development Student </h2>
             </section>
 
-            <button class="mode-toggle">
-                dark mode
-            </button>
-            <section id="hero-section" >
-                <div class="hero-left">
-                    <div class="hero-title">
+            <button class="mode-toggle">dark mode</button>
+        <section id="hero-section" >
+            <div class="hero_left">
+                <div class="hero__title">
                         <h1 class="bagel-fat-one-regular">
                             <span>Adriana</span>
                             <span>Hanousková</span>
                         </h1>
-                        
-                    </div>
-                    <div class="hero-paragraph">
-                        <p class="text"> Proident anim aliquip tempor ad et velit non irure culpa ut Lorem. Cillum duis magna duis occaecat labore duis cillum reprehenderit commodo eiusmod.</p>
+                </div>
+                <div class="hero__paragraph">
+                        <p> Proident anim aliquip tempor ad et velit non irure culpa ut Lorem. Cillum duis magna duis occaecat labore duis cillum reprehenderit commodo eiusmod.</p>
                 </div>
             </div>
-            <div class="hero-right">
-                <div class="hero-photo">
-                    <div class="photo-text">
+            <div class="hero_right">
+                <div class="hero__photo">
+                    <div class="hero___photo-text">
                         <h2 class="bagel-fat-one-regular">ME</h2>
                     </div>
                 </div>
-                
             </div>
         </section>
-        
-        
-        
+
         <section id="aboutme-section">
-            <div class="a-content">
-                <div class="a-top">
-                    <div class="a-photo">
+            <div class="about_content">
+                <div class="about__top">
+                    <div class="about___photo">
                         
                     </div>
-                    <div class="a-bio">
-                        <h2 class="bagel-fat-one-regular">Adriana "Adris" Hanousková</h2>
+                    <div class="about__bio">
+                        <h2 class="bagel-fat-one-regular">Adriana Hanousková</h2>
                         <p>31.08.2007 // Czech Republic</p>
                         <div>
                             <h3 class="bagel-fat-one-regular">My interests:</h3>
                             <span>
                                 <span>Web</span>
-                                <span class="changing-text"></span>
+                                <span class="about___changing-interests"></span>
                             </span>
                         </div>
                         <div>
@@ -118,33 +135,53 @@
             </div>
         </section>
         <section id="skills-section">
-            <div class="s-container">
-                <div class="skills-title">
-                    <h2 class="bagel-fat-one-regular">My skills</h2>
+
+            <div class="skills__title">
+                <h2>The skills that shape my work</h2>
+            </div>
+            <div class="skills_container">
+                <div class="skills__items">
+                    <span class="skills__abs-text">hover me!!</span>
+                    <div class="skills___item skill___item-1">
+                        <div class="skills___logo skills___logo-1"></div>
+                        <div class="skills___name bagel-fat-one-regular">html</div>
+                    </div>
+                    <div class="skills___item skill___item-2">
+                        <div class="skills___logo skills___logo-2"></div>
+                        <div class="skills___name bagel-fat-one-regular">css</div>
+                    </div>
+                    <div class="skills___item skill___item-3">
+                        <div class="skills___logo skills___logo-3"></div>
+                        <div class="skills___name bagel-fat-one-regular">javascript</div>
+                    </div>
+                    <div class="skills___item skill___item-4">
+                        <div class="skills___logo skills___logo-4"></div>
+                        <div class="skills___name bagel-fat-one-regular">figma</div>
+                    </div>
                 </div>
-                <div class="skills-container">
-                    <div class="skill"></div>
-                    <div class="skill"></div>
-                    <div class="skill"></div>
-                    <div class="skill"></div>
+                <div class="skills__descriptions">
+                    <div class="skills___skill-1-desc">I’ve worked with HTML for over a year, building structured, semantic, and accessible websites from scratch to prototype-ready stages.</div>
+                    <div class="skills___skill-2-desc">With CSS, I design responsive, visually appealing layouts using Flexbox, Grid, and modern styling techniques for a clean user experience.</div>
+                    <div class="skills___skill-3-desc">Javascript</div>
+                    <div class="skills___skill-4-desc">I use Figma to design clean, user-friendly interfaces and collaborate effectively during the planning stage of web development projects.</div>
                 </div>
             </div>
         </section>
         <section id="projects-section"> 
-            <div class="p-moving">
+            <div class="projects_moving-text">
                 <span>my projects . my projects . my projects . my projects . my projects . my projects . my projects . my projects . my projects . my projects . my projects . my projects . my projects . my projects . my projects . my projects . my projects . my projects . my projects . my projects . my projects . my projects . my projects . my projects . my projects . my projects . my projects .</span>
                 <span>my projects . my projects . my projects . my projects . my projects . my projects . my projects . my projects . my projects . my projects . my projects . my projects . my projects . my projects . my projects . my projects . my projects . my projects . my projects . my projects . my projects . my projects . my projects . my projects . my projects . my projects . my projects .</span>
             </div>
-            <div class="p-main">
+            <div class="projects_main">
                 <a href="sub-sites/projects.html" target="_blank" class="projects-anchor">view all my projects</a> 
             </div>
-            <div class="background-projects">
-                <div class="projects-wrapper">
+            <div class="porjects_background">
+                <div class="projects__container">
                     <div></div>
                     <div></div>
                     <div></div>
                 </div>
-                <div class="projects-wrapper">
+                <div class="projects__container">
                     <div></div>
                     <div></div>
                     <div></div>
@@ -152,13 +189,13 @@
             </div>
         </section>
         <section id="contact-section">
-            <div class="contact-container">
-                <div class="info-wrapper iw1">
-                    <div class="info i1">
+            <div class="contact_container">
+                <div class="contact__info-wrapper contact__info-wrapper--1">
+                    <div class="contact___info contact___info-location">
                         <p>Czech Republic, Zlínský Kraj</p>
                         <p>located in</p>
                     </div>
-                    <div class="info i2">
+                    <div class="contact___info contact___info-socials">
                         <div>
                             <a href="#"><img src="img/Instagram_Glyph_White.svg" alt=""></a>
                             <a href="#"><img src="img/In-White-96-┬«.png" alt=""></a>
@@ -166,21 +203,20 @@
                         <p>social media</p>
                     </div>
                 </div>
-                <div class="info-wrapper iw2">
-                    <div class="info i3">
+                <div class="contact__info-wrapper contact__info-wrapper--2">
+                    <div class="contact___info contact___info-email">
                         <p>Reach out!</p>
-                        <p class="abs-text">click to copy</p>
-                        <a class="email-button" id="copy-text">adrianahanouskova2007@gmail.com</a>
-                        
+                        <p class="contact___abs-text">click to copy</p>
+                        <a class="contact___email-button" id="copy-text">adrianahanouskova2007@gmail.com</a>
                     </div>
                 </div>
-                <button id="cf-button">send an email</button>
+                <button id="cf-button">toggle contact form</button>
             </div>
-            <div class="contact-form">
-                <div class="cf-title-holder">
+            <div class="contact_form">
+                <div class="contact_form-title">
                     <h2 class="bagel-fat-one-regular">Let's Talk!</h2>
                 </div>
-                <div class="cf-input-holder">
+                <div class="contact_form-inputs">
                     <form>
                         <input type="text" id="input-name" name="firstname" placeholder="your name">
                         <input type="text" id="input-email" name="lastname" placeholder="your email">
