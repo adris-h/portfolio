@@ -220,12 +220,12 @@ gsap.timeline({
         ease: "power2.out"
     }, "<")
     .to('.intro__right-container', {
-        x: 10,
+        x: 0,
         duration: 1,
         ease: "power2.out"
     }, "<")
     .to('.intro__left-container', {
-        x: 120,
+        x: 0,
         duration: 1,
         ease: "power2.out"
     }, "<")

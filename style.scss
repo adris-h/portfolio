@@ -487,13 +487,14 @@
             position: absolute;
             @include center-flex(row);
             z-index: 1000;
-            width: 35%;
-            margin-bottom: 5rem;
+            max-width: 500px;
+            margin-top: 2rem;
+            bottom: 0;
+            left: 8%;
+            margin-bottom: 10rem;
+            transform: translateX(-100vw);
             background-color: var(--background-color);
             border: var(--border) solid 1px;
-            bottom: 15vh;
-            left: 0;
-            transform: translateX(-100%);
             p{
                 color: var(--text-color);
                 margin: 1rem;
@@ -753,6 +754,8 @@
         z-index: 1000;
         height: 100vh;
         width: 100vw;
+        max-width: 100vw;
+        min-width: 100vw;
         background-color: $background;
         border-bottom: 1px solid black;
         position: fixed;
