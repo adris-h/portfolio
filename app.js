@@ -209,7 +209,7 @@ gsap.timeline({
 })
     .to("#intro-section h1", {
         scale: 0.5,
-        x: -360,
+        x: "-25vw",
         duration: 1,
         ease: "power2.out"
     })
