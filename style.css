@@ -371,6 +371,20 @@ body section {
   align-items: center;
   background-color: var(--background-color);
   height: 100vh;
+  z-index: -100;
+  position: relative;
+  /*&::after{
+      content: "";
+      position: absolute;
+      top: 0;
+      height: 220%;
+      width: 25vw;
+      z-index: 1;
+      background-color: var(--main-color);
+      transform: rotate(60deg);
+      translate: 0% -25%;
+      transition: 100ms;
+  }*/
 }
 #intro-section h1 {
   z-index: 2;
@@ -385,16 +399,58 @@ body section {
   text-align: right;
   width: 60%;
 }
-#intro-section::after {
-  content: "";
+#intro-section .intro__right-container {
   position: absolute;
+  transform: translateX(100vw);
   top: 0;
-  height: 220%;
-  width: 25vw;
-  z-index: 1;
-  background-color: var(--main-color);
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-color: rgb(29, 29, 29);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#intro-section .intro__right-container .intro___photo {
+  width: 50%;
+  height: 60%;
+  background-image: url(img/c8bb9e7a2105ebb57e7a7638dcae825d.jpg);
+  background-size: cover;
+}
+#intro-section .intro__bcg-line {
+  position: absolute;
+  top: -10;
+  left: 50%;
+  background-color: #DD4083;
+  width: 360px;
+  height: 3000px;
   transform: rotate(60deg);
-  translate: 0% -25%;
+}
+#intro-section .intro__left-container {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  width: 35%;
+  margin-bottom: 5rem;
+  background-color: var(--background-color);
+  border: var(--border) solid 1px;
+  bottom: 15vh;
+  left: 0;
+  transform: translateX(-100%);
+}
+#intro-section .intro__left-container p {
+  color: var(--text-color);
+  margin: 1rem;
+  font-size: 0.8rem;
+  text-align: justify;
+}
+#intro-section.animated::after {
+  transform: rotate(45deg);
+  translate: 25% 25%;
 }
 
 #hero-section {
@@ -664,6 +720,7 @@ body section {
   }
 }
 #skills-section {
+  z-index: 10;
   scroll-margin-top: 15vh;
   display: flex;
   flex-direction: column;

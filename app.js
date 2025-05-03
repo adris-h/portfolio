@@ -1,4 +1,4 @@
-const modeToggleButton = document.querySelector('.mode-toggle');
+/*const modeToggleButton = document.querySelector('.mode-toggle');
 const bodyElement = document.body;
 const darkButton = document.querySelector("#dark")
 const lightButton = document.querySelector("#dark")
@@ -13,7 +13,7 @@ modeToggleButton.addEventListener('click', () => {
         bodyElement.classList.add('light-mode');
         modeToggleButton.textContent = 'dark mode';
     }
-});
+}); */
 
 
 // CHANGING TEXT
@@ -193,3 +193,43 @@ fourthSkill.addEventListener('mouseover', () => {
     thirdDescription.classList.remove('active');
     firstDescription.classList.remove('active');
 });
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.timeline({
+    scrollTrigger: {
+        trigger: "#intro-section",
+        start: "top top",
+        end: "+=100%", // duration of pinned scroll
+        pin: true,
+        scrub: 0.5,
+        toggleClass: { targets: "#intro-section", className: "animated" },
+    }
+})
+    .to("#intro-section h1", {
+        scale: 0.5,
+        x: -360,
+        duration: 1,
+        ease: "power2.out"
+    })
+    .to(".intro__bcg-line", {
+        x: -300,
+        duration: 1,
+        rotate: 45,
+        ease: "power2.out"
+    }, "<")
+    .to('.intro__right-container', {
+        x: 10,
+        duration: 1,
+        ease: "power2.out"
+    }, "<")
+    .to('.intro__left-container', {
+        x: 120,
+        duration: 1,
+        ease: "power2.out"
+    }, "<")
+    .to("#intro-section h2", {
+        opacity: 0,
+        ease: "power2.out"
+    }, "<"); // "<" means run at same time as previous animation

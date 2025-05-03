@@ -439,6 +439,8 @@
         @include center-flex(column);
         background-color: var(--background-color);
         height: 100vh;
+        z-index: -100;
+        position: relative;
 
         h1{
             z-index: 2;
@@ -455,7 +457,51 @@
             width: 60%;
         }
 
-        &::after{
+        .intro__right-container{
+            position: absolute;
+            transform: translateX(100vw);
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background-color: $dark-color;
+            @include center-flex(column);
+            .intro___photo{
+                width: 50%;
+                height: 60%;
+                background-image: url(img/c8bb9e7a2105ebb57e7a7638dcae825d.jpg);
+                background-size: cover;
+            }
+        }
+
+        .intro__bcg-line{
+            position: absolute;
+            top: -10;
+            left: 50%;
+            background-color: $main-color;
+            width: 360px;
+            height: 3000px;
+            transform: rotate(60deg);
+        }
+        .intro__left-container{
+            position: absolute;
+            @include center-flex(row);
+            z-index: 1000;
+            width: 35%;
+            margin-bottom: 5rem;
+            background-color: var(--background-color);
+            border: var(--border) solid 1px;
+            bottom: 15vh;
+            left: 0;
+            transform: translateX(-100%);
+            p{
+                color: var(--text-color);
+                margin: 1rem;
+                font-size: .8rem;
+                text-align: justify;
+            }
+        }
+        /*&::after{
             content: "";
             position: absolute;
             top: 0;
@@ -465,6 +511,12 @@
             background-color: var(--main-color);
             transform: rotate(60deg);
             translate: 0% -25%;
+            transition: 100ms;
+        }*/
+
+        &.animated::after{
+            transform: rotate(45deg);
+            translate: 25% 25%;
         }
     }
 
@@ -473,6 +525,7 @@
     #hero-section{
         display: flex;
         height: 100vh;
+
         .hero_left{
             position: relative;
             height: 100%;
@@ -725,6 +778,7 @@
     };
 
     #skills-section{
+        z-index: 10;
         scroll-margin-top: 15vh;
         @include center-flex(column);
         height: 100vh;
