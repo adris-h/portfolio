@@ -1,7 +1,11 @@
-    body{
+body {
+    width: 100%;
+}
+
+    html {
         overflow-x: hidden;
-        width: 100dvw;
     }
+
 
     body.unscrollable{
         overflow: hidden;
@@ -11,6 +15,9 @@
         font-size: 20px;
     }
 
+    *{
+        box-sizing: border-box
+    }
 
 
     $main-font: "Cal Sans", sans-serif;//  "Montserrat", sans-serif // Arial, Helvetica, sans-serif // monospace // "Cal Sans", sans-serif
@@ -138,18 +145,25 @@
 
     .navbar {
         @include center-flex(row);
-        top: 0;
+        width: 100dvw;
         position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
         height: 10vh;
-        width: 100%;
+
+        transform: none;
+
         z-index: 10000;
         background-color: var(--background-color);
         border-bottom: 1px solid var(--border);
         box-sizing: border-box;
         transition: 500ms;
+        overflow: hidden;
 
 
         .navbar_container{
+            box-sizing: border-box;
             @include center-flex(row);
             height: 100%;
             width: 100%;
@@ -237,7 +251,8 @@
 
             display: flex;
             justify-content: space-between;
-            width: 100%;
+            width: 100vw;
+            overflow: hidden;
 
 
             a{
@@ -441,6 +456,7 @@
         height: 100vh;
         z-index: -100;
         position: relative;
+        box-sizing: border-box;
 
         h1{
             z-index: 2;
@@ -467,8 +483,8 @@
             background-color: $dark-color;
             @include center-flex(column);
             .intro___photo{
-                width: 50%;
-                height: 60%;
+                width: 18rem;
+                height: 25rem;
                 background-image: url(img/c8bb9e7a2105ebb57e7a7638dcae825d.jpg);
                 background-size: cover;
             }
@@ -487,11 +503,10 @@
             position: absolute;
             @include center-flex(row);
             z-index: 1000;
-            max-width: 500px;
-            margin-top: 2rem;
+            width: 25rem;
             bottom: 0;
-            left: 8%;
-            margin-bottom: 10rem;
+            left: 8vw;
+            margin-bottom: 25vh;
             transform: translateX(-100vw);
             background-color: var(--background-color);
             border: var(--border) solid 1px;
@@ -1196,3 +1211,17 @@
             color: $main-color;
         }
     }
+
+    @media  only screen and (max-width: 1200px) and (min-width: 768px){
+        :root{
+            font-size: 16px;
+        }
+
+        #intro-section{
+            .intro__left-container{
+                left: 5vw;
+            }
+        }
+
+    }
+

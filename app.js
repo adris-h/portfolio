@@ -72,13 +72,18 @@ menuButton.addEventListener('click', () => {
 })
 //
 
+
+
+
+
 // MENU POSITIONS
 const navBar = document.querySelector(".navbar");
 const posSpan = document.querySelector('.navbar___position-span');
-const aboutmePosition = 1400;
-const skillsPosition = 2000;
-const projectsPosition = 3000;
-const contactPositon = 3800;
+const vh = window.innerHeight;
+const aboutmePosition = vh * 1.2;
+const skillsPosition = vh * 2.6;
+const projectsPosition = vh * 3.3;
+const contactPositon = vh * 4.5;
 
 window.addEventListener("scroll", function() {
     const currentPosition = window.scrollY;
@@ -204,6 +209,7 @@ gsap.timeline({
         end: "+=100%", // duration of pinned scroll
         pin: true,
         scrub: 0.5,
+
         toggleClass: { targets: "#intro-section", className: "animated" },
     }
 })
@@ -232,4 +238,4 @@ gsap.timeline({
     .to("#intro-section h2", {
         opacity: 0,
         ease: "power2.out"
-    }, "<"); // "<" means run at same time as previous animation
+    }, "<");
