@@ -84,7 +84,8 @@ const aboutmePosition = vh * 1.2;
 const skillsPosition = vh * 2.6;
 const projectsPosition = vh * 3.3;
 const contactPositon = vh * 4.5;
-
+const projectsContainerTop = document.querySelector('.projects__container-top');
+const projectsContainerBot = document.querySelector('.projects__container-bottom');
 window.addEventListener("scroll", function() {
     const currentPosition = window.scrollY;
     
@@ -97,6 +98,8 @@ window.addEventListener("scroll", function() {
             posSpan.textContent = 'skills';
         } else if (currentPosition < contactPositon){
             posSpan.textContent = 'projects';
+            projectsContainerTop.classList.add('visible');
+            projectsContainerBot.classList.add('visible');
         } else {
             posSpan.textContent = 'contact';
         }
@@ -115,8 +118,6 @@ window.addEventListener("scroll", () => {
    // console.log("Current position:", window.scrollY);
 });
 //
-
-
 
 
 
@@ -220,7 +221,7 @@ gsap.timeline({
         ease: "power2.out"
     })
     .to(".intro__bcg-line", {
-        x: -300,
+        x: -500,
         duration: 1,
         rotate: 45,
         ease: "power2.out"
