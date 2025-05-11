@@ -2,6 +2,7 @@ $background-color: rgb(244, 243, 243);
 $main-font: "Cal Sans", sans-serif;
 $heading-font: "Bagel Fat One", system-ui;
 $dark-color: #1d1d1d;
+$main-color: #DD4083FF;
 
 @mixin center-flex($dir){
     display: flex;
@@ -10,7 +11,7 @@ $dark-color: #1d1d1d;
     align-items: center;
 }
 
-@mixin flexbox-layout($dir, $justify, $align, $gap){
+@mixin flex($dir, $justify, $align, $gap){
     display: flex;
     flex-direction: $dir;
     justify-content: $justify;
@@ -18,12 +19,21 @@ $dark-color: #1d1d1d;
     gap: $gap;
 }
 
+html{
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
 body{
     background-color: $dark-color;
     font-family: $main-font;
     margin: 0;
     padding: 5px;
-    height: 3000px;
+    height: 500vh;
+}
+
+:root{
+    font-size: 20px;
 }
 
 #navbar{
@@ -34,14 +44,17 @@ body{
     display: flex;
     justify-content: space-between;
     width: 100vw;
-    height: 3vh;
+    height: 4vh;
     top: 0;
     left: 0;
     right: 0;
     background-color: $background-color;
     border-bottom: black 1px solid;
+
     a{
         text-decoration: none;
+        cursor: pointer;
+        @include center-flex(row);
     }
     & > span {
         display: flex;
@@ -57,7 +70,7 @@ body{
             justify-content: center;
             align-items: center;
             position: relative;
-
+            background: transparent;
             &:hover {
                 .navbar__menu-toggle span {
                     transform: translateY(-1.2em);
@@ -98,6 +111,13 @@ body{
                     &:nth-child(6) {
                         transition: 0.7s;
                     }
+                    &:nth-child(7) {
+                        transition: 0.8s;
+                    }
+
+                    &:nth-child(8) {
+                        transition: 0.9s;
+                    }
                 }
             }
 
@@ -133,6 +153,13 @@ body{
                     &:nth-child(6) {
                         transition: 0.7s;
                     }
+                    &:nth-child(7) {
+                        transition: 0.8s;
+                    }
+
+                    &:nth-child(8) {
+                        transition: 0.9s;
+                    }
                 }
 
 
@@ -156,6 +183,7 @@ body{
     @include center-flex(row);
     border-radius: 20px;
     background-color: $background-color;
+
     .projects-hero_content-container{
         display: grid;
         .projects-hero__title{
@@ -198,21 +226,166 @@ body{
     }
 }
 
+.popup-menu{
+    width: 100vw;
+    height: 5vh;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    right: 0;
+    background-color: $background-color;
+    border-bottom: black 1px solid;
+    @include flex(row, center, center, 1rem);
+    transform: translateY(-9vh);
+    transition: 500ms;
+    box-sizing: border-box;
+    padding-left: 1vw;
+    a{
+        text-decoration: none;
+        color: $dark-color;
+        width: 25%;
+    }
+}
+
+.popup-menu.active{
+    transform: translateY(4vh);
+}
+
 
 #projects-section{
-    @include flexbox-layout(column, flex-start, center, 1rem);
+    @include flex(column, flex-start, center, 1rem);
     border-radius: 20px;
+    border-top: black 2px solid;
     background-color: $background-color;
-    height: 100%;
+    height: 300vh;
+    padding-top: 5rem;
     .projects-section_container{
+        position: relative;
         .projects-section__timeline{
-            @include flexbox-layout(column, flex-start, center, 1rem);
-            height: 100rem;
+            @include flex(column, flex-start, center, 1rem);
+            height: 70rem;
             .projects-section__line{
                 width: 3px;
                 background-color: $dark-color;
+                border-radius: 5px;
+            }
+            .projects-section__timeline-final-date{
+                transition: 300ms;
+                opacity: 0;
+            }
+            .projects-section__timeline-final-date.finished{
+                opacity: 1;
+            }
+        }
+
+        .projects__projects-containers{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            @include flex(column, flex-start, center, 0);
+            .projects__project-container{
+                margin-top: 4rem;
+                height: 50vh;
+                width: 90vw;
+                font-size: 16px;
+                @include flex(row, center, flex-start, 20%);
+                scroll-margin-top: 30vh;
+
+                .project-description{
+                    width: 50%;
+                    height: 60%;
+                    @include flex(column, center, flex-start, 1rem);
+                    &.project-description-2{
+                        align-items: flex-end;
+                    }
+                    .project-description_top{
+                        border-radius: 30px;
+                        border: 1px black solid;
+                        width: 100%;
+                        @include flex(row, space-evenly, center, 1rem);
+                        span{
+                            padding: 8px 20px 8px 20px;
+                        }
+                        span:nth-child(1){
+                            width: 50%;
+                        }
+                        span:nth-child(2){
+                            @include center-flex(row);
+                            background-color: $background-color;
+                            width: 50%;
+                            border-radius: 30px;
+                            border: 1px black solid;
+                            border-left: 2px solid $dark-color;
+                        }
+                    }
+
+                    .project-description_bottom{
+                        box-sizing: border-box;
+                        padding: 1rem;
+                        width: 80%;
+                        height: 8rem;
+                        border: 1px black solid;
+                        border-radius: 30px;
+                        background-color: $dark-color;
+                        text-align: justify;
+                        font-size: 1.2rem;
+                        color: $background-color;
+                    }
+                }
+                .project-holder{
+                    width: 50%;
+                    height: 80%;
+                    position: relative;
+                    cursor: pointer;
+                    z-index: 1;
+
+                    a{
+                        z-index: 10;
+                        opacity: 0;
+                        color: white;
+                        transition: 300ms;
+                        text-decoration: none;
+                        width: 100%;
+                        height: 100%;
+                        @include center-flex(row);
+
+                    }
+                    &:hover a{
+                        opacity: 1;
+                    }
+
+                    &::after{
+                        transition: 300ms;
+                        content: "";
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        background-color: rgba(0, 0, 0, 0);
+                        z-index: -1;
+                    }
+                    &:hover::after{
+                        background-color: rgba(0, 0, 0, 0.51);
+                    }
+                    &-1{
+                        background: url("../img/radianthq-sc.webp") left/cover no-repeat;
+                    }
+                    &-2{
+                        background: url("../img/radianthq-sc.webp") left/cover no-repeat;
+                    }
+                    &-3{
+                        background: url("../img/maze-sc.png") bottom/cover no-repeat;
+                    }
+
+
+                }
             }
         }
     }
 }
+
+
 

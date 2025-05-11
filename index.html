@@ -2,54 +2,33 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-        <link rel="stylesheet" href="style.css">
 
         <link rel="icon" type="image/x-icon" href="favicon_io-2/favicon.ico">
 
+        <!-- FAVICON -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/fontawesome.min.css        ">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/solid.min.css">
-        
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Cherry+Bomb+One&display=swap" rel="stylesheet">
-        
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
 
+        <!-- GOOGLE FONTS -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Cherry+Bomb+One&family=Cal+Sans&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
+        <!-- TITLE -->
         <title>Adriana Hanousková - Portfolio</title>
+
+        <!-- STYLESHEETS -->
+        <link rel="stylesheet" href="style.css">
+
+        <!-- SCRIPTS -->
         <script src="app.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     </head>
     <body class="light-mode body">
-        <div id="menu">
-            <div class="menu_left">
-            </div>
-            <div class="menu_right">
-                <div class="menu__items">
-                    <div class="menu___number"> 1 </div>
-                    <div class="menu___link"> <a href="#">HOME</a> </div>
-                </div>
-                <div class="menu__items">
-                    <div class="menu___number"> 2 </div>
-                    <div class="menu___link"> <a href="#">MORE ABOUT ME</a> </div>
-                </div>
-                <div class="menu__items">
-                    <div class="menu___number"> 3 </div>
-                    <div class="menu___link"> <a href="#">ALL MY PROJECTS</a> </div>
-                </div> 
-                <div class="menu__items">
-                    <div class="menu___number"> 4 </div>
-                    <div class="menu___link"> <a href="#">CONTACT</a> </div>
-                </div> 
-            </div>
-        </div>
+        <!-- LOADING SCREEN -->
         <div id="loading-screen"></div>
+        <!-- NAVIGATION -->
         <nav class="navbar">
             <div class="navbar_container">
                 <div class="navbar__content">
@@ -62,7 +41,7 @@
                     <a href="#contact-section" class="navbar___contact-link">contact.</a>
                 </div>
                 <div class="navbar__scroll-info disabled">
-                    <span>you are here: 
+                    <span> you are here:
                         <span class="navbar___position-span"> about me </span>
                     </span>
                     <span>
@@ -71,161 +50,193 @@
                             <a  class="navbar__menu-toggle navbar__menu-toggle--2"><span>m</span><span>e</span><span>n</span><span>u</span></a>
                         </button>
                     </span>
-                    <!--
-                        basically - you are here (section) e.g. home it will automatically change depeneding in which section user is
-                        -->
-                    </div>
                 </div>
-            </nav>
-            
-        <section id="intro-section">
-            <div class="intro__title">
-                <h1 class="bagel-fat-one-regular">Adriana <br> Hanousková</h1>
-                <h2> Front-End Development Student </h2>
             </div>
-            <div class="intro__bcg-line"></div>
-            <div class="intro__left-container">
-                <p> Proident anim aliquip tempor ad et velit non irure culpa ut Lorem. Cillum duis magna duis occaecat labore duis cillum reprehenderit commodo eiusmod.</p>
+        </nav>
+        <!-- POP UP MENU ( when menu button is clicked )-->
+        <aside id="menu">
+            <div class="menu_left"></div>
+            <div class="menu_right">
+                <ul class="menu__list">
+                    <li class="menu__items">
+                        <div class="menu___number"> 1 </div>
+                        <div class="menu___link"> <a href="#intro-section" class="menu-link">HOME</a> </div>
+                    </li>
+                    <li class="menu__items">
+                        <div class="menu___number"> 2 </div>
+                        <div class="menu___link"> <a href="#aboutme-section" class="menu-link">MORE ABOUT ME</a> </div>
+                    </li>
+                    <li class="menu__items">
+                        <div class="menu___number"> 3 </div>
+                        <div class="menu___link"> <a href="#projects-section" class="menu-link">ALL MY PROJECTS</a> </div>
+                    </li>
+                    <li class="menu__items">
+                        <div class="menu___number"> 4 </div>
+                        <div class="menu___link"> <a href="#contact-section" class="menu-link">CONTACT</a> </div>
+                    </li>
+                </ul>
             </div>
-            <div class="intro__right-container">
-                <div class="intro___photo"></div>
-            </div>
-        </section>
-        <!--<button class="mode-toggle">dark mode</button> -->
-        <section id="aboutme-section">
-            <div class="about_content">
-                <div class="about__top">
-                    <div class="about___photo">
-
-                    </div>
-                    <div class="about__bio">
-                        <h2 class="bagel-fat-one-regular">Adriana Hanousková</h2>
-                        <p>31.08.2007 // Czech Republic</p>
-                        <div>
-                            <h3 class="bagel-fat-one-regular">My interests:</h3>
-                            <span>
-                        <span>Web</span>
-                        <span class="about___changing-interests"></span>
-                    </span>
+        </aside>
+        <main>
+            <!-- HERO SECTION -->
+            <section id="hero-section">
+                <div class="hero_title">
+                    <h1 class="bagel-fat-one-regular">Adriana <br> Hanousková</h1>
+                    <h2> Front-End Development Student </h2>
+                </div>
+                <div class="hero_bcg-line"></div>
+                <!-- CONTENT THAT APPEARS WITH SCROLL ANIMATION -->
+                <div class="hero_left-container">
+                    <p> Proident anim aliquip tempor ad et velit non irure culpa ut Lorem. Cillum duis magna duis occaecat labore duis cillum reprehenderit commodo eiusmod.</p>
+                </div>
+                <div class="hero_right-container">
+                    <div class="hero__photo"></div>
+                </div>
+            </section>
+            <!-- ABOUT ME SECTION -->
+            <section id="aboutme-section">
+                <div class="about_content">
+                    <div class="about__top">
+                        <div class="about___photo"></div>
+                        <div class="about__bio">
+                            <h2 class="bagel-fat-one-regular">Adriana Hanousková</h2>
+                            <p><time datetime="2007-08-31">31.08.2007</time> // Czech Republic</p>
+                            <div>
+                                <h3 class="bagel-fat-one-regular">My interests:</h3>
+                                <span>
+                                    <span>Web</span>
+                                    <span class="about___changing-interests"></span>
+                                </span>
+                            </div>
+                            <div>
+                                <a href="#">
+                                    <div>get to know me as a</div>
+                                    <div>person</div>
+                                </a>
+                            </div>
                         </div>
-                        <div>
-                            <a href="#">
-                                <div>get to know me as a</div>
-                                <div>person</div>
-                            </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MOVING TEXT ANIMATION -->
+            <div class="moving-text">
+                <div class="moving-text__inner">
+                    <span>my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience</span>
+                    <span>my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience</span>
+                </div>
+            </div>
+
+            <!-- SKILL SECTION -->
+            <section id="skills-section">
+                <div class="skills__left-container skills__container">
+                    <div class="skills__title">
+                        <h2>skills that shape my work</h2>
+                    </div>
+                </div>
+                <div class="skills__right-container skills__container">
+                    <span class="skills__span">hover for more info </span>
+                    <div class="skills__items">
+                        <figure class="skills___item skill___item-1">
+                            <div class="skills___logo skills___logo-1"></div>
+                            <figcaption class="skills___name bagel-fat-one-regular">html</figcaption>
+                        </figure>
+                        <figure class="skills___item skill___item-2">
+                            <div class="skills___logo skills___logo-2"></div>
+                            <figcaption class="skills___name bagel-fat-one-regular">css</figcaption>
+                        </figure>
+                        <figure class="skills___item skill___item-3">
+                            <div class="skills___logo skills___logo-3"></div>
+                            <figcaption class="skills___name bagel-fat-one-regular">javascript</figcaption>
+                        </figure>
+                        <figure class="skills___item skill___item-4">
+                            <div class="skills___logo skills___logo-4"></div>
+                            <figcaption class="skills___name bagel-fat-one-regular">figma</figcaption>
+                        </figure>
+                    </div>
+                    <div class="skills__descriptions">
+                        <p class="skills___skill-1-desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                        <p class="skills___skill-2-desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                        <p class="skills___skill-3-desc">Javascript</p>
+                        <p class="skills___skill-4-desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. In enim a arcu imperdiet malesuada. Nam libero tempore, cum soluta nobis est eligendi </p>
+                    </div>
+                </div>
+            </section>
+            <!-- MOVING TEXT ANIMATION -->
+            <div class="moving-text">
+                <div class="moving-text__inner">
+                    <span>my projects &nbsp;&nbsp;&nbsp;&nbsp; my projects &nbsp;&nbsp;&nbsp;&nbsp; my projects &nbsp;&nbsp;&nbsp;&nbsp; my projects &nbsp;&nbsp;&nbsp;&nbsp; my projects &nbsp;&nbsp;&nbsp;&nbsp; my projects &nbsp;&nbsp;&nbsp;&nbsp; my projects &nbsp;&nbsp;&nbsp;&nbsp; my projects &nbsp;&nbsp;&nbsp;&nbsp; my projects &nbsp;&nbsp;&nbsp;&nbsp; my projects &nbsp;&nbsp;&nbsp;&nbsp; my projects</span>
+                    <span>my projects &nbsp;&nbsp;&nbsp;&nbsp; my projects &nbsp;&nbsp;&nbsp;&nbsp; my projects &nbsp;&nbsp;&nbsp;&nbsp; my projects &nbsp;&nbsp;&nbsp;&nbsp; my projects &nbsp;&nbsp;&nbsp;&nbsp; my projects &nbsp;&nbsp;&nbsp;&nbsp; my projects &nbsp;&nbsp;&nbsp;&nbsp; my projects &nbsp;&nbsp;&nbsp;&nbsp; my projects &nbsp;&nbsp;&nbsp;&nbsp; my projects &nbsp;&nbsp;&nbsp;&nbsp; my projects</span>
+                </div>
+            </div>
+            <!-- PROJECTS SECTION -->
+            <section id="projects-section">
+                <div class="projects_main">
+                    <a href="sub-sites/projects.html" class="projects-anchor">view all my projects</a>
+                    <div class="projects_background">
+                        <div class="projects__container projects__container-top">
+                            <div role="img" aria-hidden="true"></div>
+                            <div role="img" aria-hidden="true"></div>
+                            <div role="img" aria-hidden="true"></div>
+                        </div>
+                        <div class="projects__container projects__container-bottom">
+                            <div role="img" aria-hidden="true"></div>
+                            <div role="img" aria-hidden="true"></div>
+                            <div role="img" aria-hidden="true"></div>
                         </div>
                     </div>
+                </div>
+            </section>
 
-                </div>
-            </div>
-        </section>
-
-        <div class="moving-text">
-            <div class="moving-text__inner">
-                <span>my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience</span>
-                <span>my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience</span>
-            </div>
-        </div>
-
-        <section id="skills-section">
-            <div class="skills__left-container skills__container">
-                <div class="skills__title">
-                    <h2>The skills that shape my work</h2>
-                </div>
-            </div>
-            <div class="skills__right-container skills__container">
-                <span class="skills__span">hover for more info </span>
-                <div class="skills__items">
-                    <div class="skills___item skill___item-1">
-                        <div class="skills___logo skills___logo-1"></div>
-                        <div class="skills___name bagel-fat-one-regular">html</div>
-                    </div>
-                    <div class="skills___item skill___item-2">
-                        <div class="skills___logo skills___logo-2"></div>
-                        <div class="skills___name bagel-fat-one-regular">css</div>
-                    </div>
-                    <div class="skills___item skill___item-3">
-                        <div class="skills___logo skills___logo-3"></div>
-                        <div class="skills___name bagel-fat-one-regular">javascript</div>
-                    </div>
-                    <div class="skills___item skill___item-4">
-                        <div class="skills___logo skills___logo-4"></div>
-                        <div class="skills___name bagel-fat-one-regular">figma</div>
-                    </div>
-                </div>
-                <div class="skills__descriptions">
-                    <div class="skills___skill-1-desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</div>
-                    <div class="skills___skill-2-desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</div>
-                    <div class="skills___skill-3-desc">Javascript</div>
-                    <div class="skills___skill-4-desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. In enim a arcu imperdiet malesuada. Nam libero tempore, cum soluta nobis est eligendi </div>
-                </div>
-            </div>
-        </section>
-        <div class="moving-text">
-            <div class="moving-text__inner">
-                <span>my projects &nbsp;&nbsp;&nbsp;&nbsp; my projects &nbsp;&nbsp;&nbsp;&nbsp; my projects &nbsp;&nbsp;&nbsp;&nbsp; my projects &nbsp;&nbsp;&nbsp;&nbsp; my projects &nbsp;&nbsp;&nbsp;&nbsp; my projects &nbsp;&nbsp;&nbsp;&nbsp; my projects &nbsp;&nbsp;&nbsp;&nbsp; my projects &nbsp;&nbsp;&nbsp;&nbsp; my projects &nbsp;&nbsp;&nbsp;&nbsp; my projects &nbsp;&nbsp;&nbsp;&nbsp; my projects</span>
-                <span>my projects &nbsp;&nbsp;&nbsp;&nbsp; my projects &nbsp;&nbsp;&nbsp;&nbsp; my projects &nbsp;&nbsp;&nbsp;&nbsp; my projects &nbsp;&nbsp;&nbsp;&nbsp; my projects &nbsp;&nbsp;&nbsp;&nbsp; my projects &nbsp;&nbsp;&nbsp;&nbsp; my projects &nbsp;&nbsp;&nbsp;&nbsp; my projects &nbsp;&nbsp;&nbsp;&nbsp; my projects &nbsp;&nbsp;&nbsp;&nbsp; my projects &nbsp;&nbsp;&nbsp;&nbsp; my projects</span>
-            </div>
-        </div>
-        <section id="projects-section">
-            <div class="projects_main">
-                <a href="sub-sites/projects.html" target="_blank" class="projects-anchor">view all my projects</a>
-                <div class="projects_background">
-                    <div class="projects__container projects__container-top">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div class="projects__container projects__container-bottom">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact-section">
-            <div class="contact_container">
-                <div class="contact__info-wrapper contact__info-wrapper--1">
-                    <div class="contact___info contact___info-location">
-                        <p>Czech Republic, Zlínský Kraj</p>
-                        <p>located in</p>
-                    </div>
-                    <div class="contact___info contact___info-socials">
-                        <div>
-                            <a href="#"><img src="img/Instagram_Glyph_White.svg" alt=""></a>
-                            <a href="#"><img src="img/In-White-96-┬«.png" alt=""></a>
+            <!-- CONTACT SECTION -->
+            <section id="contact-section">
+                <div class="contact_container">
+                    <div class="contact__info-wrapper contact__info-wrapper--1">
+                        <div class="contact___info contact___info-location">
+                            <p>Czech Republic, Zlínský Kraj</p>
+                            <p>located in</p>
                         </div>
-                        <p>social media</p>
+                        <div class="contact___info contact___info-socials">
+                            <div>
+                                <a href="#"><img src="img/Instagram_Glyph_White.svg" alt=""></a>
+                                <a href="#"><img src="img/In-White-96-┬«.png" alt=""></a>
+                            </div>
+                            <p>social media</p>
+                        </div>
                     </div>
-                </div>
-                <div class="contact__info-wrapper contact__info-wrapper--2">
-                    <div class="contact___info contact___info-email">
-                        <p>Reach out!</p>
-                        <p class="contact___abs-text">click to copy</p>
-                        <a class="contact___email-button" id="copy-text">adrianahanouskova2007@gmail.com</a>
+                    <div class="contact__info-wrapper contact__info-wrapper--2">
+                        <div class="contact___info contact___info-email">
+                            <p>Reach out!</p>
+                            <p class="contact___abs-text">click to copy</p>
+                            <a class="contact___email-button" id="copy-text">adrianahanouskova2007@gmail.com</a>
+                        </div>
                     </div>
+                    <button id="cf-button">toggle contact form</button>
                 </div>
-                <button id="cf-button">toggle contact form</button>
-            </div>
-            <div class="contact_form">
-                <div class="contact_form-title">
-                    <h2 class="bagel-fat-one-regular">Let's Talk!</h2>
-                </div>
-                <div class="contact_form-inputs">
-                    <form>
-                        <input type="text" id="input-name" name="firstname" placeholder="your name">
-                        <input type="text" id="input-email" name="lastname" placeholder="your email">
-                        <textarea type="text" id="input-message" name="message" placeholder="your message"></textarea>
-                        <input type="submit" id="input-submit" value="send">
+
+                <!-- CONTACT POP UP FORM -->
+                <div class="contact_form">
+                    <div class="contact_form-title">
+                        <h2 class="bagel-fat-one-regular">Let's Talk!</h2>
+                    </div>
+                    <form class="contact_form-inputs">
+                            <label for="input-name" class="visually-hidden">Your Name</label>
+                            <input type="text" id="input-name" name="firstname" placeholder="your name">
+
+                            <label for="input-email" class="visually-hidden">Your Email</label>
+                            <input type="text" id="input-email" name="lastname" placeholder="your email">
+
+                            <label for="input-message" class="visually-hidden">Your Message</label>
+                            <textarea type="text" id="input-message" name="message" placeholder="your message"></textarea>
+                            <input type="submit" id="input-submit" value="send">
                     </form>
                 </div>
-            </div>
-            <footer id="footer">
-                <p>Headings font: "Bagel Fat One" designed by <a href="https://fonts.adobe.com/fonts/bagel-fat-one">Oyatsupan Fonts</a> (licensed through Adobe Fonts)</p>
-            </footer>
-        </section>
-        
+
+            </section>
+        </main>
+
+        <footer id="footer">
+            <p>Headings font: "Bagel Fat One" designed by <a href="https://fonts.adobe.com/fonts/bagel-fat-one">Oyatsupan Fonts</a> (licensed through Adobe Fonts)</p>
+        </footer>
     </body>
 </html>

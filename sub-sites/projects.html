@@ -20,16 +20,27 @@
 </head>
 <body class="projects-body">
 <div id="navbar">
-    <span>you are here: &nbsp;&nbsp;&nbsp; projects</span>
     <span>
         <button class="navbar___menu-button">
+            <a class="navbar__menu-toggle navbar__menu-toggle--1" href="../index.html#projects-section"><span>g</span><span>o</span>&nbsp;<span>b</span><span>a</span><span>c</span><span>k</span></a>
+            <a class="navbar__menu-toggle navbar__menu-toggle--2" href="../index.html#projects-section"><span>g</span><span>o</span>&nbsp;<span>b</span><span>a</span><span>c</span><span>k</span></a>
+        </button>
+    </span>
+    <span>
+        <button class="navbar___menu-button" id="menu-toggle">
             <a  class="navbar__menu-toggle navbar__menu-toggle--1"><span>m</span><span>e</span><span>n</span><span>u</span></a>
             <a  class="navbar__menu-toggle navbar__menu-toggle--2"><span>m</span><span>e</span><span>n</span><span>u</span></a>
         </button>
     </span>
 </div>
+<div class="popup-menu">
+    <a href="#project-1">Beneath the Surface</a>
+    <a href="#project-2">RadiantHQ</a>
+    <a href="#project-3">Maze Game</a>
+    <a href="#project-4">Gallery</a>
+</div>
     <section class="projects-hero">
-        <div class="projects-hero_content">
+        <div class="projects-hero_content" >
             <div class="projects-hero_content-container">
                 <span class="projects-hero__title">MY PROJECTS</span>
                 <span class="projects-hero__title">MY PROJECTS</span>
@@ -41,9 +52,32 @@
     <section id="projects-section">
         <div class="projects-section_container">
             <div class="projects-section__timeline">
-                <div class="projects-section__timeline-date"><span>september &nbsp;&nbsp; 2024</span></div>
-                <!--<div class="projects-section__timeline-date"><span>june &nbsp;&nbsp; 2025 </span></div>-->
+                <div class="projects-section__timeline-date"><span>January &nbsp;&nbsp; 2024</span></div>
                 <div class="projects-section__line"></div>
+                <div class="projects-section__timeline-final-date"><span>june &nbsp;&nbsp; 2025 </span></div>
+            </div>
+            <div class="projects__projects-containers">
+                <div class="projects__project-container" id="project-1">
+                    <div class="project-description project-description-1">
+                        <div class="project-description_top"><span>html // css </span><span>Beneath the Surface</span></div>
+                        <div class="project-description_bottom">Showcase site for a game "Beneath the Surface" made in Unity featuring gameplay highlights, clean design, interactive elements.</div>
+                    </div>
+                    <div class="project-holder project-holder-1"><a href="">go to site</a></div>
+                </div>
+                <div class="projects__project-container" id="project-2">
+                    <div class="project-holder project-holder-2"><a href="https://adris-h.github.io/radianthq/" target="_blank">go to site</a></div>
+                    <div class="project-description project-description-2">
+                        <div class="project-description_top"><span>html // css // js </span><span >radianthq</span>    </div>
+                        <div class="project-description_bottom">Fan-made Valorant site showcasing agent profiles, abilities, strategies, esport insight, and a comprehensive beginner’s guide </div>
+                    </div>
+                </div>
+                <div class="projects__project-container" id="project-3">
+                    <div class="project-description project-description-1">
+                        <div class="project-description_top"><span>python</span><span> pygame maze game</span>    </div>
+                        <div class="project-description_bottom">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. </div>
+                    </div>
+                    <div class="project-holder project-holder-3"><a href="">go to info</a></div>
+                </div>
             </div>
         </div>
     </section>

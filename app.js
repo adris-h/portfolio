@@ -24,7 +24,7 @@ let i = 0;
 
 function updateText() {
     changingText.textContent = interests[i];
-    i = (i + 1) % interests.length; 
+    i = (i + 1) % interests.length;
 }
 updateText();
 setInterval(updateText, intervalTime);
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
             loadingScreen.classList.add("hidden");
             loadingScreen.innerHTML = "";
             document.body.classList.remove("unscrollable");
-        }, 6000);
+        }, 3000);
 
         sessionStorage.setItem("hasVisited", "true");
     } else {
@@ -54,31 +54,43 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 //
-
-// MENU POP UP
-const menuButton = document.querySelector('.navbar__menu-toggle--2')
-const menuPopUp = document.querySelector('.popup_menu')
-const bigMenu = document.getElementById("menu")
+// MENU BUTTON TOGGLE
+const menuButton = document.querySelector('.navbar__menu-toggle--2');
+const bigMenu = document.getElementById("menu");
+const posSpan = document.querySelector('.navbar___position-span');
 
 menuButton.addEventListener('click', () => {
-    //menuPopUp.classList.toggle('active')
-    bigMenu.classList.toggle('active')
+    bigMenu.classList.toggle('active');
     if (bigMenu.classList.contains('active')) {
         posSpan.textContent = 'menu';
     } else {
         window.dispatchEvent(new Event('scroll'));
     }
-    document.body.classList.toggle('unscrollable')
-})
-//
+    document.body.classList.toggle('unscrollable');
+});
 
+// MENU LINK CLICK HANDLING
+document.querySelectorAll('.menu-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault(); // Prevent default anchor jump
 
+        const targetId = link.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
 
+        if (targetElement) {
+            bigMenu.classList.remove('active');
+            document.body.classList.remove('unscrollable');
 
+            // Delay smooth scrolling slightly so menu can close first
+            setTimeout(() => {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }, 50);
+        }
+    });
+});
 
-// MENU POSITIONS
+// MENU POSITION TRACKING
 const navBar = document.querySelector(".navbar");
-const posSpan = document.querySelector('.navbar___position-span');
 const vh = window.innerHeight;
 const aboutmePosition = vh * 1.2;
 const skillsPosition = vh * 2.6;
@@ -86,24 +98,27 @@ const projectsPosition = vh * 3.3;
 const contactPositon = vh * 4.5;
 const projectsContainerTop = document.querySelector('.projects__container-top');
 const projectsContainerBot = document.querySelector('.projects__container-bottom');
+
 window.addEventListener("scroll", function() {
+    if (bigMenu.classList.contains('active')) return; // Don't change posSpan while menu is open
+
     const currentPosition = window.scrollY;
-    
+
     if (currentPosition > aboutmePosition) {
         navBar.classList.add("scrolled");
-    
+
         if (currentPosition < skillsPosition) {
             posSpan.textContent = 'about me';
         } else if (currentPosition < projectsPosition) {
             posSpan.textContent = 'skills';
-        } else if (currentPosition < contactPositon){
+        } else if (currentPosition < contactPositon) {
             posSpan.textContent = 'projects';
             projectsContainerTop.classList.add('visible');
             projectsContainerBot.classList.add('visible');
         } else {
             posSpan.textContent = 'contact';
         }
-    
+
     } else {
         navBar.classList.remove("scrolled");
         posSpan.textContent = 'home';
@@ -118,6 +133,7 @@ window.addEventListener("scroll", () => {
    // console.log("Current position:", window.scrollY);
 });
 //
+
 
 
 
@@ -205,38 +221,39 @@ gsap.registerPlugin(ScrollTrigger);
 
 gsap.timeline({
     scrollTrigger: {
-        trigger: "#intro-section",
+        trigger: "#hero-section",
         start: "top top",
-        end: "+=100%", // duration of pinned scroll
+        end: "+=100%",
         pin: true,
         scrub: 0.5,
 
-        toggleClass: { targets: "#intro-section", className: "animated" },
+        toggleClass: { targets: "#hero-section", className: "animated" },
     }
 })
-    .to("#intro-section h1", {
+    .to("#hero-section h1", {
         scale: 0.5,
         x: "-25vw",
+        y: "5vh",
         duration: 1,
         ease: "power2.out"
     })
-    .to(".intro__bcg-line", {
+    .to(".hero_bcg-line", {
         x: -500,
         duration: 1,
         rotate: 45,
         ease: "power2.out"
     }, "<")
-    .to('.intro__right-container', {
+    .to('.hero_right-container', {
         x: 0,
         duration: 1,
         ease: "power2.out"
     }, "<")
-    .to('.intro__left-container', {
+    .to('.hero_left-container', {
         x: 0,
         duration: 1,
         ease: "power2.out"
     }, "<")
-    .to("#intro-section h2", {
+    .to("#hero-section h2", {
         opacity: 0,
         ease: "power2.out"
     }, "<");

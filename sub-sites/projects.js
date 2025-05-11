@@ -1,4 +1,3 @@
-const projectsTitle = document.querySelectorAll('.projects-hero__title');
 const projectTitles = document.querySelectorAll('.projects-hero__title');
 
 projectTitles.forEach(title => {
@@ -12,19 +11,36 @@ projectTitles.forEach(title => {
     });
 });
 
+
+
 gsap.registerPlugin(ScrollTrigger);
 
 gsap.timeline({
     scrollTrigger: {
         trigger: "#projects-section",
-        start: "top-=300 top",
-        end: "+=300%",
+        start: "top-=100 top",
+        end: "+60%",
         pin: false,
-        scrub: .5,
+        scrub: 1
     }
 })
     .to(".projects-section__line", {
-        height: "100rem",
+        height: "70rem",
         duration: 1,
-        ease: "power2.out"
+        ease: "power2.out",
     })
+//
+window.addEventListener("scroll", (e) => {
+    const currentPos = window.scrollY;
+    const vh = window.innerHeight;
+    const animFinalPos = vh * 2;
+    if (currentPos > animFinalPos) {
+        document.querySelector(".projects-section__timeline-final-date").classList.add("finished");
+    }
+})
+
+const menuButton = document.querySelector('#menu-toggle');
+const popupMenu = document.querySelector('.popup-menu');
+menuButton.addEventListener('click', () => {
+    popupMenu.classList.toggle('active');
+})
