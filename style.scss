@@ -126,9 +126,7 @@ body {
     }
 }
 
-*{
-    box-sizing: border-box
-}
+
 
 .visually-hidden{
     display: none;
@@ -186,7 +184,6 @@ body {
             font-size: 1.2rem;
             position: relative;
             transition: 100ms;
-            padding: 5px;
             &:hover{
                 background-color: var(--main-color);
                 color: white;
@@ -210,8 +207,11 @@ body {
         }
         .navbar____links{
             @include center-flex(row);
+            height: 100%;
             a{
                 width: 8rem;
+                @include center-flex(row);
+                padding: 0 10px;
             }
         }
 

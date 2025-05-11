@@ -61,10 +61,6 @@ body.no-scroll {
   overflow: hidden;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 .visually-hidden {
   display: none;
 }
@@ -119,7 +115,6 @@ body.no-scroll {
   font-size: 1.2rem;
   position: relative;
   transition: 100ms;
-  padding: 5px;
 }
 .navbar__content a:hover {
   background-color: var(--main-color);
@@ -147,9 +142,15 @@ body.no-scroll {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  height: 100%;
 }
 .navbar__content .navbar____links a {
   width: 8rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
 }
 .navbar__scroll-info {
   display: flex;
