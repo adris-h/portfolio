@@ -167,7 +167,6 @@ bottomInfo.addEventListener('mouseout', () => {
     topInfo.classList.remove("unselected")
 })
 
-
 const cfButton = document.getElementById("cf-button")
 const contForm = document.querySelector(".contact_form")
 cfButton.addEventListener('click', () => {
@@ -238,7 +237,7 @@ gsap.timeline({
         ease: "power2.out"
     })
     .to(".hero_bcg-line", {
-        x: -500,
+        x: "-125%",
         duration: 1,
         rotate: 45,
         ease: "power2.out"

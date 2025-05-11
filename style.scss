@@ -140,6 +140,7 @@ body {
 // --------------------------
 
 
+// -NAVBAR
 .navbar {
     @include center-flex(row);
     width: 100dvw;
@@ -336,7 +337,7 @@ body {
     }
 }
 
-// MENU
+// -MENU
 #menu{
     @include center-flex(row);
     position: fixed;
@@ -402,7 +403,7 @@ body {
 }
 
 
-
+// -HERO SECTION
 #hero-section{
     @include center-flex(column);
     background-color: $background;
@@ -437,8 +438,8 @@ body {
         height: 100%;
         background-color: $dark-color;
         .hero__photo{
-            width: 18rem;
-            height: 25rem;
+            width: 50%;
+            height: 60%;
             background: url(img/c8bb9e7a2105ebb57e7a7638dcae825d.jpg) center/cover;
         }
     }
@@ -449,15 +450,15 @@ body {
         left: 50%;
         z-index: -1;
         background-color: $main-color;
-        width: 20rem;
-        height: 3000px;
+        width: 25vw;
+        height: 200vw;
         transform: rotate(60deg);
     }
     .hero_left-container{
         @include center-flex(row);
         position: absolute;
         z-index: 1000;
-        width: 25rem;
+        width: 30vw;
         bottom: 0;
         left: 8vw;
         margin-bottom: 25vh;
@@ -478,6 +479,7 @@ body {
 }
 
 
+// -ABOUT ME SECTION
 #aboutme-section{
     @include center-flex(row);
     background-color: $dark-color;
@@ -568,6 +570,7 @@ body {
     }
 }
 
+// -LOADING SCREEN
 #loading-screen {
     position: fixed;
     z-index: 100000;
@@ -592,42 +595,7 @@ body {
     }
 }
 
-$dot-count: 20;
-$dot-size: 10px;
-$dot-space: 15px;
-$animation-time: 2s;
-$animation-distance: 25px;
-
-.popup_menu {
-    z-index: 1000;
-    height: 100vh;
-    width: 100vw;
-    max-width: 100vw;
-    min-width: 100vw;
-    background-color: $background;
-    border-bottom: 1px solid black;
-    position: fixed;
-    transition: 400ms;
-    transform: translateY(-110vh);
-}
-
-.popup_menu.active{
-    display: flex;
-    transform: translateY(0);
-}
-
-@keyframes movement {
-    0% {
-    transform: translateY(-#{$animation-distance});
-    }
-    50% {
-    transform: translateY(#{$animation-distance});
-    }
-    100% {
-    transform: translateY(-#{$animation-distance});
-    }
-};
-
+// SKILLS SECTION
 #skills-section{
     z-index: 10;
     scroll-margin-top: 15vh;
@@ -648,11 +616,11 @@ $animation-distance: 25px;
     .skills__left-container{
         border-right: var(--border) solid 2px;
         padding: 1rem;
-        width: 40%;
+        width: 30%;
         @include center-flex(row);
         .skills__title{
+            width: 80%;
             h2{
-                font-size: 4rem;
                 margin: 0;
             }
         }
@@ -661,6 +629,7 @@ $animation-distance: 25px;
     .skills__right-container{
         height: 100%;
         @include center-flex(column);
+        width: 70%;
 
         .skills__span{
             @include flex(column, flex-end, flex-start, 0);
@@ -722,28 +691,9 @@ $animation-distance: 25px;
             }
         }
     }
-
-    /*.skills__title{
-        @include flexbox-layout(row, flex-start, flex-start, 1rem);
-        width: 90%;
-         h2{
-            font-size: 3rem;
-            margin: 0;
-            text-align: left;
-        }
-    }
-
-    .skills_container{
-        width: 70%;
-        height: 60%;
-        @include center-flex(column);
-        gap: 1rem;
-    } */
-
-
-
 }
 
+// -MOVING TEXT
 .moving-text {
     height: 3rem;
     overflow: hidden;
@@ -767,6 +717,7 @@ $animation-distance: 25px;
     }
 }
 
+// -PROJECTS SECTION
 #projects-section{
     max-height: 100%;
     overflow: hidden;
@@ -870,9 +821,7 @@ $animation-distance: 25px;
         }
     }
 }
-
-
-
+// -CONTACT SECTION
 #contact-section{
     height: 100vh;
     width: 100%;
@@ -1092,6 +1041,7 @@ $animation-distance: 25px;
     }
 }
 
+// -FOOTER
 footer{
     height: 10vh;
     @include center-flex(row);
@@ -1108,7 +1058,12 @@ footer{
 
 @media  only screen and (max-width: 2600px) and (min-width: 1750px){
     :root{
-        font-size: 25px;
+        font-size: 35px;
+    }
+    .skills__title{
+        h2{
+            font-size: 4rem;
+        }
     }
 }
 
@@ -1120,7 +1075,7 @@ footer{
     #skills-section{
         .skills__title{
             h2{
-                font-size: 6rem;
+                font-size: 4rem;
             }
         }
     }
@@ -1129,36 +1084,55 @@ footer{
 
 @media  only screen and (max-width: 1400px) and (min-width: 860px){
     :root{
-        font-size: 20px;
+        font-size: 18px;
     }
 
     #hero-section{
-        .intro__left-container{
+        .hero_left-container{
             left: 5vw;
+            width: 40vw;
         }
     }
-
     #about-section{
         height: 70vh;
     }
 
     #skills-section{
-        height: 50vh;
+        height: 70vh;
         .skills__items{
             margin-bottom: 2rem;
         }
         .skills__title{
             width: 60%;
             h2{
-                font-size: 2rem;
+                font-size: 3rem;
             }
         }
     }
 }
 
+.mobile-only{
+    display: none;
+}
+
 @media  only screen and (max-width: 860px) and (min-width: 500px){
     :root{
-        font-size: 12px;
+        font-size: 16px;
+    }
+    #hero-section{
+        display: none;
+    }
+    #hero-section-mobile-tablet{
+        height: 100vh;
+        width: 100vw;
+    }
+
+    #skills-section{
+        .skills__title{
+            h2{
+                font-size: 3rem;
+            }
+        }
     }
 }
 
