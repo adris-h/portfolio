@@ -1024,7 +1024,7 @@ footer a {
 
 @media only screen and (max-width: 2600px) and (min-width: 1750px) {
   :root {
-    font-size: 35px;
+    font-size: 25px;
   }
   .skills__title h2 {
     font-size: 4rem;
