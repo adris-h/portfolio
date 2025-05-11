@@ -69,10 +69,22 @@ menuButton.addEventListener('click', () => {
     document.body.classList.toggle('unscrollable');
 });
 
+
+const mobileMenuButton = document.querySelector('.mobile-nav_menu-toggle--2');
+mobileMenuButton.addEventListener('click', () => {
+    bigMenu.classList.toggle('active');
+    if (bigMenu.classList.contains('active')) {
+        posSpan.textContent = 'menu';
+    } else {
+        window.dispatchEvent(new Event('scroll'));
+    }
+    document.body.classList.toggle('unscrollable');
+})
+
 // MENU LINK CLICK HANDLING
 document.querySelectorAll('.menu-link').forEach(link => {
     link.addEventListener('click', (e) => {
-        e.preventDefault(); // Prevent default anchor jump
+        e.preventDefault();
 
         const targetId = link.getAttribute('href');
         const targetElement = document.querySelector(targetId);
@@ -98,12 +110,11 @@ const projectsPosition = vh * 3.3;
 const contactPositon = vh * 4.5;
 const projectsContainerTop = document.querySelector('.projects__container-top');
 const projectsContainerBot = document.querySelector('.projects__container-bottom');
+const width = window.innerWidth;
 
 window.addEventListener("scroll", function() {
     if (bigMenu.classList.contains('active')) return; // Don't change posSpan while menu is open
-
     const currentPosition = window.scrollY;
-
     if (currentPosition > aboutmePosition) {
         navBar.classList.add("scrolled");
 
@@ -125,6 +136,31 @@ window.addEventListener("scroll", function() {
     }
 });
 
+
+
+
+// -MOBILE POS
+const mobilePos = document.querySelector('.mobile-nav__position-span');
+window.addEventListener("scroll", function() {
+    if (bigMenu.classList.contains('active')) return;
+    const currentPosition = window.scrollY;
+    if (currentPosition > aboutmePosition) {
+        if (currentPosition < skillsPosition) {
+            mobilePos.textContent = 'about me';
+        } else if (currentPosition < projectsPosition) {
+            mobilePos.textContent = 'skills';
+        } else if (currentPosition < contactPositon) {
+            mobilePos.textContent = 'projects';
+        } else {
+            mobilePos.textContent = 'contact';
+        }
+    } else {
+        mobilePos.textContent = 'home';
+    }
+});
+
+
+
 function doThis() {
     console.log("You scrolled to target position!");
 }
@@ -133,11 +169,6 @@ window.addEventListener("scroll", () => {
    // console.log("Current position:", window.scrollY);
 });
 //
-
-
-
-
-
 
 const absText = document.querySelector('.contact___abs-text')
 const copyButton = document.getElementById("copy-text")
@@ -215,44 +246,45 @@ fourthSkill.addEventListener('mouseover', () => {
     firstDescription.classList.remove('active');
 });
 
+if (window.getComputedStyle(document.getElementById("hero-section")).display !== "none") {
+    gsap.registerPlugin(ScrollTrigger);
 
-gsap.registerPlugin(ScrollTrigger);
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: "#hero-section",
+            start: "top top",
+            end: "+=100%",
+            pin: true,
+            scrub: 0.5,
 
-gsap.timeline({
-    scrollTrigger: {
-        trigger: "#hero-section",
-        start: "top top",
-        end: "+=100%",
-        pin: true,
-        scrub: 0.5,
-
-        toggleClass: { targets: "#hero-section", className: "animated" },
-    }
-})
-    .to("#hero-section h1", {
-        scale: 0.5,
-        x: "-25vw",
-        y: "5vh",
-        duration: 1,
-        ease: "power2.out"
+            toggleClass: { targets: "#hero-section", className: "animated" },
+        }
     })
-    .to(".hero_bcg-line", {
-        x: "-125%",
-        duration: 1,
-        rotate: 45,
-        ease: "power2.out"
-    }, "<")
-    .to('.hero_right-container', {
-        x: 0,
-        duration: 1,
-        ease: "power2.out"
-    }, "<")
-    .to('.hero_left-container', {
-        x: 0,
-        duration: 1,
-        ease: "power2.out"
-    }, "<")
-    .to("#hero-section h2", {
-        opacity: 0,
-        ease: "power2.out"
-    }, "<");
+        .to("#hero-section h1", {
+            scale: 0.5,
+            x: "-25vw",
+            y: "5vh",
+            duration: 1,
+            ease: "power2.out"
+        })
+        .to(".hero_bcg-line", {
+            x: "-125%",
+            duration: 1,
+            rotate: 45,
+            ease: "power2.out"
+        }, "<")
+        .to('.hero_right-container', {
+            x: 0,
+            duration: 1,
+            ease: "power2.out"
+        }, "<")
+        .to('.hero_left-container', {
+            x: 0,
+            duration: 1,
+            ease: "power2.out"
+        }, "<")
+        .to("#hero-section h2", {
+            opacity: 0,
+            ease: "power2.out"
+        }, "<");
+}
