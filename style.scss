@@ -134,6 +134,21 @@ body {
     display: none;
 }
 
+u{
+    text-decoration: none;
+    position: relative;
+    &:after{
+        content: "";
+        position: absolute;
+        bottom: 10%;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: $main-color;
+        border-radius: 5px;
+    }
+}
+
 
 // --------------------------
 // COMPONENTS
@@ -251,7 +266,7 @@ body {
 
                 &:hover{
                     .navbar__menu-toggle span{
-                        transform: translateY(-1.2em);
+                        transform: translateY(-1.5em);
                     }
                 }
                 .navbar__menu-toggle--1{
@@ -282,6 +297,12 @@ body {
                         &:nth-child(6) {
                             transition: 0.7s;
                         }
+                        &:nth-child(7) {
+                            transition: 0.8s;
+                        }
+                        &:nth-child(8) {
+                            transition: 0.9s;
+                        }
                     }
                 }
                 .navbar__menu-toggle--2{
@@ -311,6 +332,12 @@ body {
                         }
                         &:nth-child(6) {
                                 transition: 0.7s;
+                        }
+                        &:nth-child(7) {
+                            transition: 0.8s;
+                        }
+                        &:nth-child(8) {
+                            transition: 0.9s;
                         }
                         }
                         &:hover span {
@@ -428,8 +455,9 @@ body {
            z-index: 2;
            font-size: 10rem;
            line-height: 80%;
-           text-shadow: 2px 0 0 white;
+
            margin: 0;
+           text-shadow: 2px 0 0 white;
        }
 
        h2{
@@ -489,6 +517,87 @@ body {
     }
 }
 
+
+
+// -INTRO SECTION
+#intro-section{
+    border-top: 2px solid $dark-background;
+    height: 100vh;
+    background-color: $dark-color;
+    .intro_container{
+        @include center-flex(column);
+        gap: 4%;
+        height: 100%;
+        width: 100%;
+        border-radius: 20px;
+        background-color: $background;
+        .intro_top-container{
+            @include flex(column, flex-end, flex-start);
+            height: 60%;
+            width: 100%;
+            padding-left: 5vh;
+            h2{
+                margin: 0;
+                font-size: 4rem;
+                line-height: 4.5rem;
+                span{
+                    text-transform: uppercase;
+                }
+            }
+            h3{
+                margin: 0;
+                font-size: 1.5rem;
+                font-weight: 400;
+            }
+        }
+        .intro_bottom-container{
+            @include center-flex(column);
+            width: 80%;
+            height: 30%;
+            border-top: 1px solid rgba(0, 0, 0, 0.07);
+            a{
+                text-decoration: none;
+                color: $dark-color;
+                position: relative;
+                @include center-flex(row);
+                gap: .25rem;
+                transition: 300ms;
+                .outer{
+                    width: 1rem;
+                    height: 1rem;
+                    background-color: rgba(221, 64, 131, 0.08);
+                    border-radius: 50%;
+                    @include center-flex(row);
+                    .inner{
+                        height: 50%;
+                        width: 50%;
+                        border-radius: 50%;
+                        background-color: $main-color;
+                    }
+                }
+            }
+            a:hover{
+                transform: scale(1.1);
+            }
+
+            a:hover::after{
+                width: 55%;
+            }
+
+            a::after{
+                position: absolute;
+                content: "";
+                bottom: 0;
+                left: 10%;
+                height: 2px;
+                width: 0;
+                background-color: $main-color;
+                transition: 300ms;
+            }
+        }
+    }
+
+}
 
 // -ABOUT ME SECTION
 #about-section{
@@ -1139,7 +1248,7 @@ footer{
         .hero_left-container{
             left: 2.25vw;
             width: 45vw;
-            margin-bottom: 28vh;
+            margin-bottom: 22vh;
         }
     }
 }
@@ -1362,7 +1471,7 @@ footer{
 
 
 // ---------------------
-// KEYFRAMES
+// -KEYFRAMES
 // ---------------------
 
 @keyframes infinitemove {

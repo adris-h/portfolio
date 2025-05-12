@@ -65,6 +65,21 @@ body {
   display: none;
 }
 
+u {
+  text-decoration: none;
+  position: relative;
+}
+u:after {
+  content: "";
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #DD4083;
+  border-radius: 5px;
+}
+
 .navbar {
   display: flex;
   flex-direction: row;
@@ -192,7 +207,7 @@ body {
   position: relative;
 }
 .navbar__scroll-info > span .navbar___menu-button:hover .navbar__menu-toggle span {
-  transform: translateY(-1.2em);
+  transform: translateY(-1.5em);
 }
 .navbar__scroll-info > span .navbar___menu-button .navbar__menu-toggle--1 {
   display: flex;
@@ -223,6 +238,12 @@ body {
 .navbar__scroll-info > span .navbar___menu-button .navbar__menu-toggle--1 span:nth-child(6) {
   transition: 0.7s;
 }
+.navbar__scroll-info > span .navbar___menu-button .navbar__menu-toggle--1 span:nth-child(7) {
+  transition: 0.8s;
+}
+.navbar__scroll-info > span .navbar___menu-button .navbar__menu-toggle--1 span:nth-child(8) {
+  transition: 0.9s;
+}
 .navbar__scroll-info > span .navbar___menu-button .navbar__menu-toggle--2 {
   color: var(--text-color);
   display: flex;
@@ -249,6 +270,12 @@ body {
 }
 .navbar__scroll-info > span .navbar___menu-button .navbar__menu-toggle--2 span:nth-child(6) {
   transition: 0.7s;
+}
+.navbar__scroll-info > span .navbar___menu-button .navbar__menu-toggle--2 span:nth-child(7) {
+  transition: 0.8s;
+}
+.navbar__scroll-info > span .navbar___menu-button .navbar__menu-toggle--2 span:nth-child(8) {
+  transition: 0.9s;
 }
 .navbar__scroll-info > span .navbar___menu-button .navbar__menu-toggle--2:hover span {
   transform: translateY(0);
@@ -356,8 +383,8 @@ body {
   z-index: 2;
   font-size: 10rem;
   line-height: 80%;
-  text-shadow: 2px 0 0 white;
   margin: 0;
+  text-shadow: 2px 0 0 white;
 }
 #hero-section .hero_title h2 {
   z-index: 2;
@@ -416,6 +443,98 @@ body {
 #hero-section.animated::after {
   transform: rotate(45deg);
   translate: 25% 25%;
+}
+
+#intro-section {
+  border-top: 2px solid rgb(29, 29, 29);
+  height: 100vh;
+  background-color: rgb(29, 29, 29);
+}
+#intro-section .intro_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4%;
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  background-color: #f9f7f3;
+}
+#intro-section .intro_container .intro_top-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 0;
+  height: 60%;
+  width: 100%;
+  padding-left: 5vh;
+}
+#intro-section .intro_container .intro_top-container h2 {
+  margin: 0;
+  font-size: 4rem;
+  line-height: 4.5rem;
+}
+#intro-section .intro_container .intro_top-container h2 span {
+  text-transform: uppercase;
+}
+#intro-section .intro_container .intro_top-container h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+#intro-section .intro_container .intro_bottom-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 30%;
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
+}
+#intro-section .intro_container .intro_bottom-container a {
+  text-decoration: none;
+  color: rgb(29, 29, 29);
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+  transition: 300ms;
+}
+#intro-section .intro_container .intro_bottom-container a .outer {
+  width: 1rem;
+  height: 1rem;
+  background-color: rgba(221, 64, 131, 0.08);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#intro-section .intro_container .intro_bottom-container a .outer .inner {
+  height: 50%;
+  width: 50%;
+  border-radius: 50%;
+  background-color: #DD4083;
+}
+#intro-section .intro_container .intro_bottom-container a:hover {
+  transform: scale(1.1);
+}
+#intro-section .intro_container .intro_bottom-container a:hover::after {
+  width: 55%;
+}
+#intro-section .intro_container .intro_bottom-container a::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 10%;
+  height: 2px;
+  width: 0;
+  background-color: #DD4083;
+  transition: 300ms;
 }
 
 #about-section {
@@ -1090,7 +1209,7 @@ footer a {
   #hero-section .hero_left-container {
     left: 2.25vw;
     width: 45vw;
-    margin-bottom: 28vh;
+    margin-bottom: 22vh;
   }
 }
 .mobile-only {

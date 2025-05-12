@@ -18,7 +18,7 @@ modeToggleButton.addEventListener('click', () => {
 
 // CHANGING TEXT
 const changingText = document.querySelector('.about___changing-interests');
-const interests = ["Development", "Design", "Applications"];
+const interests = ["Development", "UX/UI", "Applications"];
 const intervalTime = 1000;
 let i = 0;
 
@@ -55,19 +55,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 //
 // MENU BUTTON TOGGLE
-const menuButton = document.querySelector('.navbar__menu-toggle--2');
 const bigMenu = document.getElementById("menu");
 const posSpan = document.querySelector('.navbar___position-span');
-
-menuButton.addEventListener('click', () => {
-    bigMenu.classList.toggle('active');
-    if (bigMenu.classList.contains('active')) {
-        posSpan.textContent = 'menu';
-    } else {
-        window.dispatchEvent(new Event('scroll'));
-    }
-});
-
 
 const mobileMenuButton = document.querySelector('.mobile-nav_menu-toggle--2');
 mobileMenuButton.addEventListener('click', () => {
