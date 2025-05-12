@@ -66,7 +66,6 @@ menuButton.addEventListener('click', () => {
     } else {
         window.dispatchEvent(new Event('scroll'));
     }
-    document.body.classList.toggle('unscrollable');
 });
 
 
@@ -78,7 +77,6 @@ mobileMenuButton.addEventListener('click', () => {
     } else {
         window.dispatchEvent(new Event('scroll'));
     }
-    document.body.classList.toggle('unscrollable');
 })
 
 // MENU LINK CLICK HANDLING

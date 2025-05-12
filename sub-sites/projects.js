@@ -44,3 +44,20 @@ const popupMenu = document.querySelector('.popup-menu');
 menuButton.addEventListener('click', () => {
     popupMenu.classList.toggle('active');
 })
+
+
+document.querySelectorAll('.popup-menu a').forEach(anchor => {
+    anchor.addEventListener('mouseenter', () => {
+        document.querySelectorAll('.popup-menu a').forEach(other => {
+            if (other !== anchor) {
+                other.classList.add('inactive');
+            }
+        });
+    });
+
+    anchor.addEventListener('mouseleave', () => {
+        document.querySelectorAll('.popup-menu a').forEach(other => {
+            other.classList.remove('inactive');
+        });
+    });
+});

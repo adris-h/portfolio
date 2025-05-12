@@ -5,7 +5,7 @@ html {
 
 body {
   background-color: #1d1d1d;
-  font-family: "Cal Sans", sans-serif;
+  font-family: Inter;
   margin: 0;
   padding: 5px;
   height: 500vh;
@@ -39,6 +39,7 @@ body {
   align-items: center;
 }
 #navbar > span {
+  font-weight: 400;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,7 +47,7 @@ body {
 }
 #navbar > span .navbar___menu-button {
   font-size: 1rem;
-  font-family: "Cal Sans", sans-serif;
+  font-family: Inter;
   cursor: pointer;
   border: none;
   display: flex;
@@ -192,7 +193,7 @@ body {
   border-bottom: black 1px solid;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   transform: translateY(-9vh);
@@ -201,9 +202,38 @@ body {
   padding-left: 1vw;
 }
 .popup-menu a {
+  font-family: Inter;
+  font-weight: 300;
+  position: relative;
   text-decoration: none;
   color: #1d1d1d;
-  width: 25%;
+  width: fit-content;
+  transition: 300ms;
+  /*&::after{
+      position: absolute;
+      top: 50%;
+      right: 10%;
+      height: 1px;
+      width: 80%;
+      background-color: $dark-color;
+      content: '';
+      z-index: -1;
+
+  }*/
+}
+.popup-menu a span {
+  background-color: rgb(244, 243, 243);
+  width: fit-content;
+  padding-right: 1rem;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+.popup-menu a.inactive {
+  opacity: 0.3;
 }
 
 .popup-menu.active {
@@ -282,7 +312,7 @@ body {
   align-items: flex-end;
 }
 #projects-section .projects-section_container .projects__projects-containers .projects__project-container .project-description .project-description_top {
-  border-radius: 30px;
+  border-radius: 10px 30px 30px 10px;
   border: 1px black solid;
   width: 100%;
   display: flex;
@@ -314,7 +344,7 @@ body {
   width: 80%;
   height: 8rem;
   border: 1px black solid;
-  border-radius: 30px;
+  border-radius: 10px;
   background-color: #1d1d1d;
   text-align: justify;
   font-size: 1.2rem;

@@ -4,7 +4,9 @@
 // --------------------------
 
 // FONTS
-$main-font: "Cal Sans", sans-serif;//  "Montserrat", sans-serif // Arial, Helvetica, sans-serif // monospace // "Cal Sans", sans-serif
+$main-font: Poppins;//  "Montserrat", sans-serif // Arial, Helvetica, sans-serif // monospace // "Cal Sans", sans-serif
+$heading-font: "Cal Sans", sans-serif;
+$bold-weight: 600;
 
 
 // COLORS
@@ -104,9 +106,10 @@ $breakpoints: (
 // BASE STYLING
 // --------------------------
 
-body {
-    width: 100%;
+::selection {
+    background: rgba(162, 162, 162, 0.54);
 }
+
 html {
     overflow-x: hidden;
     scroll-behavior: smooth;
@@ -120,10 +123,6 @@ body {
     background-color: $background;
     color: black;
     width: 100dvw;
-    height: 2000px;
-    &.no-scroll {
-        overflow: hidden;
-    }
 }
 
 *{
@@ -169,7 +168,8 @@ body {
     }
 
     &__content{
-        font-family: "Montserrat", sans-serif;
+        font-family: Poppins, sans-serif;
+        font-weight: 300;
         transition: 500ms;
         display: flex;
         justify-content: space-between;
@@ -237,6 +237,7 @@ body {
             text-decoration: none;
         }
         & > span{
+
             @include center-flex(row);
             margin-left: 1vh;
             .navbar___menu-button{
@@ -350,6 +351,7 @@ body {
 #menu{
     @include center-flex(row);
     position: fixed;
+    font-weight: $bold-weight;
 
     width: 100vw;
     height: 100vh;
@@ -467,10 +469,10 @@ body {
         @include center-flex(row);
         position: absolute;
         z-index: 1000;
-        width: 30vw;
+        width: 38vw;
         bottom: 0;
-        left: 8vw;
-        margin-bottom: 25vh;
+        left: 6vw;
+        margin-bottom: 22vh;
         transform: translateX(-100vw);
         background-color: var(--background-color);
         border: var(--border) solid 1px;
@@ -628,9 +630,12 @@ body {
         width: 30%;
         @include center-flex(row);
         .skills__title{
-            width: 80%;
+            width: 90%;
             h2{
+                line-height: 4rem;
+                font-family: "Cal Sans", sans-serif;
                 margin: 0;
+                font-weight: $bold-weight;
             }
         }
     }
@@ -639,6 +644,7 @@ body {
         height: 100%;
         @include center-flex(column);
         width: 70%;
+        font-weight: 400;
 
         .skills__span{
             @include flex(row, flex-start, flex-end, 0);
@@ -704,6 +710,7 @@ body {
 
 // -MOVING TEXT
 .moving-text {
+    font-weight: $bold-weight;
     height: 3rem;
     overflow: hidden;
     position: relative;
@@ -732,6 +739,7 @@ body {
     overflow: hidden;
     height: 90vh;
     @include center-flex(column);
+    font-weight: $bold-weight;
     .projects_main{
         @include center-flex(column);
         height: 80%;
@@ -765,7 +773,7 @@ body {
             transition: 300ms;
         }
         .projects_background{
-            opacity: .3;
+            opacity: .5;
             position: absolute;
             top: 0;
             height: 100%;
@@ -778,9 +786,9 @@ body {
                 gap: 3rem;
 
                 & > div{
-                    width: 18rem;
-                    height: 10rem;
-                    background-color: $main-color;
+                    width: 100%;
+                    max-width: 18rem;
+                    aspect-ratio: 16 / 9;
                     border: solid 1px black;
                 }
 
@@ -795,6 +803,7 @@ body {
                 &.projects__container-top{
                     div{
                         opacity: 0;
+                        background: url("img/radianthq-sc.webp") bottom left/cover no-repeat;
                     }
                     &.visible{
                         div{
@@ -812,6 +821,7 @@ body {
                 &.projects__container-bottom{
                     div{
                         opacity: 0;
+                        background: url("img/radianthq-sc.webp") bottom left/cover no-repeat;
                     }
                     &.visible{
                         div{
@@ -832,6 +842,8 @@ body {
 }
 // -CONTACT SECTION
 #contact-section{
+    font-weight: $bold-weight;
+
     height: 100vh;
     width: 100%;
     font-size: 1.5rem;
@@ -1091,7 +1103,7 @@ footer{
 }
 
 
-@media  only screen and (max-width: 1400px) and (min-width: 860px){
+@media  only screen and (max-width: 1400px) and (min-width: 1001px){
     :root{
         font-size: 18px;
     }
@@ -1105,7 +1117,6 @@ footer{
     #about-section{
         height: 70vh;
     }
-
     #skills-section{
         height: 70vh;
         .skills__items{
@@ -1116,6 +1127,19 @@ footer{
             h2{
                 font-size: 3rem;
             }
+        }
+    }
+}
+
+@media  only screen and (max-width: 1000px) and (min-width: 860px){
+    :root{
+        font-size: 16px;
+    }
+    #hero-section{
+        .hero_left-container{
+            left: 2.25vw;
+            width: 45vw;
+            margin-bottom: 28vh;
         }
     }
 }

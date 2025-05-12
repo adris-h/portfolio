@@ -36,8 +36,8 @@
   font-style: normal;
 }
 
-body {
-  width: 100%;
+::selection {
+  background: rgba(162, 162, 162, 0.54);
 }
 
 html {
@@ -51,14 +51,10 @@ html {
 
 body {
   margin: 0;
-  font-family: "Cal Sans", sans-serif;
+  font-family: Poppins;
   background-color: #f9f7f3;
   color: black;
   width: 100dvw;
-  height: 2000px;
-}
-body.no-scroll {
-  overflow: hidden;
 }
 
 * {
@@ -100,7 +96,8 @@ body.no-scroll {
   position: relative;
 }
 .navbar__content {
-  font-family: "Montserrat", sans-serif;
+  font-family: Poppins, sans-serif;
+  font-weight: 300;
   transition: 500ms;
   display: flex;
   justify-content: space-between;
@@ -189,7 +186,7 @@ body.no-scroll {
   align-items: center;
   background-color: rgba(0, 0, 0, 0);
   font-size: 1rem;
-  font-family: "Cal Sans", sans-serif;
+  font-family: Poppins;
   cursor: pointer;
   border: none;
   position: relative;
@@ -284,6 +281,7 @@ body.no-scroll {
   justify-content: center;
   align-items: center;
   position: fixed;
+  font-weight: 600;
   width: 100vw;
   height: 100vh;
   z-index: -100;
@@ -401,10 +399,10 @@ body.no-scroll {
   align-items: center;
   position: absolute;
   z-index: 1000;
-  width: 30vw;
+  width: 38vw;
   bottom: 0;
-  left: 8vw;
-  margin-bottom: 25vh;
+  left: 6vw;
+  margin-bottom: 22vh;
   transform: translateX(-100vw);
   background-color: var(--background-color);
   border: var(--border) solid 1px;
@@ -583,10 +581,13 @@ body.no-scroll {
   align-items: center;
 }
 #skills-section .skills__left-container .skills__title {
-  width: 80%;
+  width: 90%;
 }
 #skills-section .skills__left-container .skills__title h2 {
+  line-height: 4rem;
+  font-family: "Cal Sans", sans-serif;
   margin: 0;
+  font-weight: 600;
 }
 #skills-section .skills__right-container {
   height: 100%;
@@ -595,6 +596,7 @@ body.no-scroll {
   justify-content: center;
   align-items: center;
   width: 70%;
+  font-weight: 400;
 }
 #skills-section .skills__right-container .skills__span {
   display: flex;
@@ -678,6 +680,7 @@ body.no-scroll {
 }
 
 .moving-text {
+  font-weight: 600;
   height: 3rem;
   overflow: hidden;
   position: relative;
@@ -710,6 +713,7 @@ body.no-scroll {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-weight: 600;
 }
 #projects-section .projects_main {
   display: flex;
@@ -745,7 +749,7 @@ body.no-scroll {
   transition: 300ms;
 }
 #projects-section .projects_main .projects_background {
-  opacity: 0.3;
+  opacity: 0.5;
   position: absolute;
   top: 0;
   height: 100%;
@@ -758,9 +762,9 @@ body.no-scroll {
   gap: 3rem;
 }
 #projects-section .projects_main .projects_background .projects__container > div {
-  width: 18rem;
-  height: 10rem;
-  background-color: #DD4083;
+  width: 100%;
+  max-width: 18rem;
+  aspect-ratio: 16/9;
   border: solid 1px black;
 }
 #projects-section .projects_main .projects_background .projects__container:nth-child(1) {
@@ -781,6 +785,7 @@ body.no-scroll {
 }
 #projects-section .projects_main .projects_background .projects__container.projects__container-top div {
   opacity: 0;
+  background: url("img/radianthq-sc.webp") bottom left/cover no-repeat;
 }
 #projects-section .projects_main .projects_background .projects__container.projects__container-top.visible div {
   animation: slide-in-left 1000ms ease forwards;
@@ -794,6 +799,7 @@ body.no-scroll {
 }
 #projects-section .projects_main .projects_background .projects__container.projects__container-bottom div {
   opacity: 0;
+  background: url("img/radianthq-sc.webp") bottom left/cover no-repeat;
 }
 #projects-section .projects_main .projects_background .projects__container.projects__container-bottom.visible div {
   animation: slide-in-right 1000ms ease forwards;
@@ -807,6 +813,7 @@ body.no-scroll {
 }
 
 #contact-section {
+  font-weight: 600;
   height: 100vh;
   width: 100%;
   font-size: 1.5rem;
@@ -908,7 +915,7 @@ body.no-scroll {
   background-color: transparent;
   color: white;
   font-size: 1rem;
-  font-family: "Cal Sans", sans-serif;
+  font-family: Poppins;
   cursor: pointer;
   transition: 300ms;
   z-index: 999;
@@ -971,7 +978,7 @@ body.no-scroll {
 #contact-section .contact_form .contact_form-inputs input:not(#input-submit), #contact-section .contact_form .contact_form-inputs textarea {
   width: 70%;
   color: white;
-  font-family: "Cal Sans", sans-serif;
+  font-family: Poppins;
   border-bottom: 2px solid white;
   border-top: none;
   border-right: none;
@@ -1007,7 +1014,7 @@ body.no-scroll {
   padding-top: 1rem;
 }
 #contact-section .contact_form .contact_form-inputs #input-submit {
-  font-family: "Cal Sans", sans-serif;
+  font-family: Poppins;
   height: 2rem;
   width: 3rem;
   cursor: pointer;
@@ -1052,7 +1059,7 @@ footer a {
     font-size: 4rem;
   }
 }
-@media only screen and (max-width: 1400px) and (min-width: 860px) {
+@media only screen and (max-width: 1400px) and (min-width: 1001px) {
   :root {
     font-size: 18px;
   }
@@ -1074,6 +1081,16 @@ footer a {
   }
   #skills-section .skills__title h2 {
     font-size: 3rem;
+  }
+}
+@media only screen and (max-width: 1000px) and (min-width: 860px) {
+  :root {
+    font-size: 16px;
+  }
+  #hero-section .hero_left-container {
+    left: 2.25vw;
+    width: 45vw;
+    margin-bottom: 28vh;
   }
 }
 .mobile-only {
@@ -1166,7 +1183,7 @@ footer a {
   }
   .mobile-nav > span .mobile-nav__menu-button {
     font-size: 1rem;
-    font-family: "Cal Sans", sans-serif;
+    font-family: Poppins;
     cursor: pointer;
     border: none;
     display: flex;
