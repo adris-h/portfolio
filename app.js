@@ -16,19 +16,6 @@ modeToggleButton.addEventListener('click', () => {
 }); */
 
 
-// CHANGING TEXT
-const changingText = document.querySelector('.about___changing-interests');
-const interests = ["Development", "UX/UI", "Applications"];
-const intervalTime = 1000;
-let i = 0;
-
-function updateText() {
-    changingText.textContent = interests[i];
-    i = (i + 1) % interests.length;
-}
-updateText();
-setInterval(updateText, intervalTime);
-
 
 // LOADING SCREEN
 document.addEventListener("DOMContentLoaded", function () {
@@ -91,13 +78,15 @@ document.querySelectorAll('.menu-link').forEach(link => {
 // MENU POSITION TRACKING
 const navBar = document.querySelector(".navbar");
 const vh = window.innerHeight;
-const aboutmePosition = vh * 1.2;
+const aboutmePosition = vh * 1.7;
 const skillsPosition = vh * 2.6;
 const projectsPosition = vh * 3.3;
 const contactPositon = vh * 4.5;
 const projectsContainerTop = document.querySelector('.projects__container-top');
 const projectsContainerBot = document.querySelector('.projects__container-bottom');
 const width = window.innerWidth;
+
+const introHeading = document.querySelector('.intro_top-container h2');
 
 window.addEventListener("scroll", function() {
     if (bigMenu.classList.contains('active')) return; // Don't change posSpan while menu is open
@@ -107,6 +96,7 @@ window.addEventListener("scroll", function() {
 
         if (currentPosition < skillsPosition) {
             posSpan.textContent = 'about me';
+            introHeading.classList.add('active');
         } else if (currentPosition < projectsPosition) {
             posSpan.textContent = 'skills';
         } else if (currentPosition < contactPositon) {
@@ -122,6 +112,49 @@ window.addEventListener("scroll", function() {
         posSpan.textContent = 'home';
     }
 });
+
+
+
+// CHANGING TEXT
+const changingText = document.querySelector('.about___changing-interests');
+const interests = ["Development", "UX/UI", "Applications"];
+const intervalTime = 1000;
+let i = 0;
+
+function updateText() {
+    changingText.textContent = interests[i];
+    i = (i + 1) % interests.length;
+}
+updateText();
+setInterval(updateText, intervalTime);
+
+const projectImg1 = document.querySelector('.project_img-1');
+const projectIcon1 = document.querySelector('.project_img-1 i');
+const projectText1 = document.querySelector('.project_img-1 p');
+
+projectImg1.addEventListener('mouseover', e => {
+    projectIcon1.classList.add('active');
+    projectText1.classList.add('active');
+})
+
+projectImg1.addEventListener('mouseout', e => {
+    projectIcon1.classList.remove('active');
+    projectText1.classList.remove('active');
+})
+
+const projectImg2 = document.querySelector('.project_img-2');
+const projectIcon2 = document.querySelector('.project_img-2 i');
+const projectText2 = document.querySelector('.project_img-2 p');
+
+projectImg2.addEventListener('mouseover', e => {
+    projectIcon2.classList.add('active');
+    projectText2.classList.add('active');
+})
+
+projectImg2.addEventListener('mouseout', e => {
+    projectIcon2.classList.remove('active');
+    projectText2.classList.remove('active');
+})
 
 
 
@@ -209,6 +242,11 @@ firstSkill.addEventListener('mouseover', () => {
     secondDescription.classList.remove('active');
     thirdDescription.classList.remove('active');
     fourthDescription.classList.remove('active');
+
+    secondSkill.classList.add('inactive');
+    thirdSkill.classList.add('inactive');
+    fourthSkill.classList.add('inactive');
+    firstSkill.classList.remove('inactive');
 });
 
 secondSkill.addEventListener('mouseover', () => {
@@ -216,6 +254,11 @@ secondSkill.addEventListener('mouseover', () => {
     firstDescription.classList.remove('active');
     thirdDescription.classList.remove('active');
     fourthDescription.classList.remove('active');
+
+    firstSkill.classList.add('inactive');
+    thirdSkill.classList.add('inactive');
+    fourthSkill.classList.add('inactive');
+    secondSkill.classList.remove('inactive');
 });
 
 thirdSkill.addEventListener('mouseover', () => {
@@ -223,6 +266,11 @@ thirdSkill.addEventListener('mouseover', () => {
     secondDescription.classList.remove('active');
     firstDescription.classList.remove('active');
     fourthDescription.classList.remove('active');
+
+    secondSkill.classList.add('inactive');
+    firstSkill.classList.add('inactive');
+    fourthSkill.classList.add('inactive');
+    thirdSkill.classList.remove('inactive');
 });
 
 // Fourth skill
@@ -231,6 +279,12 @@ fourthSkill.addEventListener('mouseover', () => {
     secondDescription.classList.remove('active');
     thirdDescription.classList.remove('active');
     firstDescription.classList.remove('active');
+
+
+    secondSkill.classList.add('inactive');
+    thirdSkill.classList.add('inactive');
+    firstSkill.classList.add('inactive');
+    fourthSkill.classList.remove('inactive');
 });
 
 if (window.getComputedStyle(document.getElementById("hero-section")).display !== "none") {

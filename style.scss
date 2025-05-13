@@ -8,6 +8,11 @@ $main-font: Poppins;//  "Montserrat", sans-serif // Arial, Helvetica, sans-serif
 $heading-font: "Cal Sans", sans-serif;
 $bold-weight: 600;
 
+// FONT SIZE
+$big: 10rem;
+$medium: 5rem;
+$normal: 1rem;
+$small: .8rem;
 
 // COLORS
 $main-color: #DD4083; // pink #DD4083 // green #adc178 // light blue #b5e2fa // blue #7cc3e5 // anotha blue #00c6cf
@@ -26,22 +31,6 @@ $dark-background: rgb(29, 29, 29);
 $dark-text: rgb(189, 188, 188);
 $dark-border: rgb(179, 175, 175);
 
-// LIGHT MODE - DARK MODE
-.light-mode {
-    --background-color: #{$light-background};
-    --text-color: #{$light-text};
-    --border: #{$light-border};
-    --main-color: #{$main-color};
-    --title: #{$light-text};
-}
-
-.dark-mode {
-    --background-color: #{$dark-background};
-    --text-color: #{$dark-text};
-    --border: #{$dark-border};
-    --main-color: #{$blue};
-    --divider: #{$dark-border};
-}
 
 
 // BREAKPOINTS
@@ -113,15 +102,13 @@ $breakpoints: (
 html {
     overflow-x: hidden;
     scroll-behavior: smooth;
-}
-:root{
     font-size: 20px;
 }
 body {
     margin: 0;
     font-family: $main-font;
     background-color: $background;
-    color: black;
+    color: $dark-color;
     width: 100dvw;
 }
 
@@ -192,22 +179,22 @@ u{
         gap: 0;
         width: 100%;
         height: 100%;
-        border: 1px solid var(--border);
+        border: 1px solid $dark-color;
         a{
             text-align: center;
             width: auto;
             height: 100%;
-            color: var(--text-color);
+            color: $dark-color;
             text-decoration: none;
-            font-size: 1.2rem;
+            font-size: $normal;
             position: relative;
             transition: 100ms;
             &:hover{
-                background-color: var(--main-color);
+                background-color: $main-color;
                 color: white;
             }
             &:not(.navbar___contact-link){
-                border-right: 1px solid var(--border);
+                border-right: 1px solid $dark-color;
             }
 
             &:nth-child(1):not(.navbar___logo){
@@ -250,6 +237,7 @@ u{
 
         a{
             text-decoration: none;
+            color: $dark-color;
         }
         & > span{
 
@@ -258,7 +246,7 @@ u{
             .navbar___menu-button{
                 @include center-flex(row);
                 background-color: rgba(0, 0, 0, 0);
-                font-size: 1rem;
+                font-size: $normal;
                 font-family: $main-font;
                 cursor: pointer;
                 border: none;
@@ -277,7 +265,7 @@ u{
                     position: absolute;
                     }
                     span{
-                        color: var(--text-color);
+                        color: $dark-color;
                         transform: translateY(0);
                         &:nth-child(1) {
                             transition: 0.2s;
@@ -306,7 +294,7 @@ u{
                     }
                 }
                 .navbar__menu-toggle--2{
-                    color: var(--text-color);
+                    color: $dark-color;
                     display: flex;
                     position: absolute;
                     overflow: hidden;
@@ -451,17 +439,16 @@ u{
     box-sizing: border-box;
 
    .hero_title{
+       animation-delay: 2.8s;
        h1{
            z-index: 2;
-           font-size: 10rem;
+           font-size: $big;
            line-height: 80%;
-
            margin: 0;
            text-shadow: 2px 0 0 white;
        }
 
        h2{
-           z-index: 2;
            text-align: right;
            width: 100%;
        }
@@ -500,14 +487,14 @@ u{
         width: 38vw;
         bottom: 0;
         left: 6vw;
-        margin-bottom: 22vh;
+        margin-bottom: 15vh;
         transform: translateX(-100vw);
-        background-color: var(--background-color);
-        border: var(--border) solid 1px;
+        background-color: $background;
+        border: $dark-color solid 1px;
         p{
-            color: var(--text-color);
-            margin: 1rem;
-            font-size: .8rem;
+            color: $dark-color;
+            margin: .8rem 1rem .8rem 1rem;
+            font-size: $normal;
             text-align: justify;
         }
     }
@@ -521,8 +508,9 @@ u{
 
 // -INTRO SECTION
 #intro-section{
-    border-top: 2px solid $dark-background;
-    height: 100vh;
+    border-top: 3px solid $dark-background;
+    height: 90vh;
+    width: 100%;
     background-color: $dark-color;
     .intro_container{
         @include center-flex(column);
@@ -538,17 +526,24 @@ u{
             padding-left: 5vh;
             h2{
                 margin: 0;
-                font-size: 4rem;
+                font-size: $medium;
                 line-height: 4.5rem;
+                transform: translateX(-120%);
+                transition: 800ms;
                 span{
                     text-transform: uppercase;
+                }
+                &.active{
+                    opacity: 1;
+                    transform: translateX(0);
                 }
             }
             h3{
                 margin: 0;
-                font-size: 1.5rem;
+                font-size: $normal;
                 font-weight: 400;
             }
+
         }
         .intro_bottom-container{
             @include center-flex(column);
@@ -589,106 +584,16 @@ u{
                 content: "";
                 bottom: 0;
                 left: 10%;
-                height: 2px;
+                height: 3px;
+                border-radius: 10px;
                 width: 0;
                 background-color: $main-color;
                 transition: 300ms;
             }
         }
     }
-
 }
 
-// -ABOUT ME SECTION
-#about-section{
-    @include center-flex(row);
-    background-color: $dark-color;
-    border: var(--border) solid 2px;
-    z-index: 10;
-    width: 100vw;
-    height: 100vh;
-    .about_content{
-        @include center-flex(column);
-        width: 100%;
-        height: 100%;
-        border-radius: 20px;
-        background-color: var(--background-color);
-        .about__top{
-            @include flex(row, center, flex-start, 4rem );
-            height: 80%;
-            width: 80%;
-            .about___photo{
-                @include center-flex(row);
-                width: 25rem;
-                height: 30rem;
-                background-color: $main-color;
-            }
-            .about__bio{
-                @include flex(column, flex-start, flex-start, 1rem);
-                margin-top: 4rem;
-                font-size: 25px;
-                width: 60%;
-                *{
-                    margin: 0;
-                    color: var(--text-color);
-                }
-                p{
-                    font-size: 1em;
-                }
-                div{
-                    @include flex(column, center, flex-start, 1rem);
-                    width: 100%;
-                    & > span{
-                        margin-left: 5rem;
-                        font-size: 1.2em;
-
-                        height: 5rem;
-                    }
-                }
-                div:nth-child(4){
-                    @include flex( column, center, flex-end, 0);
-                    text-align: right;
-
-                    a{
-                        position: relative;
-                        text-decoration: none;
-                        transition: 300ms;
-                        div{
-                            @include flex( column, center, flex-end, 0);
-                            color: rgba(0, 0, 0, 0.327);
-                            transition: 300ms;
-                        }
-                    }
-
-                    a::after{
-                        content: "";
-                        position: absolute;
-                        top: 55%;
-                        left: 0;
-                        width: 0;
-                        height: 2px;
-                        border-radius: 40px;
-                        background-color: black;
-                        transition: 300ms;
-                    }
-
-                    a:hover{
-                        transform: scale(1.1);
-                    }
-
-                    a:hover div{
-                        color: black;
-
-                    }
-
-                    a:hover::after{
-                        width: 55%;
-                    }
-                }
-            }
-        }
-    }
-}
 
 // -LOADING SCREEN
 #loading-screen {
@@ -734,7 +639,7 @@ u{
 
     }
     .skills__left-container{
-        border-right: var(--border) solid 2px;
+        border-right: $dark-color solid 2px;
         padding: 1rem;
         width: 30%;
         @include center-flex(row);
@@ -743,6 +648,7 @@ u{
             h2{
                 line-height: 4rem;
                 font-family: "Cal Sans", sans-serif;
+                font-size: $medium;
                 margin: 0;
                 font-weight: $bold-weight;
             }
@@ -775,7 +681,13 @@ u{
                 @include flex(column, center, center, 1rem);
                 cursor: pointer;
                 margin: 0;
+                &.inactive{
+                    .skills___logo{
+                        opacity: .6;
+                    }
+                }
                 .skills___logo{
+                    transition: 300ms;
                     background-size: contain;
                     background-repeat: no-repeat;
                     background-position: center;
@@ -787,7 +699,7 @@ u{
                     &-4 { background-image: url(img/Figma-Icon.svg); }
                 }
                 .skills___name{
-                    font-size: 1.2rem;
+                    font-size: $normal;
                     width: 100%;
                     @include center-flex(row);
                 }
@@ -805,7 +717,7 @@ u{
                 height: 50%;
                 grid-row: 1;
                 grid-column: 1;
-                font-size: 1.2rem;
+                font-size: $normal;
                 opacity: 0;
                 transition: 300ms;
                 &.active{
@@ -825,8 +737,8 @@ u{
     position: relative;
     background-color: $dark-color;
     color: white;
-    border-top: var(--border) solid 2px;
-    border-bottom: var(--border) solid 2px;
+    border-top: $dark-color solid 2px;
+    border-bottom: $dark-color solid 2px;
 
     .moving-text__inner {
         width: max-content;
@@ -856,8 +768,8 @@ u{
         position: relative;
         .projects-anchor{
             text-decoration: none;
-            color: black;
-            font-size: 1.2rem;
+            color: $dark-color;
+            font-size: $normal;
             position: relative;
             height: 1rem;
             transition: 300ms;
@@ -878,7 +790,7 @@ u{
             left: 0;
             height: 2px;
             width: 0;
-            background-color: black;
+            background-color: $dark-color;
             transition: 300ms;
         }
         .projects_background{
@@ -898,7 +810,7 @@ u{
                     width: 100%;
                     max-width: 18rem;
                     aspect-ratio: 16 / 9;
-                    border: solid 1px black;
+                    border: solid 1px $dark-color;
                 }
 
                 &:nth-child(1){
@@ -949,13 +861,104 @@ u{
         }
     }
 }
+
+#temporary-name{
+    height: 90vh;
+    width: 100vw;
+    background-color: $dark-color;
+    color: white;
+    .temporary-name__container{
+        height: 100%;
+        width: 100%;
+        @include center-flex(row);
+        & > div{
+            width: 50%;
+            height: 100%;
+            margin: 0;
+            @include center-flex(column);
+            & > *{
+                width: 100%;
+            }
+            .project_img{
+                @include center-flex(column);
+                gap: 0;
+                width: 90%;
+                *:not(a){
+                    opacity: 0.9;
+                }
+                & > span:nth-child(1){
+                    font-size: $normal;
+                    width: 100%;
+                    padding-left: 2px;
+                    @include flex(row, flex-start, flex-end);
+                }
+                a{
+                    cursor: pointer;
+                    width: 100%;
+                    max-width: 40rem;
+                    aspect-ratio: 16 / 9;
+                    position: relative;
+                    background: url("img/radianthq-sc.webp") center/cover no-repeat;
+                    *{
+                        color: white;
+                    }
+                    p{
+                        position: absolute;
+                        width: 100%;
+                        margin: 0;
+                        bottom: 0;
+                        left: 0;
+                        background-color: rgba(0, 0, 0, 0.42);
+                        @include center-flex(column);
+                        text-align: justify;
+                        font-size: $small;
+                        padding: 2rem;
+                        transition: 300ms;
+                        opacity: 0;
+
+
+                    }
+                    i{
+                        position: absolute;
+                        transform: rotate(-45deg);
+                        right: 0;
+                        margin: 1rem;
+                        transition: 300ms;
+                        opacity: 0;
+                    }
+
+                    p.active, i.active{
+                        opacity: 1;
+                    }
+                }
+
+                & > span:nth-child(3){
+                    font-size: $small;
+                    width: 100%;
+                    @include flex(row, space-between, flex-start);
+                    p{
+                        margin: 0;
+                    }
+                }
+
+            }
+            figcaption{
+                height: 40%;
+                width: 80%;
+            }
+
+        }
+    }
+}
+
+
 // -CONTACT SECTION
 #contact-section{
     font-weight: $bold-weight;
 
     height: 100vh;
     width: 100%;
-    font-size: 1.5rem;
+    font-size: $normal;
     position: relative;
     @include flex( column, flex-end, center, 1rem);
     .contact_container{
@@ -995,7 +998,7 @@ u{
                     position: absolute;
                     opacity: 0;
                     cursor: default ;
-                    font-size: 1rem;
+                    font-size: $normal;
                     top: 20px;
                     right: 0;
                     transform: rotate(10deg);
@@ -1007,11 +1010,11 @@ u{
                 .contact___email-button{
                     transition: 300ms;
                     cursor: pointer;
-                    font-size: 1.4rem;
+                    font-size: $normal;
                 }
 
                 p{
-                    font-size: 1rem;
+                    font-size: $normal;
                 }
 
                 p:nth-child(1){
@@ -1048,7 +1051,7 @@ u{
             border: none;
             background-color: transparent;
             color: white;
-            font-size: 1rem;
+            font-size: $normal;
             font-family: $main-font;
             cursor: pointer;
             transition: 300ms;
@@ -1101,7 +1104,7 @@ u{
         .contact_form-title{
             height: 20%;
             color: white;
-            font-size: 1rem;
+            font-size: $normal;
             @include center-flex(row);
         }
         .contact_form-inputs{
@@ -1175,7 +1178,7 @@ u{
 footer{
     height: 10vh;
     @include center-flex(row);
-    font-size: .7rem;
+    font-size: $small;
     a{
         color: $main-color;
     }
@@ -1186,34 +1189,21 @@ footer{
 // MEDIA QUERIES
 // ---------------------
 
-@media  only screen and (max-width: 2600px) and (min-width: 1750px){
-    :root{
+@media only screen and (max-width: 2200px) and (min-width: 1740px){
+    html{
         font-size: 25px;
-    }
-    .skills__title{
-        h2{
-            font-size: 4rem;
-        }
     }
 }
 
 @media  only screen and (max-width: 1749px) and (min-width: 1400px){
-    :root{
+    html{
         font-size: 20px;
-    }
-
-    #skills-section{
-        .skills__title{
-            h2{
-                font-size: 4rem;
-            }
-        }
     }
 }
 
 
 @media  only screen and (max-width: 1400px) and (min-width: 1001px){
-    :root{
+    html{
         font-size: 18px;
     }
 
@@ -1241,14 +1231,14 @@ footer{
 }
 
 @media  only screen and (max-width: 1000px) and (min-width: 860px){
-    :root{
+    html{
         font-size: 16px;
     }
     #hero-section{
         .hero_left-container{
             left: 2.25vw;
             width: 45vw;
-            margin-bottom: 22vh;
+            margin-bottom: 25vh;
         }
     }
 }
@@ -1257,14 +1247,22 @@ footer{
     display: none;
 }
 
-@media  only screen and (max-width: 860px) and (min-width: 500px){
-    :root{
+@media  only screen and (max-width: 900px) and (min-width: 500px){
+    html{
         font-size: 16px;
     }
     #skills-section{
         .skills__title{
             h2{
                 font-size: 3rem;
+            }
+        }
+    }
+    #temporary-name{
+        .temporary-name__container{
+            flex-direction: column;
+            & > div{
+                width: 80%;
             }
         }
     }
@@ -1321,7 +1319,7 @@ footer{
         transition: 500ms;
         z-index: 10000;
         position: fixed;
-        color: black;
+        color: $dark-color;
         display: flex;
         justify-content: space-between;
         width: 100vw;
@@ -1330,7 +1328,7 @@ footer{
         left: 0;
         right: 0;
         background-color: $background;
-        border-bottom: black 1px solid;
+        border-bottom: $dark-color 1px solid;
 
         a{
             text-decoration: none;
@@ -1343,7 +1341,7 @@ footer{
             align-items: center;
             margin-left: 1vh;
             .mobile-nav__menu-button {
-                font-size: 1rem;
+                font-size: $normal;
                 font-family: $main-font;
                 cursor: pointer;
                 border: none;
@@ -1366,7 +1364,7 @@ footer{
                     }
 
                     span {
-                        color: black;
+                        color: $dark-color;
                         transform: translateY(0);
 
                         &:nth-child(1) {
@@ -1403,7 +1401,7 @@ footer{
                 }
 
                 .mobile-nav_menu-toggle--2 {
-                    color: black;
+                    color: $dark-color;
                     display: flex;
                     position: absolute;
                     overflow: hidden;
@@ -1496,14 +1494,54 @@ footer{
 
 @keyframes slide-in-right {
     0% {
-        transform: translate3d(-100%, 0, 0);
+        transform: translatex(-100%);
         opacity: 0;
     }
     100% {
-        transform: translate3d(0, 0, 0);
+        transform: translateX(0);
         opacity: 1;
     }
 }
+
+@keyframes fade-in{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes height-animation{
+    0%{
+        height: 0;
+    }
+    100%{
+        height: 300vh;
+    }
+}
+
+
+// ANIMATION
+
+.fade-animation{
+    animation: fade-in 1000ms ease forwards;
+}
+
+.slide-in-anim-left{
+    animation: slide-in-left 1000ms ease forwards;
+}
+
+.slide-in-anim-right{
+    animation: slide-in-right 1000ms ease forwards;
+}
+
+.height-change{
+    animation: height-animation 2000ms ease forwards;
+    animation-delay: 2.8s;
+}
+
+
 
 
 
