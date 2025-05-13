@@ -1295,6 +1295,14 @@ footer{
             height: 70%;
         }
     }
+    #temporary-name{
+        .temporary-name__container{
+            flex-direction: column;
+            & > div{
+                width: 80%;
+            }
+        }
+    }
 }
 
 @media  only screen and (max-width: 600px) and (orientation: portrait){
