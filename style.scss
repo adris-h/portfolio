@@ -10,9 +10,13 @@ $bold-weight: 600;
 
 // FONT SIZE
 $big: 10rem;
-$medium: 5rem;
+$medium: var(--medium-font);
 $normal: 1rem;
 $small: .8rem;
+
+:root{
+    --medium-font: 5rem;
+}
 
 // COLORS
 $main-color: #DD4083; // pink #DD4083 // green #adc178 // light blue #b5e2fa // blue #7cc3e5 // anotha blue #00c6cf
@@ -114,6 +118,7 @@ body {
 
 *{
     box-sizing: border-box;
+
 }
 
 
@@ -509,13 +514,12 @@ u{
 // -INTRO SECTION
 #intro-section{
     border-top: 3px solid $dark-background;
-    height: 90vh;
     width: 100%;
     background-color: $dark-color;
     .intro_container{
         @include center-flex(column);
+        padding: 10rem 0 10rem 0;
         gap: 4%;
-        height: 100%;
         width: 100%;
         border-radius: 20px;
         background-color: $background;
@@ -1251,6 +1255,9 @@ footer{
     html{
         font-size: 16px;
     }
+    :root{
+        --medium-font: 3rem;
+    }
     #skills-section{
         .skills__title{
             h2{
@@ -1273,7 +1280,7 @@ footer{
         display: none;
     }
     #hero-section-mobile-tablet{
-        height: 70vh;
+        height: 100vh;
         width: 100vw;
     }
     #about-section{
@@ -1306,6 +1313,9 @@ footer{
 }
 
 @media  only screen and (max-width: 600px) and (orientation: portrait){
+    :root{
+        --medium-font: 2rem;
+    }
     #skills-section{
         height: fit-content;
         .skills__right-container{
