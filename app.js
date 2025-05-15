@@ -80,6 +80,12 @@ const navBar = document.querySelector(".navbar");
 const projectsContainerTop = document.querySelector('.projects__container-top');
 const projectsContainerBot = document.querySelector('.projects__container-bottom');
 const introHeading = document.querySelector('.intro_top-container h2');
+const introSubheading = document.querySelector('.intro_top-container h3');
+const introText = document.querySelector('.intro_bottom-container a');
+
+const skillsHeading = document.querySelector('.skills__title');
+
+const projectsAnim = document.querySelectorAll('#temporary-name a');
 
 let aboutmePosition, skillsPosition, projectsPosition, contactPosition;
 function setSectionPositions() {
@@ -96,8 +102,8 @@ function setSectionPositions() {
         contactPosition = vh * 4.4;
     } else {
         aboutmePosition = vh * 1.7;
-        skillsPosition = vh * 2.6;
-        projectsPosition = vh * 3.3;
+        skillsPosition = vh * 2.3;
+        projectsPosition = vh * 3.5;
         contactPosition = vh * 4.5;
     }
 }
@@ -112,11 +118,19 @@ window.addEventListener("scroll", function () {
         if (currentPosition < skillsPosition) {
             posSpan.textContent = 'about me';
             introHeading.classList.add('active');
+            introSubheading.classList.add('active');
+            introText.classList.add('active');
             console.log("about meeee");
         } else if (currentPosition < projectsPosition) {
             posSpan.textContent = 'skills';
+            skillsHeading.classList.add('active');
         } else if (currentPosition < contactPosition) {
             posSpan.textContent = 'projects';
+
+            if (window.matchMedia("(min-width: 900px)").matches) {
+                projectsAnim.forEach(link => link.classList.add('active'));
+            }
+
             projectsContainerTop.classList.add('visible');
             projectsContainerBot.classList.add('visible');
         } else {

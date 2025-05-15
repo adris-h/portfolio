@@ -1,0 +1,9 @@
+// -FOOTER
+footer{
+  height: 10vh;
+  @include center-flex(row);
+  font-size: $small;
+  a{
+    color: $main-color;
+  }
+}
