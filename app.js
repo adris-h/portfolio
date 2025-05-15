@@ -76,21 +76,43 @@ document.querySelectorAll('.menu-link').forEach(link => {
 });
 
 // MENU POSITION TRACKING
+// MENU POSITION TRACKING
 const navBar = document.querySelector(".navbar");
-const vh = window.innerHeight;
-const aboutmePosition = vh * 1.7;
-const skillsPosition = vh * 2.6;
-const projectsPosition = vh * 3.3;
-const contactPositon = vh * 4.5;
 const projectsContainerTop = document.querySelector('.projects__container-top');
 const projectsContainerBot = document.querySelector('.projects__container-bottom');
-const width = window.innerWidth;
-
 const introHeading = document.querySelector('.intro_top-container h2');
 
-window.addEventListener("scroll", function() {
-    if (bigMenu.classList.contains('active')) return; // Don't change posSpan while menu is open
+let aboutmePosition, skillsPosition, projectsPosition, contactPosition;
+function setSectionPositions() {
+    const vh = window.innerHeight;
+
+    if (window.matchMedia("(max-width: 768px)").matches) {
+        aboutmePosition = vh * 0.8;
+        skillsPosition = vh * 2.2;
+        projectsPosition = vh * 3.1;
+        contactPosition = vh * 4.2;
+    } else if (window.matchMedia("(max-width: 1024px)").matches) {
+        aboutmePosition = vh * 1.1;
+        skillsPosition = vh * 2.4;
+        projectsPosition = vh * 3.2;
+        contactPosition = vh * 4.4;
+    } else {
+        aboutmePosition = vh * 1.7;
+        skillsPosition = vh * 2.6;
+        projectsPosition = vh * 3.3;
+        contactPosition = vh * 4.5;
+    }
+}
+
+setSectionPositions();
+
+window.addEventListener("resize", setSectionPositions);
+
+window.addEventListener("scroll", function () {
+    if (bigMenu.classList.contains('active')) return;
+
     const currentPosition = window.scrollY;
+
     if (currentPosition > aboutmePosition) {
         navBar.classList.add("scrolled");
 
@@ -99,7 +121,7 @@ window.addEventListener("scroll", function() {
             introHeading.classList.add('active');
         } else if (currentPosition < projectsPosition) {
             posSpan.textContent = 'skills';
-        } else if (currentPosition < contactPositon) {
+        } else if (currentPosition < contactPosition) {
             posSpan.textContent = 'projects';
             projectsContainerTop.classList.add('visible');
             projectsContainerBot.classList.add('visible');
