@@ -76,7 +76,6 @@ document.querySelectorAll('.menu-link').forEach(link => {
 });
 
 // MENU POSITION TRACKING
-// MENU POSITION TRACKING
 const navBar = document.querySelector(".navbar");
 const projectsContainerTop = document.querySelector('.projects__container-top');
 const projectsContainerBot = document.querySelector('.projects__container-bottom');
@@ -85,12 +84,11 @@ const introHeading = document.querySelector('.intro_top-container h2');
 let aboutmePosition, skillsPosition, projectsPosition, contactPosition;
 function setSectionPositions() {
     const vh = window.innerHeight;
-
     if (window.matchMedia("(max-width: 768px)").matches) {
         aboutmePosition = vh * 0.8;
-        skillsPosition = vh * 2.2;
-        projectsPosition = vh * 3.1;
-        contactPosition = vh * 4.2;
+        skillsPosition = vh * 1.5;
+        projectsPosition = vh * 2;
+        contactPosition = vh * 3;
     } else if (window.matchMedia("(max-width: 1024px)").matches) {
         aboutmePosition = vh * 1.1;
         skillsPosition = vh * 2.4;
@@ -105,20 +103,16 @@ function setSectionPositions() {
 }
 
 setSectionPositions();
-
 window.addEventListener("resize", setSectionPositions);
-
 window.addEventListener("scroll", function () {
     if (bigMenu.classList.contains('active')) return;
-
     const currentPosition = window.scrollY;
-
-    if (currentPosition > aboutmePosition) {
+    if (currentPosition >= aboutmePosition) {
         navBar.classList.add("scrolled");
-
         if (currentPosition < skillsPosition) {
             posSpan.textContent = 'about me';
             introHeading.classList.add('active');
+            console.log("about meeee");
         } else if (currentPosition < projectsPosition) {
             posSpan.textContent = 'skills';
         } else if (currentPosition < contactPosition) {
@@ -128,7 +122,6 @@ window.addEventListener("scroll", function () {
         } else {
             posSpan.textContent = 'contact';
         }
-
     } else {
         navBar.classList.remove("scrolled");
         posSpan.textContent = 'home';

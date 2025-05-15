@@ -531,7 +531,7 @@ u{
             h2{
                 margin: 0;
                 font-size: $medium;
-                line-height: 4.5rem;
+                line-height: $medium;
                 transform: translateX(-120%);
                 transition: 800ms;
                 span{
@@ -624,13 +624,14 @@ u{
     }
 }
 
+
 // -SKILLS SECTION
 #skills-section{
     z-index: 10;
     scroll-margin-top: 15vh;
     @include center-flex(row);
-    height: 70vh;
     width: 100vw;
+    height: 70vh;
     background-color: $dark-color;
     border-left: 2px solid $dark-color;
     border-right: 2px solid $dark-color;
@@ -644,8 +645,9 @@ u{
     }
     .skills__left-container{
         border-right: $dark-color solid 2px;
-        padding: 1rem;
+        padding: 5vh 0 5vh 0;
         width: 30%;
+
         @include center-flex(row);
         .skills__title{
             width: 90%;
@@ -677,35 +679,40 @@ u{
         .skills__items{
             @include center-flex(row);
             width: 100%;
-            height: 30%;
-            gap: 3rem;
-            .skills___item{
-                height: 10rem;
-                width: 10rem;
-                @include flex(column, center, center, 1rem);
-                cursor: pointer;
-                margin: 0;
-                &.inactive{
-                    .skills___logo{
-                        opacity: .6;
+            height: 40%;
+            gap: 0;
+            & > div{
+                @include center-flex(row);
+                gap: 0;
+                height: 100%;
+                .skills___item{
+                    height: 10rem;
+                    width: 10rem;
+                    @include flex(column, center, center, 1rem);
+                    cursor: pointer;
+                    margin: 0;
+                    &.inactive{
+                        .skills___logo{
+                            opacity: .6;
+                        }
                     }
-                }
-                .skills___logo{
-                    transition: 300ms;
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    height: 80%;
-                    width: 100%;
-                    &-1 { background-image: url(img/html-logo.svg); }
-                    &-2 { background-image: url(img/css-logo.svg); }
-                    &-3 { background-image: url(img/javascript-logo-svgrepo-com.svg); }
-                    &-4 { background-image: url(img/Figma-Icon.svg); }
-                }
-                .skills___name{
-                    font-size: $normal;
-                    width: 100%;
-                    @include center-flex(row);
+                    .skills___logo{
+                        transition: 300ms;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        height: 80%;
+                        width: 100%;
+                        &-1 { background-image: url(img/html-logo.svg); }
+                        &-2 { background-image: url(img/css-logo.svg); }
+                        &-3 { background-image: url(img/javascript-logo-svgrepo-com.svg); }
+                        &-4 { background-image: url(img/Figma-Icon.svg); }
+                    }
+                    .skills___name{
+                        font-size: $normal;
+                        width: 100%;
+                        @include center-flex(row);
+                    }
                 }
             }
 
@@ -1310,12 +1317,26 @@ footer{
             }
         }
     }
+    .intro_top-container {
+        padding-left: 0;
+    }
 }
 
 @media  only screen and (max-width: 600px) and (orientation: portrait){
     :root{
         --medium-font: 2rem;
     }
+    html{
+        font-size: 16px;
+    }
+    #intro-section{
+        .intro_container{
+            .intro_top-container {
+                padding-left: 3vw;
+            }
+        }
+    }
+
     #skills-section{
         height: fit-content;
         .skills__right-container{
