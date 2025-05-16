@@ -8,7 +8,6 @@
   left: 0;
   right: 0;
   height: 10vh;
-
   transform: none;
 
   z-index: 10000;
@@ -38,12 +37,12 @@
     height: 100%;
     border: 1px solid $dark-color;
     a{
+
       text-align: center;
       width: auto;
       height: 100%;
       color: $dark-color;
       text-decoration: none;
-      font-size: $normal;
       position: relative;
       transition: 100ms;
       &:hover{
@@ -92,6 +91,8 @@
     width: 100vw;
     overflow: hidden;
 
+
+
     a{
       text-decoration: none;
       color: $dark-color;
@@ -103,11 +104,11 @@
       .navbar___menu-button{
         @include center-flex(row);
         background-color: rgba(0, 0, 0, 0);
-        font-size: $normal;
         font-family: $main-font;
         cursor: pointer;
         border: none;
         position: relative;
+        font-size: 1rem;
 
         &:hover{
           .navbar__menu-toggle span{

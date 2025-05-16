@@ -16,12 +16,14 @@ $bold-weight: 600;
 // FONT SIZE
 $big: var(--big-font);
 $medium: var(--medium-font);
-$normal: 1rem;
-$small: .8rem;
+$normal: var(--normal-font);
+$small: var(--small-font);
 
 :root{
     --medium-font: 6vw;
     --big-font: 15vw;
+    --small-font: 1vw;
+    --normal-font: 1.5vw;
 }
 
 // COLORS
@@ -235,6 +237,13 @@ u{
             }
         }
     }
+    #hero-section{
+        .hero_left-container{
+            left: 2.25vw;
+            width: 45vw;
+            margin-bottom: 25vh;
+        }
+    }
 }
 
 @media  only screen and (max-width: 900px) and (min-width: 500px){
@@ -277,6 +286,7 @@ u{
     :root{
         --medium-font: 6vw;
         --big-font: 9.5vw;
+        --small-font: 2vw;
     }
     .mobile-only{
         display: flex;
@@ -321,6 +331,7 @@ u{
 }
 
 @media  only screen and (max-width: 550px) and (orientation: portrait){
+
     html{
         font-size: 16px;
     }
@@ -359,18 +370,20 @@ u{
         background-color: $background;
         border-bottom: $dark-color 1px solid;
 
+
         a{
             text-decoration: none;
             cursor: pointer;
             @include center-flex(row);
         }
         & > span {
+
             display: flex;
             justify-content: center;
             align-items: center;
             margin-left: 1vh;
             .mobile-nav__menu-button {
-                font-size: $normal;
+                font-size: 1rem;
                 font-family: $main-font;
                 cursor: pointer;
                 border: none;

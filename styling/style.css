@@ -1,6 +1,8 @@
 :root {
   --medium-font: 6vw;
   --big-font: 15vw;
+  --small-font: 1vw;
+  --normal-font: 1.5vw;
 }
 
 @font-face {
@@ -106,10 +108,10 @@
   align-items: center;
   position: absolute;
   z-index: 1000;
-  width: 38vw;
+  width: 42vw;
   bottom: 0;
-  left: 6vw;
-  margin-bottom: 15vh;
+  left: 4vw;
+  margin-bottom: 12vh;
   transform: translateX(-100vw);
   background-color: #f9f7f3;
   border: rgb(29, 29, 29) solid 1px;
@@ -117,7 +119,7 @@
 #hero-section .hero_left-container p {
   color: rgb(29, 29, 29);
   margin: 0.8rem 1rem 0.8rem 1rem;
-  font-size: 1rem;
+  font-size: var(--normal-font);
   text-align: justify;
 }
 #hero-section.animated::after {
@@ -173,7 +175,7 @@
 #hero-section-mobile-tablet .hero_container .hero_container p {
   color: rgb(29, 29, 29);
   margin: 0.8rem 1rem 0.8rem 1rem;
-  font-size: 1rem;
+  font-size: var(--normal-font);
   text-align: justify;
 }
 
@@ -219,7 +221,7 @@
 }
 #intro-section .intro_container .intro_top-container h3 {
   margin: 0;
-  font-size: 1rem;
+  font-size: var(--normal-font);
   font-weight: 400;
   transform: translateX(-120%);
   transition: 800ms;
@@ -421,7 +423,7 @@
   background-image: url(../img/Figma-Icon.svg);
 }
 #skills-section .skills__right-container .skills__items > div .skills___item .skills___name {
-  font-size: 1rem;
+  font-size: var(--normal-font);
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -441,7 +443,7 @@
   height: 50%;
   grid-row: 1;
   grid-column: 1;
-  font-size: 1rem;
+  font-size: var(--normal-font);
   opacity: 0;
   transition: 300ms;
 }
@@ -498,7 +500,7 @@
 #projects-section .projects_main .projects-anchor {
   text-decoration: none;
   color: rgb(29, 29, 29);
-  font-size: 1rem;
+  font-size: var(--normal-font);
   position: relative;
   height: 1rem;
   transition: 300ms;
@@ -632,7 +634,7 @@
   z-index: 5;
 }
 #temporary-name .temporary-name__container > div .project_img > span:nth-child(1) {
-  font-size: 1rem;
+  font-size: var(--normal-font);
   width: 100%;
   padding-left: 2px;
   display: flex;
@@ -668,7 +670,7 @@
   justify-content: center;
   align-items: center;
   text-align: justify;
-  font-size: 0.8rem;
+  font-size: var(--small-font);
   padding: 2rem;
   transition: 300ms;
   opacity: 0;
@@ -685,7 +687,7 @@
   opacity: 1;
 }
 #temporary-name .temporary-name__container > div .project_img > span:nth-child(3) {
-  font-size: 0.8rem;
+  font-size: var(--small-font);
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -708,7 +710,7 @@
   z-index: 5;
   height: 100vh;
   width: 100%;
-  font-size: 1rem;
+  font-size: var(--normal-font);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -763,7 +765,7 @@
   position: absolute;
   opacity: 0;
   cursor: default;
-  font-size: 1rem;
+  font-size: var(--normal-font);
   top: 20px;
   right: 0;
   transform: rotate(10deg);
@@ -775,10 +777,10 @@
 #contact-section .contact_container .contact__info-wrapper .contact___info-email .contact___email-button {
   transition: 300ms;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: var(--normal-font);
 }
 #contact-section .contact_container .contact__info-wrapper .contact___info-email p {
-  font-size: 1rem;
+  font-size: var(--normal-font);
 }
 #contact-section .contact_container .contact__info-wrapper .contact___info-email p:nth-child(1) {
   transition: 300ms;
@@ -806,7 +808,7 @@
   border: none;
   background-color: transparent;
   color: white;
-  font-size: 1rem;
+  font-size: var(--normal-font);
   font-family: Poppins;
   cursor: pointer;
   transition: 300ms;
@@ -853,7 +855,7 @@
 #contact-section .contact_form .contact_form-title {
   height: 20%;
   color: white;
-  font-size: 1rem;
+  font-size: var(--normal-font);
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -971,7 +973,6 @@
   height: 100%;
   color: rgb(29, 29, 29);
   text-decoration: none;
-  font-size: 1rem;
   position: relative;
   transition: 100ms;
 }
@@ -1044,11 +1045,11 @@
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0);
-  font-size: 1rem;
   font-family: Poppins;
   cursor: pointer;
   border: none;
   position: relative;
+  font-size: 1rem;
 }
 .navbar__scroll-info > span .navbar___menu-button:hover .navbar__menu-toggle span {
   transform: translateY(-1.5em);
@@ -1218,7 +1219,7 @@ footer {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  font-size: 0.8rem;
+  font-size: var(--small-font);
 }
 footer a {
   color: #DD4083;
@@ -1333,6 +1334,11 @@ u:after {
   #temporary-name .temporary-name__container > div .project_img div {
     display: none;
   }
+  #hero-section .hero_left-container {
+    left: 2.25vw;
+    width: 45vw;
+    margin-bottom: 25vh;
+  }
 }
 @media only screen and (max-width: 900px) and (min-width: 500px) {
   html {
@@ -1371,6 +1377,7 @@ u:after {
   :root {
     --medium-font: 6vw;
     --big-font: 9.5vw;
+    --small-font: 2vw;
   }
   .mobile-only {
     display: flex;

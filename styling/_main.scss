@@ -73,10 +73,10 @@
     @include center-flex(row);
     position: absolute;
     z-index: 1000;
-    width: 38vw;
+    width: 42vw;
     bottom: 0;
-    left: 6vw;
-    margin-bottom: 15vh;
+    left: 4vw;
+    margin-bottom: 12vh;
     transform: translateX(-$full-width);
     background-color: $background;
     border: $dark-color solid 1px;
