@@ -419,6 +419,17 @@ u {
     }
 }
 
+@keyframes slide-out-left {
+    0% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate3d(-100%, 0, 0);
+        opacity: 2;
+    }
+}
+
 @keyframes slide-in-right {
     0% {
         transform: translatex(-100%);

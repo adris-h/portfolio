@@ -24,11 +24,13 @@
     .skills__title {
       $anim-delay: 150ms;
       width: 90%;
+
       &.inactive {
+        animation: slide-out-left 800ms ease forwards;
         h2 span {
           animation: fade-out 800ms ease-in forwards;
         }
-        // animation: slide-in-left 800ms ease forwards;
+
       }
 
       &.active {
