@@ -1,5 +1,6 @@
 :root {
-  --medium-font: 5rem;
+  --medium-font: 6vw;
+  --big-font: 15vw;
 }
 
 @font-face {
@@ -61,7 +62,7 @@
 }
 #hero-section .hero_title h1 {
   z-index: 2;
-  font-size: 10rem;
+  font-size: var(--big-font);
   line-height: 80%;
   margin: 0;
   text-shadow: 2px 0 0 white;
@@ -122,6 +123,58 @@
 #hero-section.animated::after {
   transform: rotate(45deg);
   translate: 25% 25%;
+}
+
+#hero-section-mobile-tablet {
+  width: 100vw;
+  height: 100vh;
+}
+#hero-section-mobile-tablet .hero_container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#hero-section-mobile-tablet .hero_container .hero_title {
+  animation-delay: 2.8s;
+}
+#hero-section-mobile-tablet .hero_container .hero_title h1 {
+  z-index: 2;
+  font-size: var(--big-font);
+  line-height: 80%;
+  margin: 0;
+  text-shadow: 2px 0 0 white;
+}
+#hero-section-mobile-tablet .hero_container .hero_title h2 {
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  font-size: calc(var(--big-font) / 2);
+}
+#hero-section-mobile-tablet .hero_container .hero-mobile_bcg-line {
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%) rotate(-135deg);
+  z-index: -1;
+  background-color: #DD4083;
+  width: 50vw;
+  height: 150vh;
+}
+#hero-section-mobile-tablet .hero_container .hero_container {
+  background-color: #f9f7f3;
+  border: rgb(29, 29, 29) solid 1px;
+  width: 80%;
+  height: fit-content;
+}
+#hero-section-mobile-tablet .hero_container .hero_container p {
+  color: rgb(29, 29, 29);
+  margin: 0.8rem 1rem 0.8rem 1rem;
+  font-size: 1rem;
+  text-align: justify;
 }
 
 #intro-section {
@@ -311,6 +364,7 @@
   width: 100%;
   height: 20%;
   padding-left: 1.5rem;
+  padding-top: 1rem;
   margin-bottom: 1rem;
   font-family: "Montserrat", sans-serif;
   opacity: 0.5;
@@ -380,6 +434,7 @@
   display: grid;
   align-items: center;
   justify-items: center;
+  padding-bottom: 1rem;
 }
 #skills-section .skills__right-container .skills__descriptions p {
   width: 85%;
@@ -1283,9 +1338,6 @@ u:after {
   html {
     font-size: 16px;
   }
-  :root {
-    --medium-font: 3rem;
-  }
   #skills-section {
     flex-direction: column;
   }
@@ -1316,6 +1368,13 @@ u:after {
   }
 }
 @media (orientation: portrait) {
+  :root {
+    --medium-font: 6vw;
+    --big-font: 9.5vw;
+  }
+  .mobile-only {
+    display: flex;
+  }
   #hero-section {
     display: none;
   }
@@ -1355,10 +1414,7 @@ u:after {
     padding-left: 0;
   }
 }
-@media only screen and (max-width: 600px) and (orientation: portrait) {
-  :root {
-    --medium-font: 2rem;
-  }
+@media only screen and (max-width: 550px) and (orientation: portrait) {
   html {
     font-size: 16px;
   }
@@ -1376,9 +1432,6 @@ u:after {
   }
   .navbar {
     display: none;
-  }
-  .mobile-only {
-    display: flex;
   }
   .mobile-nav {
     transition: 500ms;

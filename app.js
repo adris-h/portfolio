@@ -92,14 +92,9 @@ function setSectionPositions() {
     const vh = window.innerHeight;
     if (window.matchMedia("(max-width: 768px)").matches) {
         aboutmePosition = vh * 0.8;
-        skillsPosition = vh * 1.5;
+        skillsPosition = vh * 1.2;
         projectsPosition = vh * 2;
-        contactPosition = vh * 3;
-    } else if (window.matchMedia("(max-width: 1024px)").matches) {
-        aboutmePosition = vh * 1.1;
-        skillsPosition = vh * 2.4;
-        projectsPosition = vh * 3.2;
-        contactPosition = vh * 4.4;
+        contactPosition = vh * 2.5;
     } else {
         aboutmePosition = vh * 1.7;
         skillsPosition = vh * 2.3;
@@ -141,6 +136,27 @@ window.addEventListener("scroll", function () {
         posSpan.textContent = 'home';
     }
 });
+
+// -MOBILE POS
+const mobilePos = document.querySelector('.mobile-nav__position-span');
+window.addEventListener("scroll", function() {
+    if (bigMenu.classList.contains('active')) return;
+    const currentPosition = window.scrollY;
+    if (currentPosition > aboutmePosition) {
+        if (currentPosition < skillsPosition) {
+            mobilePos.textContent = 'about me';
+        } else if (currentPosition < projectsPosition) {
+            mobilePos.textContent = 'skills';
+        } else if (currentPosition < contactPosition) {
+            mobilePos.textContent = 'projects';
+        } else {
+            mobilePos.textContent = 'contact';
+        }
+    } else {
+        mobilePos.textContent = 'home';
+    }
+});
+
 
 
 
@@ -184,29 +200,6 @@ projectImg2.addEventListener('mouseout', e => {
     projectIcon2.classList.remove('active');
     projectText2.classList.remove('active');
 })
-
-
-
-
-// -MOBILE POS
-const mobilePos = document.querySelector('.mobile-nav__position-span');
-window.addEventListener("scroll", function() {
-    if (bigMenu.classList.contains('active')) return;
-    const currentPosition = window.scrollY;
-    if (currentPosition > aboutmePosition) {
-        if (currentPosition < skillsPosition) {
-            mobilePos.textContent = 'about me';
-        } else if (currentPosition < projectsPosition) {
-            mobilePos.textContent = 'skills';
-        } else if (currentPosition < contactPositon) {
-            mobilePos.textContent = 'projects';
-        } else {
-            mobilePos.textContent = 'contact';
-        }
-    } else {
-        mobilePos.textContent = 'home';
-    }
-});
 
 
 

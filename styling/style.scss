@@ -14,13 +14,14 @@ $heading-font: "Cal Sans", sans-serif;
 $bold-weight: 600;
 
 // FONT SIZE
-$big: 10rem;
+$big: var(--big-font);
 $medium: var(--medium-font);
 $normal: 1rem;
 $small: .8rem;
 
 :root{
-    --medium-font: 5rem;
+    --medium-font: 6vw;
+    --big-font: 15vw;
 }
 
 // COLORS
@@ -219,7 +220,7 @@ u{
 
 @media only screen and (max-width: 900px){
     #temporary-name{
-        height: 100vh;
+        height: $full-height;
         .temporary-name__container{
             & > div{
                 .project_img{
@@ -237,14 +238,10 @@ u{
 }
 
 @media  only screen and (max-width: 900px) and (min-width: 500px){
+
     html{
         font-size: 16px;
     }
-    :root{
-        --medium-font: 3rem;
-    }
-
-
     #skills-section{
         flex-direction: column;
         .skills__left-container{
@@ -277,6 +274,13 @@ u{
 }
 
 @media (orientation: portrait){
+    :root{
+        --medium-font: 6vw;
+        --big-font: 9.5vw;
+    }
+    .mobile-only{
+        display: flex;
+    }
     #hero-section{
         display: none;
     }
@@ -316,10 +320,7 @@ u{
     }
 }
 
-@media  only screen and (max-width: 600px) and (orientation: portrait){
-    :root{
-        --medium-font: 2rem;
-    }
+@media  only screen and (max-width: 550px) and (orientation: portrait){
     html{
         font-size: 16px;
     }
@@ -342,9 +343,6 @@ u{
     }
     .navbar{
         display: none;
-    }
-    .mobile-only{
-        display: flex;
     }
     .mobile-nav{
         transition: 500ms;
@@ -497,6 +495,7 @@ u{
     }
 
 }
+
 
 
 // ---------------------
