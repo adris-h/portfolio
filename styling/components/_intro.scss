@@ -1,0 +1,109 @@
+
+#intro-section {
+  border-top: 3px solid $dark-color;
+  width: 100%;
+  background-color: $dark-color;
+  .intro_container {
+    @include flex(column);
+    padding: 10rem 0;
+    gap: 4%;
+    width: 100%;
+    border-radius: 20px;
+    @extend %light-background;
+
+    .intro_top-container {
+      @include flex(column, flex-end, flex-start);
+      height: 60%;
+      width: 100%;
+      padding-left: 5vh;
+
+      h2 {
+        margin: 0;
+        font-size: $medium;
+        line-height: $medium;
+        transform: translateX(-120%);
+        transition: $transition;
+
+        span {
+          text-transform: uppercase;
+        }
+
+        &.active {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      h3 {
+        margin: 0;
+        font-size: $normal;
+        font-weight: 400;
+        transform: translateX(-120%);
+        transition: $transition;
+
+        &.active {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+    }
+
+    .intro_bottom-container {
+      @include flex(column);
+      width: 80%;
+      height: 5rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.07);
+
+      a {
+        font-size: $normal;
+        text-decoration: none;
+        color: $dark-color;
+        position: relative;
+        @include flex();
+        gap: .25rem;
+        transition: $transition;
+        transform: translateX(500%);
+
+        &.active {
+          opacity: 1;
+          transform: translateX(0);
+        }
+
+        .outer {
+          width: 1rem;
+          height: 1rem;
+          background-color: rgba(221, 64, 131, 0.08);
+          border-radius: 50%;
+          @include flex();
+
+          .inner {
+            height: 50%;
+            width: 50%;
+            border-radius: 50%;
+            background-color: $main-color;
+          }
+        }
+
+        &:hover {
+          transform: scale(1.1);
+
+          &::after {
+            width: 55%;
+          }
+        }
+
+        &::after {
+          position: absolute;
+          content: "";
+          bottom: 0;
+          left: 10%;
+          height: 3px;
+          border-radius: 10px;
+          width: 0;
+          background-color: $main-color;
+          transition: 300ms;
+        }
+      }
+    }
+  }
+}

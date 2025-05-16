@@ -1,12 +1,11 @@
 
 // -NAVBAR
 .navbar {
-  @include center-flex(row);
+  @include flex();
   width: 100dvw;
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
   height: 10vh;
   transform: none;
 
@@ -18,10 +17,10 @@
   overflow: hidden;
   &_container{
     box-sizing: border-box;
-    @include center-flex(row);
+    @include flex();
     height: 100%;
     width: 100%;
-    padding: 20px 20px;
+    padding: 1rem 1rem;
     position: relative;
   }
 
@@ -44,6 +43,7 @@
       text-decoration: none;
       position: relative;
       transition: 100ms;
+
       &:hover{
         background-color: $main-color;
         color: white;
@@ -57,21 +57,21 @@
       }
       &.navbar___logo,
       &.navbar___contact-link{
-        padding: 0 10px;
+        padding: 10px;
         height: 100%;
-        @include center-flex(row);
+        @include flex();
       }
       &.navbar___contact-link{
         border-left: 1px solid $dark-color;
       }
     }
     .navbar____links{
-      @include center-flex(row);
+      @include flex();
       height: 100%;
       a{
         width: 8rem;
-        @include center-flex(row);
-        padding: 0 10px;
+        @include flex();
+        padding: 10px;
       }
     }
 
@@ -98,10 +98,10 @@
     }
     & > span{
 
-      @include center-flex(row);
+      @include flex();
       margin-left: 1vh;
       .navbar___menu-button{
-        @include center-flex(row);
+        @include flex();
         background-color: rgba(0, 0, 0, 0);
         font-family: $main-font;
         cursor: pointer;
@@ -222,7 +222,7 @@
 
 // -MENU
 #menu{
-  @include center-flex(row);
+  @include flex();
   position: fixed;
   font-weight: $bold-weight;
 
@@ -260,11 +260,11 @@
       margin: 0;
       padding: 0;
       .menu__items{
-        border-bottom: 1px solid $dark-background;
+        border-bottom: 1px solid $dark-color;
         height: calc(100%/4);
-        @include center-flex(row);
+        @include flex();
         & > div{
-          @include center-flex(row)
+          @include flex()
         }
         .menu___number{
           width: 20%;
@@ -309,7 +309,7 @@
     a{
       text-decoration: none;
       cursor: pointer;
-      @include center-flex(row);
+      @include flex();
     }
     & > span {
 

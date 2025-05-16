@@ -77,8 +77,7 @@ document.querySelectorAll('.menu-link').forEach(link => {
 
 // MENU POSITION TRACKING
 const navBar = document.querySelector(".navbar");
-const projectsContainerTop = document.querySelector('.projects__container-top');
-const projectsContainerBot = document.querySelector('.projects__container-bottom');
+
 const introHeading = document.querySelector('.intro_top-container h2');
 const introSubheading = document.querySelector('.intro_top-container h3');
 const introText = document.querySelector('.intro_bottom-container a');
@@ -112,28 +111,43 @@ window.addEventListener("scroll", function () {
         navBar.classList.add("scrolled");
         if (currentPosition < skillsPosition) {
             posSpan.textContent = 'about me';
+
             introHeading.classList.add('active');
             introSubheading.classList.add('active');
             introText.classList.add('active');
-            console.log("about meeee");
+
+
+            skillsHeading.classList.remove('active');
+            skillsHeading.classList.add('inactive');
+
         } else if (currentPosition < projectsPosition) {
             posSpan.textContent = 'skills';
+
+            skillsHeading.classList.remove('inactive');
             skillsHeading.classList.add('active');
+
+
+            if (window.matchMedia("(min-width: 900px)").matches) {
+                projectsAnim.forEach(link => link.classList.remove('active'));
+                projectsAnim.forEach(link => link.classList.add('inactive'));
+            }
+
         } else if (currentPosition < contactPosition) {
             posSpan.textContent = 'projects';
 
             if (window.matchMedia("(min-width: 900px)").matches) {
                 projectsAnim.forEach(link => link.classList.add('active'));
+                projectsAnim.forEach(link => link.classList.remove('inactive'));
             }
-
-            projectsContainerTop.classList.add('visible');
-            projectsContainerBot.classList.add('visible');
         } else {
             posSpan.textContent = 'contact';
         }
     } else {
         navBar.classList.remove("scrolled");
         posSpan.textContent = 'home';
+        introHeading.classList.remove('active');
+        introSubheading.classList.remove('active');
+        introText.classList.remove('active');
     }
 });
 
@@ -156,8 +170,6 @@ window.addEventListener("scroll", function() {
         mobilePos.textContent = 'home';
     }
 });
-
-
 
 
 // CHANGING TEXT

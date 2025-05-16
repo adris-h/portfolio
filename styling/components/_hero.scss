@@ -1,0 +1,131 @@
+
+#hero-section {
+  @include flex(column);
+  @extend %light-background;
+  height: $full-height;
+  z-index: -100;
+  position: relative;
+  box-sizing: border-box;
+
+  .hero_title {
+    animation-delay: 2.8s;
+
+    h1 {
+      z-index: 2;
+      font-size: $big;
+      line-height: 80%;
+      margin: 0;
+      text-shadow: 2px 0 0 white;
+    }
+
+    h2 {
+      text-align: right;
+      width: 100%;
+    }
+  }
+
+  .hero_right-container {
+    @include flex(column);
+    position: absolute;
+    transform: translateX($full-width);
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-color: $dark-color;
+
+    .hero__photo {
+      width: 50%;
+      height: 60%;
+      background: url(../../img/c8bb9e7a2105ebb57e7a7638dcae825d.jpg) center/cover;
+    }
+  }
+
+  .hero_bcg-line {
+    position: absolute;
+    top: -10;
+    left: 50%;
+    z-index: -1;
+    background-color: $main-color;
+    width: 25vw;
+    height: 200vw;
+    transform: rotate(60deg);
+  }
+
+  .hero_left-container {
+    @include flex();
+    position: absolute;
+    z-index: 1000;
+    width: 42vw;
+    bottom: 0;
+    left: 4vw;
+    margin-bottom: 12vh;
+    transform: translateX(-$full-width);
+    @extend %light-background;
+    border: $dark-color solid 1px;
+
+    p {
+      color: $dark-color;
+      margin: .8rem 1rem;
+      font-size: $normal;
+      text-align: justify;
+    }
+  }
+
+  &.animated::after {
+    transform: rotate(45deg);
+    translate: 25% 25%;
+  }
+}
+
+// Mobile hero section
+#hero-section-mobile-tablet {
+  width: 100vw;
+  height: 100vh;
+
+  .hero_container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    @include flex(column);
+    gap: 1rem;
+
+    .hero_title {
+      animation-delay: 2.8s;
+      @include flex(column);
+
+      h1 {
+        z-index: 2;
+        font-size: $big;
+        line-height: 80%;
+        margin: 0;
+        text-shadow: 2px 0 0 white;
+      }
+    }
+
+    .hero-mobile_bcg-line {
+      position: absolute;
+      top: 50vh;
+      left: 50vw;
+      transform: translate(-50%, -50%) rotate(-135deg);
+      z-index: -1;
+      background-color: $main-color;
+      width: 50vw;
+      height: 150vh;
+    }
+
+    .hero_container {
+      @extend %light-background;
+      border: $dark-color solid 1px;
+      width: 80%;
+      height: fit-content;
+
+      p {
+        color: $dark-color;
+        margin: .8rem 1rem;
+        font-size: $normal;
+        text-align: justify;
+      }
+    }
+  }
+}
