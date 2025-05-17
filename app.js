@@ -100,12 +100,12 @@ function setSectionPositions() {
         aboutmePosition = vh * 0.5;
         skillsPosition = vh;
         projectsPosition = vh * 2.4;
-        contactPosition = vh * 3.4;
+        contactPosition = vh * 3.2;
     } else {
         aboutmePosition = vh * 1.7;
         skillsPosition = vh * 2.3;
         projectsPosition = vh * 3.5;
-        contactPosition = vh * 3.8;
+        contactPosition = vh * 4.3;
     }
 }
 
