@@ -9,11 +9,21 @@ $main-font: Poppins, sans-serif;
 $heading-font: "Cal Sans", sans-serif;
 $bold-weight: 600;
 
+
 // FONT SIZES
+:root {
+  --medium-font: 6vw;
+  --big-font: 15vw;
+  --small-font: 1vw;
+  --normal-font: 1.5vw;
+  --small-heading: 2.5vw;
+}
+
 $big: var(--big-font);
 $medium: var(--medium-font);
 $normal: var(--normal-font);
 $small: var(--small-font);
+$small-heading: var(--small-heading);
 
 // COLORS
 $main-color: #DD4083;

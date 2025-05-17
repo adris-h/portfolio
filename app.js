@@ -86,6 +86,8 @@ const skillsHeading = document.querySelector('.skills__title');
 
 const projectsAnim = document.querySelectorAll('#temporary-name a');
 
+const contactsAnim = document.querySelector('.contact__container');
+
 let aboutmePosition, skillsPosition, projectsPosition, contactPosition;
 function setSectionPositions() {
     const vh = window.innerHeight;
@@ -93,12 +95,12 @@ function setSectionPositions() {
         aboutmePosition = vh * 0.5;
         skillsPosition = vh;
         projectsPosition = vh * 2.2;
-        contactPosition = vh * 3.5;
+        projectsPosition = vh * 3;
     } else {
         aboutmePosition = vh * 1.7;
         skillsPosition = vh * 2.3;
         projectsPosition = vh * 3.5;
-        contactPosition = vh * 4.5;
+        contactPosition = vh * 3.8;
     }
 }
 
@@ -135,12 +137,15 @@ window.addEventListener("scroll", function () {
         } else if (currentPosition < contactPosition) {
             posSpan.textContent = 'projects';
 
+            contactsAnim.classList.remove('active');
+
             if (window.matchMedia("(min-width: 900px)").matches) {
                 projectsAnim.forEach(link => link.classList.add('active'));
                 projectsAnim.forEach(link => link.classList.remove('inactive'));
             }
         } else {
             posSpan.textContent = 'contact';
+            contactsAnim.classList.add('active');
         }
     } else {
         navBar.classList.remove("scrolled");
@@ -161,10 +166,8 @@ window.addEventListener("scroll", function() {
             mobilePos.textContent = 'about me';
         } else if (currentPosition < projectsPosition) {
             mobilePos.textContent = 'skills';
-        } else if (currentPosition < contactPosition) {
+        } else{
             mobilePos.textContent = 'projects';
-        } else {
-            mobilePos.textContent = 'contact';
         }
     } else {
         mobilePos.textContent = 'home';
@@ -215,48 +218,13 @@ projectImg2.addEventListener('mouseout', e => {
 
 
 
-function doThis() {
-    console.log("You scrolled to target position!");
-}
 
-window.addEventListener("scroll", () => {
-   // console.log("Current position:", window.scrollY);
-});
-//
-
-const absText = document.querySelector('.contact___abs-text')
-const copyButton = document.getElementById("copy-text")
+const copyButton = document.getElementById("copy-button")
 copyButton.addEventListener('click', () =>{
     const email = "adrianahanouskova2007@gmail.com"
     navigator.clipboard.writeText(email);
-})
+});
 
-copyButton.addEventListener('mouseover', () => {
-    absText.classList.add('hovered')
-    console.log("hovered!")
-})
-
-copyButton.addEventListener('mouseout', () => {
-    absText.classList.remove('hovered')
-})
-
-const topInfo = document.querySelector(".iw1")
-const bottomInfo = document.querySelector(".contact__info-wrapper--2")
-
-bottomInfo.addEventListener('mouseover', () => {
-    bottomInfo.classList.add("selected")
-    topInfo.classList.add("unselected")
-})
-bottomInfo.addEventListener('mouseout', () => {
-    bottomInfo.classList.remove("selected")
-    topInfo.classList.remove("unselected")
-})
-
-const cfButton = document.getElementById("cf-button")
-const contForm = document.querySelector(".contact_form")
-cfButton.addEventListener('click', () => {
-    contForm.classList.toggle('active')
-})
 
 
 // SKILLS SECTION - HOVER - DESCRIPTIONS
@@ -373,3 +341,31 @@ if (window.getComputedStyle(document.getElementById("hero-section")).display !==
             ease: "power2.out"
         }, "<");
 }
+
+
+window.addEventListener('DOMContentLoaded', () => {
+    function updateTimeUTCPlus2() {
+        const now = new Date();
+
+        const options = {
+            timeZone: 'Europe/Prague',
+            year: 'numeric',
+            month: 'numeric',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: false,
+        };
+        const formatter = new Intl.DateTimeFormat('cs-CZ', options);
+        const formatted = formatter.format(now).replace(',', '');
+        const isoString = now.toISOString();
+        const timeEl = document.getElementById('current-time');
+        if (timeEl) {
+            timeEl.textContent = formatted;
+            timeEl.setAttribute('datetime', isoString);
+        }
+    }
+
+    updateTimeUTCPlus2();
+    setInterval(updateTimeUTCPlus2, 60000);
+});

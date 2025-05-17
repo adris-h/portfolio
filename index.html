@@ -5,6 +5,8 @@
 
         <link rel="icon" type="image/x-icon" href="favicon_io-2/favicon.ico">
 
+        <meta name="description" content="Portfolio of Adriana Hanousková - Front End Developer"/>
+
         <!-- FAVICON -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/fontawesome.min.css        ">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/solid.min.css">
@@ -113,7 +115,7 @@
                 <div class="hero_bcg-line height-change"></div>
                 <!-- CONTENT THAT APPEARS WITH SCROLL ANIMATION -->
                 <div class="hero_left-container">
-                    <p> Hi, I’m Adriana “Adris” Hanousková - student at CHC Zlín, currently studying Game & Mobile Application Development. I like clean code, visually stunning interfaces and turning ideas into things that actually work.</p>
+                    <p> Hi, I’m Adriana “Adris” Hanousková - student at CHC Zlín, currently studying Game & Mobile Application Development. </p> <!--I like clean code, visually stunning interfaces and turning ideas into things that actually work.-->
                 </div>
                 <div class="hero_right-container">
                     <div class="hero__photo"></div>
@@ -128,7 +130,7 @@
                     </div>
                     <div class="hero-mobile_bcg-line"></div>
                     <div class="hero_container">
-                        <p> Hi, I’m Adriana “Adris” Hanousková - student at CHC Zlín, currently studying Game & Mobile Application Development. I like clean code, visually stunning interfaces and turning ideas into things that actually work.</p>
+                        <p> Hi, I’m Adriana “Adris” Hanousková - student at CHC Zlín, currently studying Game & Mobile Application Development. </p>
                     </div>
                 </div>
             </section>
@@ -186,7 +188,7 @@
                         <p class="skills___skill-1-desc">Years of writing clean, semantic HTML taught me that <u>structure is</u>  <u>everything</u>.</p>
                         <p class="skills___skill-2-desc">With CSS, I build <u>responsive</u>, <u>consistent layouts</u>. I pay attention to structure and maintainability across devices.</p>
                         <p class="skills___skill-3-desc">I use JavaScript to add <u>interactivity</u> — from small features to more complex ones. My experience covers both native JS and working with libraries.</p>
-                        <p class="skills___skill-4-desc">All my designs are made in Figma. Every element is placed with obssessive care - <u>if perfection isn't pursued with hate, it's never truly</u> <u>perfection.</u></p>
+                        <p class="skills___skill-4-desc">All my designs are made in Figma. Every element is placed with obssessive care</u></p>
                     </div>
                 </div>
             </section>
@@ -206,7 +208,7 @@
                                 <i class="fa-solid fa-arrow-right"></i>
                                 <p>Fan-made Valorant site showcasing agent profiles, abilities, strategies, esport insight, and a comprehensive beginner’s guide. </p>
                             </a>
-                            <span><span><b>Completed</b> in January 2025</span>html / css / js</span>
+                            <span><span><b>Completed</b> in January 2025</span>Frontend & Design</span>
                             <div></div>
                         </div>
                     </div>
@@ -217,64 +219,45 @@
                                 <i class="fa-solid fa-arrow-right"></i>
                                 <p>Showcase site for a game "Beneath the Surface" made in Unity featuring gameplay highlights, clean design, interactive elements.</p>
                             </a>
-                            <span><span><b>Completed</b> in January 2024</span>Fan-made site</span>
+                            <span><span><b>Completed</b> in January 2024</span>Frontend & Design</span>
                             <div></div>
                         </div>
                     </div>
                 </div>
             </section>
-
-            <!-- CONTACT SECTION -->
-            <section id="contact-section">
-                <div class="contact_container">
-                    <div class="contact__info-wrapper contact__info-wrapper--1">
-                        <div class="contact___info contact___info-location">
-                            <span>Czech Republic, Zlínský Kraj</span>
-                            <p>located in</p>
-                        </div>
-                        <div class="contact___info contact___info-socials">
-                            <div>
-                                <a href="#">Instagram</a>
-                                <a href="#">Linkedin</a>
-                            </div>
-                            <p>social media</p>
-                        </div>
-                    </div>
-                    <div class="contact__info-wrapper contact__info-wrapper--2">
-                        <div class="contact___info contact___info-email">
-                            <p>Reach out!</p>
-                            <p class="contact___abs-text">click to copy</p>
-                            <a class="contact___email-button" id="copy-text">adrianahanouskova2007@gmail.com</a>
-                        </div>
-                    </div>
-                    <button id="cf-button">toggle contact form</button>
-                </div>
-
-                <!-- CONTACT POP UP FORM -->
-                <div class="contact_form">
-                    <div class="contact_form-title">
-                        <h2 class="bagel-fat-one-regular">Let's Talk!</h2>
-                    </div>
-                    <form class="contact_form-inputs">
-                            <label for="input-name" class="visually-hidden">Your Name</label>
-                            <input type="text" id="input-name" name="firstname" placeholder="your name">
-
-                            <label for="input-email" class="visually-hidden">Your Email</label>
-                            <input type="text" id="input-email" name="lastname" placeholder="your email">
-
-                            <label for="input-message" class="visually-hidden">Your Message</label>
-                            <textarea type="text" id="input-message" name="message" placeholder="your message"></textarea>
-                            <input type="submit" id="input-submit" value="send">
-                    </form>
-                </div>
-
-            </section>
         </main>
-
-        <!--
-        <footer id="footer">
-            <p>H1 Font: "Bagel Fat One" designed by <a href="https://fonts.adobe.com/fonts/bagel-fat-one">Oyatsupan Fonts</a> (licensed through Adobe Fonts)</p>
+        <!-- CONTACT  -->
+        <footer id="contact-section" aria-labelledby="contact-heading">
+            <div class="contact__container">
+                <section class="contact" aria-label="Contact information">
+                    <h2 class="contact__title">Get in touch!</h2>
+                    <span class="contact__email">
+                        <span class="contact__email-label">copy to clipboard</span>
+                        <button id="copy-button" class="contact__email-button">adrianahanouskova2007@gmail.com</button>
+                    </span>
+                    <address class="contact__info">
+                        <div class="contact__info-logo" aria-hidden="true"><img src="logo.svg" alt=""></div>
+                        <div class="contact__location">
+                            <h3 class="contact__location-title">Location & Timezone</h3>
+                            <div class="contact__location-details">
+                                <p><strong>Czech Republic, Zlín</strong></p>
+                                <p>UTC +2 </p>
+                                <p>Central European Summer Time</p>
+                                <p><time id="current-time" datetime=""></time></p>
+                            </div>
+                        </div>
+                    </address>
+                </section>
+                <section class="footer-info">
+                    <p class="footer-info__copyright">&copy; <span id="current-year"></span> Adriana Hanousková. All rights reserved.</p>
+                    <ul class="footer-info__socials" aria-label="Social media links">
+                        <li><a href="#" aria-label="Instagram">Instagram</a></li>
+                        <li><a href="#" aria-label="Twitter">Twitter</a></li>
+                        <li><a href="#" aria-label="GitHub">GitHub</a></li>
+                        <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
+                    </ul>
+                </section>
+            </div>
         </footer>
-        -->
     </body>
 </html>

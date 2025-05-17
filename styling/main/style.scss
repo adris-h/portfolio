@@ -1,10 +1,5 @@
 
-:root {
-    --medium-font: 6vw;
-    --big-font: 15vw;
-    --small-font: 1vw;
-    --normal-font: 1.5vw;
-}
+
 
 
 // --------------------------
@@ -46,17 +41,22 @@
 @import '../components/intro';
 @import '../components/skills';
 @import '../components/projects';
-@import '../components/contact';
+//@import '../components/contact';
 
 @import '../components/navbar';
 @import '../components/footer';
 
 
 ::selection {
-    background: rgba(162, 162, 162, 0.54);
+    //background: rgba(162, 162, 162, 0.54);
+    background: #dd4083;
 }
 
-
+.bold-heading{
+    font-family:$main-font;
+    font-weight: 1000;
+    letter-spacing: -10px;
+}
 html {
     overflow-x: hidden;
     scroll-behavior: smooth;
@@ -66,7 +66,7 @@ html {
 body {
     margin: 0;
     font-family: $main-font;
-    background-color: $background;
+    background-color: $dark-color;
     color: $dark-color;
     width: 100dvw;
 }
@@ -138,7 +138,6 @@ u {
     background-color: $dark-color;
     color: white;
     border: $dark-color solid 2px;
-    border-width: 2px 0;
 
     .moving-text__inner {
         width: max-content;
@@ -302,6 +301,7 @@ u {
         --big-font: 14.5vw;
         --normal-font: 4vw;
         --small-font: 3vw;
+        --small-heading: 5vw;
     }
 
     .mobile-only {
@@ -407,6 +407,40 @@ u {
                     flex-direction: row;
                 }
             }
+        }
+
+        footer{
+            .contact__container {
+                .contact{
+                    &__info{
+                        flex-direction: column;
+                        align-items: flex-start;
+                        .contact__location{
+                            align-items: flex-start;
+                            width: 100%;
+                            &-details{
+                                align-items: flex-start;
+                            }
+                        }
+                    }
+                }
+                .footer-info{
+                    flex-direction: column-reverse;
+                    align-items: center;
+                    justify-content: center;
+                    padding-top: 2vh;
+                    padding-bottom: 2vh;
+                    gap: 1rem;
+                    &__socials{
+                        padding: 0;
+                        margin: 0;
+                    }
+                    p{
+                        margin: 0;
+                    }
+                }
+            }
+
         }
     }
 }
@@ -536,5 +570,4 @@ u {
 
 .height-change {
     animation: height-animation 2000ms ease forwards;
-    animation-delay: 2.8s;
 }
