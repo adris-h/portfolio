@@ -91,8 +91,8 @@ function setSectionPositions() {
     const vh = window.innerHeight;
     if (window.matchMedia("(max-width: 600px)").matches) {
         aboutmePosition = vh * 0.5;
-        skillsPosition = vh * 1;
-        projectsPosition = vh * 2.5;
+        skillsPosition = vh;
+        projectsPosition = vh * 2.2;
         contactPosition = vh * 3.5;
     } else {
         aboutmePosition = vh * 1.7;
@@ -270,8 +270,12 @@ const secondDescription = document.querySelector(".skills___skill-2-desc");
 const thirdDescription = document.querySelector(".skills___skill-3-desc");
 const fourthDescription = document.querySelector(".skills___skill-4-desc");
 
+const skillHolder = document.querySelector(".skills__right-container");
+
 // First skill
 firstSkill.addEventListener('mouseover', () => {
+    skillHolder.classList.add('active');
+
     firstDescription.classList.add('active');
     secondDescription.classList.remove('active');
     thirdDescription.classList.remove('active');
@@ -284,6 +288,8 @@ firstSkill.addEventListener('mouseover', () => {
 });
 
 secondSkill.addEventListener('mouseover', () => {
+    skillHolder.classList.add('active');
+
     secondDescription.classList.add('active');
     firstDescription.classList.remove('active');
     thirdDescription.classList.remove('active');
@@ -296,6 +302,8 @@ secondSkill.addEventListener('mouseover', () => {
 });
 
 thirdSkill.addEventListener('mouseover', () => {
+    skillHolder.classList.add('active');
+
     thirdDescription.classList.add('active');
     secondDescription.classList.remove('active');
     firstDescription.classList.remove('active');
@@ -309,6 +317,8 @@ thirdSkill.addEventListener('mouseover', () => {
 
 // Fourth skill
 fourthSkill.addEventListener('mouseover', () => {
+    skillHolder.classList.add('active');
+
     fourthDescription.classList.add('active');
     secondDescription.classList.remove('active');
     thirdDescription.classList.remove('active');

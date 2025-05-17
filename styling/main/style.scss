@@ -246,7 +246,7 @@ u {
     }
 
     // oNLY TABLET
-    @media (min-width: 500px) {
+    @media (min-width: 700px) {
         :root {
             --medium-font: 6vw;
             --big-font: 15vw;
@@ -301,6 +301,7 @@ u {
         --medium-font: 9vw;
         --big-font: 14.5vw;
         --normal-font: 4vw;
+        --small-font: 3vw;
     }
 
     .mobile-only {
@@ -370,7 +371,7 @@ u {
         padding-left: 0;
     }
 
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 700px) {
         html {
             font-size: 16px;
         }
@@ -395,7 +396,12 @@ u {
             height: fit-content;
 
             .skills__right-container {
-                height: fit-content;
+                height: 50vw;
+                transition: 800ms;
+                justify-content: flex-start;
+                &.active{
+                    height: 80vw;
+                }
 
                 .skills__items {
                     flex-direction: row;
