@@ -1373,7 +1373,7 @@ u::after {
   #hero-section .hero_left-container {
     left: 2.25vw;
     width: 45vw;
-    margin-bottom: 15vh;
+    margin-bottom: 10vh;
   }
 }
 @media only screen and (max-width: 900px) {
@@ -1403,15 +1403,39 @@ u::after {
   }
 }
 @media only screen and (max-width: 900px) and (min-width: 500px) {
+  :root {
+    --medium-font: 6vw;
+    --big-font: 15vw;
+    --small-font: 1.8vw;
+    --normal-font: 2vw;
+  }
   html {
     font-size: 16px;
   }
   #skills-section {
-    height: 50vh;
-    flex-direction: row;
+    height: 90vh;
+    flex-direction: column;
   }
-  #skills-section .skills__title h2 {
-    font-size: 3rem;
+  #skills-section .skills__left-container {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    border-bottom: 2px solid rgb(29, 29, 29);
+  }
+  #skills-section .skills__left-container h2 {
+    text-align: center;
+  }
+  #skills-section .skills__right-container {
+    width: 100%;
+    height: 70%;
+  }
+  #skills-section .skills__right-container .skills__items > div .skills___item {
+    width: 20vw;
+    height: 20vw;
   }
   #temporary-name {
     height: 50vw;
@@ -1422,9 +1446,9 @@ u::after {
 }
 @media (orientation: portrait) {
   :root {
-    --medium-font: 6vw;
+    --medium-font: 9vw;
     --big-font: 14.5vw;
-    --normal-font: 3vw;
+    --normal-font: 4vw;
   }
   .mobile-only {
     display: flex;

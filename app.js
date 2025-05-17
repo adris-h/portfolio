@@ -89,7 +89,7 @@ const projectsAnim = document.querySelectorAll('#temporary-name a');
 let aboutmePosition, skillsPosition, projectsPosition, contactPosition;
 function setSectionPositions() {
     const vh = window.innerHeight;
-    if (window.matchMedia("(max-width: 768px)").matches) {
+    if (window.matchMedia("(max-width: 600px)").matches) {
         aboutmePosition = vh * 0.5;
         skillsPosition = vh * 1;
         projectsPosition = vh * 2.5;
