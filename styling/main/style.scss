@@ -237,12 +237,10 @@ u {
         }
     }
 
-    #hero-section {
-        .hero_left-container {
-            left: 2.25vw;
-            width: 45vw;
-        }
+    .mobile-only {
+        display: flex;
     }
+
 
     // oNLY TABLET
     @media (min-width: 700px) {
