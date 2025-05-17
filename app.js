@@ -94,8 +94,8 @@ function setSectionPositions() {
     if (window.matchMedia("(max-width: 600px)").matches) {
         aboutmePosition = vh * 0.5;
         skillsPosition = vh;
-        projectsPosition = vh * 2.2;
-        projectsPosition = vh * 3;
+        projectsPosition = vh * 1.8;
+        contactPosition = vh * 2;
     } else {
         aboutmePosition = vh * 1.7;
         skillsPosition = vh * 2.3;
