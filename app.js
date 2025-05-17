@@ -16,7 +16,7 @@ modeToggleButton.addEventListener('click', () => {
 }); */
 
 
-
+/*
 // LOADING SCREEN
 document.addEventListener("DOMContentLoaded", function () {
     const loadingScreen = document.getElementById("loading-screen");
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
         loadingScreen.innerHTML = "";
     }
 });
-//
+//*/
 // MENU BUTTON TOGGLE
 const bigMenu = document.getElementById("menu");
 const posSpan = document.querySelector('.navbar___position-span');
@@ -90,10 +90,10 @@ let aboutmePosition, skillsPosition, projectsPosition, contactPosition;
 function setSectionPositions() {
     const vh = window.innerHeight;
     if (window.matchMedia("(max-width: 768px)").matches) {
-        aboutmePosition = vh * 0.8;
-        skillsPosition = vh * 1.2;
-        projectsPosition = vh * 2;
-        contactPosition = vh * 3.2;
+        aboutmePosition = vh * 0.5;
+        skillsPosition = vh * 1;
+        projectsPosition = vh * 2.5;
+        contactPosition = vh * 3.5;
     } else {
         aboutmePosition = vh * 1.7;
         skillsPosition = vh * 2.3;

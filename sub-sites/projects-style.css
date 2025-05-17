@@ -388,10 +388,10 @@ body {
   background-color: rgba(0, 0, 0, 0.51);
 }
 #projects-section .projects-section_container .projects__projects-containers .projects__project-container .project-holder-1 {
-  background: url("../img/radianthq-sc.webp") left/cover no-repeat;
+  background: url("../img/projects/radianthq-sc.webp") left/cover no-repeat;
 }
 #projects-section .projects-section_container .projects__projects-containers .projects__project-container .project-holder-2 {
-  background: url("../img/radianthq-sc.webp") left/cover no-repeat;
+  background: url("../img/projects/radianthq-sc.webp") left/cover no-repeat;
 }
 #projects-section .projects-section_container .projects__projects-containers .projects__project-container .project-holder-3 {
   background: url("../img/maze-sc.png") bottom/cover no-repeat;

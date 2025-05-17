@@ -10,10 +10,7 @@
 // --------------------------
 // FONTS
 // --------------------------
-@font-face {
-    font-family: moonget;
-    src: url(../fonts/moon_get/moon_get-Heavy.ttf);
-}
+
 
 
 .cherry-bomb-one-regular {
@@ -38,21 +35,21 @@
 // BASE STYLING
 // --------------------------
 // BASE
-@import 'base/variables';
-@import 'base/mixins';
-@import 'base/placeholders';
+@import '../base/variables';
+@import '../base/mixins';
+@import '../base/placeholders';
 
 
 
 // COMPONENTS
-@import 'components/hero';
-@import 'components/intro';
-@import 'components/skills';
-@import 'components/projects';
-@import 'components/contact';
+@import '../components/hero';
+@import '../components/intro';
+@import '../components/skills';
+@import '../components/projects';
+@import '../components/contact';
 
-@import 'components/navbar';
-@import 'components/footer';
+@import '../components/navbar';
+@import '../components/footer';
 
 
 ::selection {
@@ -109,6 +106,7 @@ u {
     }
 }
 
+/*
 // -LOADING SCREEN
 #loading-screen {
     position: fixed;
@@ -127,7 +125,7 @@ u {
         opacity: 0;
         visibility: hidden;
     }
-}
+} */
 
 
 
@@ -222,14 +220,13 @@ u {
 
 @include respond(mobile-tablet) {
     #temporary-name {
-        height: 120vh;
         padding-top: 10vw;
         padding-bottom: 10vw;
 
         .temporary-name__container > div {
+            height: fit-content;
             .project_img {
                 @include flex(column);
-
                 a {
                     transform: translateY(0);
                 }
@@ -248,42 +245,25 @@ u {
         }
     }
 
+    // oNLY TABLET
     @media (min-width: 500px) {
         html {
             font-size: 16px;
         }
 
         #skills-section {
-            flex-direction: column;
-
-            .skills__left-container {
-                width: 100%;
-                height: 30%;
-                @include flex(column);
-                border-bottom: 2px solid $dark-color;
-
-                h2 {
-                    text-align: center;
-                }
-            }
-
-            .skills__right-container {
-                width: 100%;
-                height: 70%;
-            }
-
+            height: 50vh;
+            flex-direction: row;
             .skills__title h2 {
                 font-size: 3rem;
             }
         }
 
         #temporary-name {
+            height: 50vw;
             .temporary-name__container {
-                flex-direction: column;
+                flex-direction: row;
 
-                & > div {
-                    width: 80%;
-                }
             }
         }
     }
@@ -332,14 +312,24 @@ u {
                 text-align: center;
             }
         }
-
         .skills__right-container {
             width: 100%;
             height: 70%;
+
+            .skills__items{
+                & > div{
+                    .skills___item{
+                        width: 25vw;
+                        height: 25vw;
+                    }
+                }
+            }
         }
+
     }
 
     #temporary-name {
+        height: 120vw;
         .temporary-name__container {
             flex-direction: column;
 
@@ -381,7 +371,7 @@ u {
                 height: fit-content;
 
                 .skills__items {
-                    flex-direction: column;
+                    flex-direction: row;
                 }
             }
         }
@@ -395,6 +385,8 @@ u {
         }
     }
 }
+
+
 
 // ---------------------
 // KEYFRAMES

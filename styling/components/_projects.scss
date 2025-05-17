@@ -11,8 +11,6 @@
     @include flex();
     gap: 1rem;
 
-
-
     & > div {
       width: 50%;
       height: 100%;
@@ -57,7 +55,7 @@
           aspect-ratio: 16 / 9;
           position: relative;
           transform: translateY(100%);
-          background: url("../../img/radianthq-sc.webp") center/cover no-repeat;
+          background: url("../../img/projects/radianthq-sc.webp") center/cover no-repeat;
 
           &.active {
             animation: slide-up 1000ms ease forwards;

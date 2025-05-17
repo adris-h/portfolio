@@ -63,6 +63,9 @@
           box-sizing: border-box;
           justify-content: flex-end;
           padding-bottom: 4rem;
+          a{
+            color: white;
+          }
         }
       }
 
@@ -76,7 +79,8 @@
           opacity: 0;
           cursor: default;
           font-size: $normal;
-          top: 20px;
+          font-weight: 400;
+          top: 2rem;
           right: 0;
           transform: rotate(10deg);
           transition: 300ms;
@@ -94,7 +98,7 @@
 
         p {
           font-size: $normal;
-
+          font-weight: 400;
           &:nth-child(1) {
             transition: 300ms;
           }
