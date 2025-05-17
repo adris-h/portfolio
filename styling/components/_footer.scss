@@ -5,6 +5,7 @@ footer{
   height: 80vh;
   z-index: 10;
   width: 100vw;
+  overflow: hidden;
   .contact__container{
     transition: $transition;
     transform: translateY(100%);

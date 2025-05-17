@@ -1000,6 +1000,7 @@ footer {
   height: 80vh;
   z-index: 10;
   width: 100vw;
+  overflow: hidden;
 }
 footer .contact__container {
   transition: 800ms;
