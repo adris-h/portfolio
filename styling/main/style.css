@@ -159,6 +159,41 @@
   z-index: 10;
 }
 
+@media only screen and (max-width: 1400px) and (min-width: 1001px) {
+  #hero-section .hero_left-container {
+    left: 5vw;
+    width: 40vw;
+  }
+}
+@media only screen and (max-width: 1000px) and (min-width: 900px) {
+  #hero-section .hero_left-container {
+    left: 2.25vw;
+    width: 45vw;
+    margin-bottom: 10vh;
+  }
+}
+@media (orientation: portrait) {
+  #hero-section {
+    display: none;
+  }
+}
+@media only screen and (orientation: portrait) and (max-width: 700px) {
+  #hero-section #hero-section .hero_left-container {
+    left: 2.25vw;
+    width: 45vw;
+    margin-bottom: 25vh;
+  }
+}
+
+@media (orientation: portrait) {
+  #hero-section-mobile-tablet {
+    height: 100vh;
+    width: 100vw;
+  }
+  #hero-section-mobile-tablet .hero_container .hero_title h2 {
+    font-size: var(--normal-font);
+  }
+}
 #intro-section {
   border-top: 3px solid rgb(29, 29, 29);
   width: 100%;
@@ -1261,10 +1296,6 @@ u::after {
   html {
     font-size: 18px;
   }
-  #hero-section .hero_left-container {
-    left: 5vw;
-    width: 40vw;
-  }
   #about-section {
     height: 70vh;
   }
@@ -1284,11 +1315,6 @@ u::after {
 @media only screen and (max-width: 1000px) and (min-width: 900px) {
   html {
     font-size: 16px;
-  }
-  #hero-section .hero_left-container {
-    left: 2.25vw;
-    width: 45vw;
-    margin-bottom: 10vh;
   }
 }
 @media only screen and (max-width: 900px) {
@@ -1311,9 +1337,6 @@ u::after {
   }
   #temporary-name .temporary-name__container > div .project_img div {
     display: none;
-  }
-  .mobile-only {
-    display: flex;
   }
 }
 @media only screen and (max-width: 900px) and (min-width: 700px) {
@@ -1369,16 +1392,6 @@ u::after {
   .mobile-only {
     display: flex;
   }
-  #hero-section {
-    display: none;
-  }
-  #hero-section-mobile-tablet {
-    height: 100vh;
-    width: 100vw;
-  }
-  #hero-section-mobile-tablet .hero_container .hero_title h2 {
-    font-size: var(--normal-font);
-  }
   #about-section {
     height: fit-content10vh;
   }
@@ -1422,11 +1435,6 @@ u::after {
 @media only screen and (orientation: portrait) and (max-width: 700px) {
   html {
     font-size: 16px;
-  }
-  #hero-section .hero_left-container {
-    left: 2.25vw;
-    width: 45vw;
-    margin-bottom: 25vh;
   }
   #intro-section .intro_container .intro_top-container {
     padding-left: 3vw;

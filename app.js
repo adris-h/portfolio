@@ -45,27 +45,44 @@ const contactsAnim = document.querySelector('.contact__container');
 
 // DEFINED POSITIONS
 let aboutmePosition, skillsPosition, projectsPosition, contactPosition;
-function setSectionPositions() {
+function setSectionPositions(){
     const vh = window.innerHeight;
-    if (window.matchMedia("(max-width: 600px)").matches) {
-        aboutmePosition = vh * 0.5;
-        skillsPosition = vh;
-        projectsPosition = vh * 1.8;
-        contactPosition = vh * 2;
-    }else if (window.matchMedia("(max-width: 900px)").matches) {
-        aboutmePosition = vh * 0.5;
-        skillsPosition = vh;
-        projectsPosition = vh * 2.4;
-        contactPosition = vh * 3.2;
-    } else {
-        aboutmePosition = vh * 1.7;
-        skillsPosition = vh * 2.3;
-        projectsPosition = vh * 3.5;
-        contactPosition = vh * 4.3;
+    const offset = vh * .5;
+
+    const aboutme = document.getElementById('intro-section');
+    const skills = document.getElementById('skills-section');
+    const projects = document.getElementById('temporary-name');
+    const contact = document.getElementById('contact-section');
+
+    if (aboutme) {
+        aboutmePosition = aboutme.getBoundingClientRect().top + window.scrollY - offset;
+    }
+
+    if (skills) {
+        skillsPosition = skills.getBoundingClientRect().top + window.scrollY - offset;
+    }
+
+    if (projects) {
+        projectsPosition = projects.getBoundingClientRect().top + window.scrollY - offset;
+    }
+
+    if (contact) {
+        contactPosition = contact.getBoundingClientRect().top + window.scrollY - offset;
     }
 }
-setSectionPositions();
-window.addEventListener("resize", setSectionPositions);
+
+window.addEventListener('DOMContentLoaded', () => {
+    setSectionPositions();
+    setTimeout(setSectionPositions, 100);
+});
+console.log({
+    aboutmePosition,
+    skillsPosition,
+    projectsPosition,
+    contactPosition
+});
+window.addEventListener('resize', setSectionPositions);
+window.addEventListener('load', setSectionPositions);
 //
 
 window.addEventListener("scroll", function () {

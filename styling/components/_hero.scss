@@ -74,6 +74,7 @@
     transform: rotate(45deg);
     translate: 25% 25%;
   }
+
 }
 
 // Mobile hero section
@@ -131,3 +132,52 @@
     }
   }
 }
+
+
+// RESPONSIVITY
+#hero-section{
+  @include respond(laptop){
+    .hero_left-container {
+      left: 5vw;
+      width: 40vw;
+    }
+  }
+
+  @include respond(tablet) {
+    .hero_left-container {
+      left: 2.25vw;
+      width: 45vw;
+      margin-bottom: 10vh;
+    }
+  }
+
+  @include respond(portrait) {
+    display: none;
+
+    @media only screen and (max-width: 700px) {
+
+      #hero-section {
+        .hero_left-container {
+          left: 2.25vw;
+          width: 45vw;
+          margin-bottom: 25vh;
+        }
+      }
+    }
+  }
+}
+
+
+@include respond(portrait) {
+  #hero-section-mobile-tablet {
+    height: 100vh;
+    width: 100vw;
+
+    .hero_container {
+      .hero_title h2 {
+        font-size: var(--normal-font);
+      }
+    }
+  }
+}
+

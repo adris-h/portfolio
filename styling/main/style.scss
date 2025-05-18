@@ -175,13 +175,6 @@ u {
         font-size: 18px;
     }
 
-    #hero-section {
-        .hero_left-container {
-            left: 5vw;
-            width: 40vw;
-        }
-    }
-
     #about-section {
         height: 70vh;
     }
@@ -207,14 +200,6 @@ u {
     html {
         font-size: 16px;
     }
-
-    #hero-section {
-        .hero_left-container {
-            left: 2.25vw;
-            width: 45vw;
-            margin-bottom: 10vh;
-        }
-    }
 }
 
 @include respond(mobile-tablet) {
@@ -235,10 +220,6 @@ u {
                 }
             }
         }
-    }
-
-    .mobile-only {
-        display: flex;
     }
 
 
@@ -306,20 +287,6 @@ u {
         display: flex;
     }
 
-    #hero-section {
-        display: none;
-    }
-
-    #hero-section-mobile-tablet {
-        height: 100vh;
-        width: 100vw;
-
-        .hero_container {
-            .hero_title h2 {
-                font-size: var(--normal-font);
-            }
-        }
-    }
 
     #about-section {
         height: fit-content + 10vh;
@@ -372,14 +339,6 @@ u {
     @media only screen and (max-width: 700px) {
         html {
             font-size: 16px;
-        }
-
-        #hero-section {
-            .hero_left-container {
-                left: 2.25vw;
-                width: 45vw;
-                margin-bottom: 25vh;
-            }
         }
 
         #intro-section {
