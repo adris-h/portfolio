@@ -1,46 +1,4 @@
-/*const modeToggleButton = document.querySelector('.mode-toggle');
-const bodyElement = document.body;
-const darkButton = document.querySelector("#dark")
-const lightButton = document.querySelector("#dark")
 
-modeToggleButton.addEventListener('click', () => {
-    if (bodyElement.classList.contains('light-mode')) {
-        bodyElement.classList.remove('light-mode');
-        bodyElement.classList.add('dark-mode');
-        modeToggleButton.textContent = 'light mode';
-    } else {
-        bodyElement.classList.remove('dark-mode');
-        bodyElement.classList.add('light-mode');
-        modeToggleButton.textContent = 'dark mode';
-    }
-}); */
-
-
-/*
-// LOADING SCREEN
-document.addEventListener("DOMContentLoaded", function () {
-    const loadingScreen = document.getElementById("loading-screen");
-
-    if (!sessionStorage.getItem("hasVisited")) {
-        document.body.classList.add("unscrollable");
-        const img = document.createElement("img");
-        img.src = `loading-anim.gif?cacheBust=${Date.now()}`;
-        img.alt = "";
-        loadingScreen.appendChild(img);
-
-        setTimeout(() => {
-            loadingScreen.classList.add("hidden");
-            loadingScreen.innerHTML = "";
-            document.body.classList.remove("unscrollable");
-        }, 3000);
-
-        sessionStorage.setItem("hasVisited", "true");
-    } else {
-        loadingScreen.classList.add("hidden");
-        loadingScreen.innerHTML = "";
-    }
-});
-//*/
 // MENU BUTTON TOGGLE
 const bigMenu = document.getElementById("menu");
 const posSpan = document.querySelector('.navbar___position-span');
@@ -54,6 +12,7 @@ mobileMenuButton.addEventListener('click', () => {
         window.dispatchEvent(new Event('scroll'));
     }
 })
+//
 
 // MENU LINK CLICK HANDLING
 document.querySelectorAll('.menu-link').forEach(link => {
@@ -77,17 +36,14 @@ document.querySelectorAll('.menu-link').forEach(link => {
 
 // MENU POSITION TRACKING
 const navBar = document.querySelector(".navbar");
-
 const introHeading = document.querySelector('.intro_top-container h2');
 const introSubheading = document.querySelector('.intro_top-container h3');
 const introText = document.querySelector('.intro_bottom-container a');
-
 const skillsHeading = document.querySelector('.skills__title');
-
 const projectsAnim = document.querySelectorAll('#temporary-name a');
-
 const contactsAnim = document.querySelector('.contact__container');
 
+// DEFINED POSITIONS
 let aboutmePosition, skillsPosition, projectsPosition, contactPosition;
 function setSectionPositions() {
     const vh = window.innerHeight;
@@ -108,9 +64,10 @@ function setSectionPositions() {
         contactPosition = vh * 4.3;
     }
 }
-
 setSectionPositions();
 window.addEventListener("resize", setSectionPositions);
+//
+
 window.addEventListener("scroll", function () {
     if (bigMenu.classList.contains('active')) return;
     const currentPosition = window.scrollY;
@@ -160,6 +117,7 @@ window.addEventListener("scroll", function () {
         introText.classList.remove('active');
     }
 });
+//
 
 // -MOBILE POS
 const mobilePos = document.querySelector('.mobile-nav__position-span');
@@ -178,7 +136,7 @@ window.addEventListener("scroll", function() {
         mobilePos.textContent = 'home';
     }
 });
-
+//
 
 // CHANGING TEXT
 const changingText = document.querySelector('.about___changing-interests');
@@ -193,6 +151,8 @@ function updateText() {
 updateText();
 setInterval(updateText, intervalTime);
 
+
+// PROJECTS SHOWCASE ANIMATION
 const projectImg1 = document.querySelector('.project_img-1');
 const projectIcon1 = document.querySelector('.project_img-1 i');
 const projectText1 = document.querySelector('.project_img-1 p');
@@ -220,10 +180,10 @@ projectImg2.addEventListener('mouseout', e => {
     projectIcon2.classList.remove('active');
     projectText2.classList.remove('active');
 })
+//
 
 
-
-
+// COPY EMAIL
 const copyButton = document.getElementById("copy-button")
 copyButton.addEventListener('click', () =>{
     const email = "adrianahanouskova2007@gmail.com"
@@ -245,7 +205,6 @@ const fourthDescription = document.querySelector(".skills___skill-4-desc");
 
 const skillHolder = document.querySelector(".skills__right-container");
 
-// First skill
 firstSkill.addEventListener('mouseover', () => {
     skillHolder.classList.add('active');
 
@@ -288,7 +247,6 @@ thirdSkill.addEventListener('mouseover', () => {
     thirdSkill.classList.remove('inactive');
 });
 
-// Fourth skill
 fourthSkill.addEventListener('mouseover', () => {
     skillHolder.classList.add('active');
 
@@ -303,7 +261,9 @@ fourthSkill.addEventListener('mouseover', () => {
     firstSkill.classList.add('inactive');
     fourthSkill.classList.remove('inactive');
 });
+//
 
+// HERO SECTION ANIMAITON WITH GSAP
 if (window.getComputedStyle(document.getElementById("hero-section")).display !== "none") {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -346,8 +306,9 @@ if (window.getComputedStyle(document.getElementById("hero-section")).display !==
             ease: "power2.out"
         }, "<");
 }
+//
 
-
+// CURRENT DATE AND TIME
 window.addEventListener('DOMContentLoaded', () => {
     function updateTimeUTCPlus2() {
         const now = new Date();
@@ -374,3 +335,4 @@ window.addEventListener('DOMContentLoaded', () => {
     updateTimeUTCPlus2();
     setInterval(updateTimeUTCPlus2, 60000);
 });
+//

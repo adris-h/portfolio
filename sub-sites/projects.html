@@ -1,89 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="projects-style.css">
+    <head>
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="projects-style.css">
 
-    <!-- -GOOGLE FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Cherry+Bomb+One&family=Cal+Sans&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <!-- -GOOGLE FONTS -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Cherry+Bomb+One&family=Cal+Sans&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
 
 
-    <!-- -TITLE -->
-    <title>Adriana Hanousková - Projects</title>
-    <script src="projects.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-</head>
-<body class="projects-body">
-<div id="navbar">
-    <span>
-        <button class="navbar___menu-button">
-            <a class="navbar__menu-toggle navbar__menu-toggle--1" href="../index.html#projects-section"><span>g</span><span>o</span>&nbsp;<span>b</span><span>a</span><span>c</span><span>k</span></a>
-            <a class="navbar__menu-toggle navbar__menu-toggle--2" href="../index.html#projects-section"><span>g</span><span>o</span>&nbsp;<span>b</span><span>a</span><span>c</span><span>k</span></a>
-        </button>
-    </span>
-    <span>
-        <button class="navbar___menu-button" id="menu-toggle">
-            <a  class="navbar__menu-toggle navbar__menu-toggle--1"><span>m</span><span>e</span><span>n</span><span>u</span></a>
-            <a  class="navbar__menu-toggle navbar__menu-toggle--2"><span>m</span><span>e</span><span>n</span><span>u</span></a>
-        </button>
-    </span>
-</div>
-<div class="popup-menu">
-    <a href="#project-1"><span>Beneath the Surface</span></a>
-    <a href="#project-2"><span>RadiantHQ</span></a>
-    <a href="#project-3"><span>Maze Game</span></a>
-    <a href="#"><span>Gallery</span></a>
-</div>
-    <section class="projects-hero">
-        <div class="projects-hero_content" >
-            <div class="projects-hero_content-container">
-                <span class="projects-hero__title">MY PROJECTS</span>
-                <span class="projects-hero__title">MY PROJECTS</span>
-                <span class="projects-hero__title">MY PROJECTS</span>
-                <span class="projects-hero__title">MY PROJECTS</span>
+        <!-- -TITLE -->
+        <title>Adriana Hanousková - Projects</title>
+        <script src="projects.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    </head>
+    <body>
+    <main>
+        <section class="projects-intro">
+            <h1 class="projects-title">The entire timeline of my studies</h1>
+        </section>
+        <section class="projects" aria-labelledby="projects-title">
+            <div class="projects__holder">
+                <div class="project-1"></div>
+                <div class="project-2"></div>
+                <div class="project-3"></div>
+                <div class="project-4"></div>
             </div>
+            <div class="projects__line" aria-hidden="true">
+                <div></div>
+            </div>
+            <div class="projects__description">
+                <div class="project-description-1"></div>
+                <div class="project-description-2"></div>
+                <div class="project-description-3"></div>
+                <div class="project-description-4"></div>
+            </div>
+        </section>
+    </main>
+    <!-- CONTACT  -->
+    <footer id="contact-section" aria-labelledby="contact-heading">
+        <div class="contact__container">
+            <section class="contact" aria-label="Contact information">
+                <h2 class="contact__title">Get in touch!</h2>
+                <span class="contact__email">
+                        <span class="contact__email-label">copy to clipboard</span>
+                        <button id="copy-button" class="contact__email-button">adrianahanouskova2007@gmail.com</button>
+                    </span>
+                <address class="contact__info">
+                    <div class="contact__info-logo" aria-hidden="true"><img src="logo.svg" alt=""></div>
+                    <div class="contact__location">
+                        <h3 class="contact__location-title">Location & Timezone</h3>
+                        <div class="contact__location-details">
+                            <p><strong>Czech Republic, Zlín</strong></p>
+                            <p>UTC +2 </p>
+                            <p>Central European Summer Time</p>
+                            <p><time id="current-time" datetime=""></time></p>
+                        </div>
+                    </div>
+                </address>
+            </section>
+            <section class="footer-info">
+                <p class="footer-info__copyright">&copy; <span id="current-year"></span> Adriana Hanousková. All rights reserved.</p>
+                <ul class="footer-info__socials" aria-label="Social media links">
+                    <li><a href="https://www.instagram.com/adrriz_/" target="_blank" aria-label="Instagram">Instagram</a></li>
+                    <li><a href="https://www.tiktok.com/@bqtopia" target="_blank" aria-label="TikTok">TikTok</a></li>
+                    <li><a href="https://github.com/adris-h" target="_blank" aria-label="GitHub">GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/adriana-hanousková-7753a831a/" target="_blank" aria-label="LinkedIn">LinkedIn</a></li>
+                </ul>
+            </section>
         </div>
-    </section>
-    <section id="projects-section">
-        <div class="projects-section_container">
-            <div class="projects-section__timeline">
-                <div class="projects-section__timeline-date"><span>January &nbsp;&nbsp; 2024</span></div>
-                <div class="projects-section__line"></div>
-                <div class="projects-section__timeline-final-date"><span>june &nbsp;&nbsp; 2025 </span></div>
-            </div>
-            <div class="projects__projects-containers">
-                <div class="projects__project-container" id="project-1">
-                    <div class="project-description project-description-1">
-                        <div class="project-description_top"><span>html // css </span><span>Beneath the Surface</span></div>
-                        <div class="project-description_bottom">Showcase site for a game "Beneath the Surface" made in Unity featuring gameplay highlights, clean design, interactive elements.</div>
-                    </div>
-                    <div class="project-holder project-holder-1"><a href="">go to site</a></div>
-                </div>
-                <div class="projects__project-container" id="project-2">
-                    <div class="project-holder project-holder-2"><a href="https://adris-h.github.io/radianthq/" target="_blank">go to site</a></div>
-                    <div class="project-description project-description-2">
-                        <div class="project-description_top"><span>html // css // js </span><span >radianthq</span>    </div>
-                        <div class="project-description_bottom">Fan-made Valorant site showcasing agent profiles, abilities, strategies, esport insight, and a comprehensive beginner’s guide </div>
-                    </div>
-                </div>
-                <div class="projects__project-container" id="project-3">
-                    <div class="project-description project-description-1">
-                        <div class="project-description_top"><span>python</span><span> pygame maze game</span>    </div>
-                        <div class="project-description_bottom">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. </div>
-                    </div>
-                    <div class="project-holder project-holder-3"><a href="">go to info</a></div>
-                </div>
-            </div>
-        </div>
-    </section>
-</body>
+    </footer>
+    </body>
 </html>

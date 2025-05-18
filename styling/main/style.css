@@ -67,7 +67,7 @@
 #hero-section .hero_right-container .hero__photo {
   width: 50%;
   height: 60%;
-  background: url(../../img/c8bb9e7a2105ebb57e7a7638dcae825d.jpg) center/cover;
+  background: url("../../img/c8bb9e7a2105ebb57e7a7638dcae825d.jpg") center/cover no-repeat;
 }
 #hero-section .hero_bcg-line {
   position: absolute;
