@@ -6,3 +6,23 @@
 %light-background {
   background-color: $background;
 }
+
+%small-font{
+  font-size: $small;
+  font-weight: 400;
+}
+
+%normal-font{
+  font-size: $normal;
+  font-weight: 400;
+}
+
+%medium-font{
+  font-size: $medium;
+  font-weight: 800;
+}
+
+%small-heading{
+  font-size: $small-heading;
+  font-weight: 700;
+}

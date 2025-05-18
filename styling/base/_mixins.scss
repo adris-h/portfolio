@@ -11,8 +11,9 @@
   height: 100%;
 }
 
-@mixin background-cover($img-url) {
-  background: url($img-url) center/cover no-repeat;
+
+@mixin background-cover($img-url, $position: center, $size: cover) {
+  background: url($img-url) $position/$size no-repeat;
 }
 
 @mixin respond($breakpoint) {

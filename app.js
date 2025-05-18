@@ -1,9 +1,47 @@
-
-// MENU BUTTON TOGGLE
 const bigMenu = document.getElementById("menu");
 const posSpan = document.querySelector('.navbar___position-span');
 
 const mobileMenuButton = document.querySelector('.mobile-nav_menu-toggle--2');
+const navBar = document.querySelector(".navbar");
+
+const introHeading = document.querySelector('.intro_top-container h2');
+const introSubheading = document.querySelector('.intro_top-container h3');
+const introText = document.querySelector('.intro_bottom-container a');
+
+const skillsHeading = document.querySelector('.skills__title');
+
+const projectsAnim = document.querySelectorAll('#temporary-name a');
+const contactsAnim = document.querySelector('.contact__container');
+
+const mobilePos = document.querySelector('.mobile-nav__position-span');
+
+const changingText = document.querySelector('.about___changing-interests');
+
+const projectImg1 = document.querySelector('.project_img-1');
+const projectIcon1 = document.querySelector('.project_img-1 i');
+const projectText1 = document.querySelector('.project_img-1 p');
+const projectImg2 = document.querySelector('.project_img-2');
+const projectIcon2 = document.querySelector('.project_img-2 i');
+const projectText2 = document.querySelector('.project_img-2 p');
+
+const copyButton = document.getElementById("copy-button");
+
+const firstSkill = document.querySelector(".skill___item-1");
+const secondSkill = document.querySelector(".skill___item-2");
+const thirdSkill = document.querySelector(".skill___item-3");
+const fourthSkill = document.querySelector(".skill___item-4");
+
+const firstDescription = document.querySelector(".skills___skill-1-desc");
+const secondDescription = document.querySelector(".skills___skill-2-desc");
+const thirdDescription = document.querySelector(".skills___skill-3-desc");
+const fourthDescription = document.querySelector(".skills___skill-4-desc");
+
+const skillHolder = document.querySelector(".skills__right-container");
+
+const interests = ["Development", "UX/UI", "Applications"];
+const intervalTime = 1000;
+
+// MENU BUTTON TOGGLE
 mobileMenuButton.addEventListener('click', () => {
     bigMenu.classList.toggle('active');
     if (bigMenu.classList.contains('active')) {
@@ -34,14 +72,6 @@ document.querySelectorAll('.menu-link').forEach(link => {
     });
 });
 
-// MENU POSITION TRACKING
-const navBar = document.querySelector(".navbar");
-const introHeading = document.querySelector('.intro_top-container h2');
-const introSubheading = document.querySelector('.intro_top-container h3');
-const introText = document.querySelector('.intro_bottom-container a');
-const skillsHeading = document.querySelector('.skills__title');
-const projectsAnim = document.querySelectorAll('#temporary-name a');
-const contactsAnim = document.querySelector('.contact__container');
 
 // DEFINED POSITIONS
 let aboutmePosition, skillsPosition, projectsPosition, contactPosition;
@@ -57,15 +87,12 @@ function setSectionPositions(){
     if (aboutme) {
         aboutmePosition = aboutme.getBoundingClientRect().top + window.scrollY - offset;
     }
-
     if (skills) {
         skillsPosition = skills.getBoundingClientRect().top + window.scrollY - offset;
     }
-
     if (projects) {
         projectsPosition = projects.getBoundingClientRect().top + window.scrollY - offset;
     }
-
     if (contact) {
         contactPosition = contact.getBoundingClientRect().top + window.scrollY - offset;
     }
@@ -86,7 +113,6 @@ window.addEventListener('load', setSectionPositions);
 //
 
 window.addEventListener("scroll", function () {
-    if (bigMenu.classList.contains('active')) return;
     const currentPosition = window.scrollY;
     if (currentPosition >= aboutmePosition) {
         navBar.classList.add("scrolled");
@@ -137,7 +163,6 @@ window.addEventListener("scroll", function () {
 //
 
 // -MOBILE POS
-const mobilePos = document.querySelector('.mobile-nav__position-span');
 window.addEventListener("scroll", function() {
     if (bigMenu.classList.contains('active')) return;
     const currentPosition = window.scrollY;
@@ -156,9 +181,7 @@ window.addEventListener("scroll", function() {
 //
 
 // CHANGING TEXT
-const changingText = document.querySelector('.about___changing-interests');
-const interests = ["Development", "UX/UI", "Applications"];
-const intervalTime = 1000;
+
 let i = 0;
 
 function updateText() {
@@ -170,9 +193,7 @@ setInterval(updateText, intervalTime);
 
 
 // PROJECTS SHOWCASE ANIMATION
-const projectImg1 = document.querySelector('.project_img-1');
-const projectIcon1 = document.querySelector('.project_img-1 i');
-const projectText1 = document.querySelector('.project_img-1 p');
+
 
 projectImg1.addEventListener('mouseover', e => {
     projectIcon1.classList.add('active');
@@ -184,9 +205,6 @@ projectImg1.addEventListener('mouseout', e => {
     projectText1.classList.remove('active');
 })
 
-const projectImg2 = document.querySelector('.project_img-2');
-const projectIcon2 = document.querySelector('.project_img-2 i');
-const projectText2 = document.querySelector('.project_img-2 p');
 
 projectImg2.addEventListener('mouseover', e => {
     projectIcon2.classList.add('active');
@@ -201,7 +219,7 @@ projectImg2.addEventListener('mouseout', e => {
 
 
 // COPY EMAIL
-const copyButton = document.getElementById("copy-button")
+
 copyButton.addEventListener('click', () =>{
     const email = "adrianahanouskova2007@gmail.com"
     navigator.clipboard.writeText(email);
@@ -210,17 +228,7 @@ copyButton.addEventListener('click', () =>{
 
 
 // SKILLS SECTION - HOVER - DESCRIPTIONS
-const firstSkill = document.querySelector(".skill___item-1");
-const secondSkill = document.querySelector(".skill___item-2");
-const thirdSkill = document.querySelector(".skill___item-3");
-const fourthSkill = document.querySelector(".skill___item-4");
 
-const firstDescription = document.querySelector(".skills___skill-1-desc");
-const secondDescription = document.querySelector(".skills___skill-2-desc");
-const thirdDescription = document.querySelector(".skills___skill-3-desc");
-const fourthDescription = document.querySelector(".skills___skill-4-desc");
-
-const skillHolder = document.querySelector(".skills__right-container");
 
 firstSkill.addEventListener('mouseover', () => {
     skillHolder.classList.add('active');
@@ -352,4 +360,3 @@ window.addEventListener('DOMContentLoaded', () => {
     updateTimeUTCPlus2();
     setInterval(updateTimeUTCPlus2, 60000);
 });
-//

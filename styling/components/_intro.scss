@@ -107,3 +107,18 @@
     }
   }
 }
+
+@include respond(portrait){
+  .intro_top-container {
+    padding-left: 0;
+  }
+  @media only screen and (max-width: 700px) {
+    #intro-section {
+      .intro_container {
+        .intro_top-container {
+          padding-left: 3vw;
+        }
+      }
+    }
+  }
+}

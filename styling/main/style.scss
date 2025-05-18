@@ -34,8 +34,6 @@
 @import '../base/mixins';
 @import '../base/placeholders';
 
-
-
 // COMPONENTS
 @import '../components/hero';
 @import '../components/intro';
@@ -106,29 +104,6 @@ u {
     }
 }
 
-/*
-// -LOADING SCREEN
-#loading-screen {
-    position: fixed;
-    z-index: 100000;
-    top: 0;
-    @extend %section;
-    @extend %light-background;
-    @include flex();
-
-    img {
-        width: 100%;
-    }
-
-    &.hidden {
-        display: none;
-        opacity: 0;
-        visibility: hidden;
-    }
-} */
-
-
-
 // -MOVING TEXT
 .moving-text {
     font-weight: $bold-weight;
@@ -155,7 +130,7 @@ u {
 }
 
 // ---------------------
-// MEDIA QUERIES (USING MIXIN)
+// MEDIA QUERIES
 // ---------------------
 
 @include respond(xlarge) {
@@ -174,26 +149,6 @@ u {
     html {
         font-size: 18px;
     }
-
-    #about-section {
-        height: 70vh;
-    }
-
-    #skills-section {
-        height: 70vh;
-
-        .skills__items {
-            margin-bottom: 2rem;
-        }
-
-        .skills__title {
-            width: 60%;
-
-            h2 {
-                font-size: 3rem;
-            }
-        }
-    }
 }
 
 @include respond(tablet) {
@@ -203,25 +158,6 @@ u {
 }
 
 @include respond(mobile-tablet) {
-    #temporary-name {
-        padding-top: 10vw;
-        padding-bottom: 10vw;
-
-        .temporary-name__container > div {
-            height: fit-content;
-            .project_img {
-                @include flex(column);
-                a {
-                    transform: translateY(0);
-                }
-
-                div {
-                    display: none;
-                }
-            }
-        }
-    }
-
 
     // oNLY TABLET
     @media (min-width: 700px) {
@@ -236,41 +172,6 @@ u {
             font-size: 16px;
         }
 
-        #skills-section {
-            height: 90vh;
-            flex-direction: column;
-            .skills__left-container {
-                width: 100%;
-                height: 30%;
-                @include flex(column);
-                border-bottom: 2px solid $dark-color;
-
-                h2 {
-                    text-align: center;
-                }
-            }
-            .skills__right-container {
-                width: 100%;
-                height: 70%;
-                .skills__items{
-                    & > div{
-                        .skills___item{
-                            width: 20vw;
-                            height: 20vw;
-                        }
-                    }
-                }
-            }
-
-        }
-
-        #temporary-name {
-            height: 50vw;
-            .temporary-name__container {
-                flex-direction: row;
-
-            }
-        }
     }
 }
 
@@ -288,82 +189,10 @@ u {
     }
 
 
-    #about-section {
-        height: fit-content + 10vh;
-    }
-
-    #skills-section {
-        flex-direction: column;
-
-        .skills__left-container {
-            width: 100%;
-            height: 30%;
-            @include flex(column);
-            border-bottom: 2px solid $dark-color;
-
-            h2 {
-                text-align: center;
-            }
-        }
-        .skills__right-container {
-            width: 100%;
-            height: 70%;
-
-            .skills__items{
-                & > div{
-                    .skills___item{
-                        width: 25vw;
-                        height: 25vw;
-                    }
-                }
-            }
-        }
-
-    }
-
-    #temporary-name {
-        height: 120vw;
-        .temporary-name__container {
-            flex-direction: column;
-
-            & > div {
-                width: 80%;
-            }
-        }
-    }
-
-    .intro_top-container {
-        padding-left: 0;
-    }
 
     @media only screen and (max-width: 700px) {
         html {
             font-size: 16px;
-        }
-
-        #intro-section {
-            .intro_container {
-                .intro_top-container {
-                    padding-left: 3vw;
-                }
-            }
-        }
-
-        #skills-section {
-            height: fit-content;
-
-            .skills__right-container {
-                height: 50vw;
-                transition: 800ms;
-                justify-content: flex-start;
-                &.active{
-                    height: 80vw;
-                }
-
-                .skills__items {
-                    flex-direction: row;
-                }
-            }
         }
 
         footer{
@@ -402,13 +231,7 @@ u {
     }
 }
 
-@include respond(no-hover) {
-    .skills__span {
-        .change-content::after {
-            content: "click";
-        }
-    }
-}
+
 
 
 
