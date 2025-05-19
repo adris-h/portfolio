@@ -133,31 +133,31 @@ u {
 // MEDIA QUERIES
 // ---------------------
 
-@include respond(xlarge) {
+@include responsive(xlarge) {
     html {
         font-size: 25px;
     }
 }
 
-@include respond(desktop) {
+@include responsive(desktop) {
     html {
         font-size: 20px;
     }
 }
 
-@include respond(laptop) {
+@include responsive(laptop) {
     html {
         font-size: 18px;
     }
 }
 
-@include respond(tablet) {
+@include responsive(tablet) {
     html {
         font-size: 16px;
     }
 }
 
-@include respond(mobile-tablet) {
+@include responsive(mobile-tablet) {
 
     // oNLY TABLET
     @media (min-width: 700px) {
@@ -175,7 +175,7 @@ u {
     }
 }
 
-@include respond(portrait) {
+@include responsive(portrait) {
     :root {
         --medium-font: 9vw;
         --big-font: 14.5vw;

@@ -24,6 +24,8 @@ const projectImg2 = document.querySelector('.project_img-2');
 const projectIcon2 = document.querySelector('.project_img-2 i');
 const projectText2 = document.querySelector('.project_img-2 p');
 
+const projectsAnchor = document.querySelector('.a-projects a');
+
 const copyButton = document.getElementById("copy-button");
 
 const firstSkill = document.querySelector(".skill___item-1");
@@ -143,6 +145,7 @@ window.addEventListener("scroll", function () {
             posSpan.textContent = 'projects';
 
             contactsAnim.classList.remove('active');
+            projectsAnchor.classList.remove('inactive');
 
             if (window.matchMedia("(min-width: 900px)").matches) {
                 projectsAnim.forEach(link => link.classList.add('active'));
@@ -150,6 +153,7 @@ window.addEventListener("scroll", function () {
             }
         } else {
             posSpan.textContent = 'contact';
+            projectsAnchor.classList.add('inactive');
             contactsAnim.classList.add('active');
         }
     } else {

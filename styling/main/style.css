@@ -33,6 +33,11 @@ footer .contact__container .footer-info, footer .contact__container .contact__in
   font-weight: 400;
 }
 
+#temporary-name .a-projects, #intro-section .intro_container .intro_top-container p {
+  font-size: var(--normal-font);
+  font-weight: 400;
+}
+
 footer .contact__container .contact__title {
   font-size: var(--medium-font);
   font-weight: 800;
@@ -234,6 +239,9 @@ footer .contact__container .contact__info .contact__location-title, footer .cont
   height: 60%;
   width: 100%;
   padding-left: 5vh;
+}
+#intro-section .intro_container .intro_top-container p {
+  margin: 0;
 }
 #intro-section .intro_container .intro_top-container h2 {
   margin: 0;
@@ -596,6 +604,47 @@ footer .contact__container .contact__info .contact__location-title, footer .cont
   height: 80vh;
   background-color: rgb(29, 29, 29);
   color: white;
+  position: relative;
+}
+#temporary-name .a-projects {
+  position: absolute;
+  bottom: 8%;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
+#temporary-name .a-projects a {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  transition: 300ms;
+  transform: translateY(0);
+}
+#temporary-name .a-projects a.inactive {
+  transform: translateY(-500%);
+  opacity: 0;
+}
+#temporary-name .a-projects a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: #DD4083;
+  border-radius: 5px;
+  transition: 300ms;
+}
+#temporary-name .a-projects a:hover {
+  transform: scale(1.2);
+}
+#temporary-name .a-projects a:hover::after {
+  width: 100%;
 }
 #temporary-name .temporary-name__container {
   height: 100%;
@@ -754,7 +803,10 @@ footer .contact__container .contact__info .contact__location-title, footer .cont
 }
 @media (orientation: portrait) {
   #temporary-name {
-    height: 120vw;
+    height: 150vw;
+  }
+  #temporary-name .a-projects {
+    bottom: 5%;
   }
   #temporary-name .temporary-name__container {
     flex-direction: column;

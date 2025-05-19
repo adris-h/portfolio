@@ -223,7 +223,7 @@ footer .contact__container .footer-info__socials li a:hover {
   gap: 0;
 }
 .projects .projects__holder > div div {
-  background: url("../../img/projects/radianthq-sc.webp") center/cover no-repeat;
+  background: url("../../../img/projects/radianthq-sc.webp") center/cover no-repeat;
 }
 .projects .wrapper {
   z-index: 2;

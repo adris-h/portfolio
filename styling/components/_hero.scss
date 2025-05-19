@@ -136,14 +136,14 @@
 
 // RESPONSIVITY
 #hero-section{
-  @include respond(laptop){
+  @include responsive(laptop){
     .hero_left-container {
       left: 5vw;
       width: 40vw;
     }
   }
 
-  @include respond(tablet) {
+  @include responsive(tablet) {
     .hero_left-container {
       left: 2.25vw;
       width: 45vw;
@@ -151,7 +151,7 @@
     }
   }
 
-  @include respond(portrait) {
+  @include responsive(portrait) {
     display: none;
 
     @media only screen and (max-width: 700px) {
@@ -168,7 +168,7 @@
 }
 
 
-@include respond(portrait) {
+@include responsive(portrait) {
   #hero-section-mobile-tablet {
     height: 100vh;
     width: 100vw;

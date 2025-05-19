@@ -16,6 +16,10 @@
       height: 60%;
       width: 100%;
       padding-left: 5vh;
+      p{
+        @extend %normal-font;
+        margin: 0;
+      }
 
       h2 {
         margin: 0;
@@ -108,7 +112,7 @@
   }
 }
 
-@include respond(portrait){
+@include responsive(portrait){
   .intro_top-container {
     padding-left: 0;
   }

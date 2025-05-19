@@ -39,7 +39,7 @@
   .projects__holder{
     & > div{
       div{
-        @include background-cover("../../img/projects/radianthq-sc.webp");
+        @include background-cover("../../../img/projects/radianthq-sc.webp");
       }
 
     }
@@ -255,7 +255,7 @@ header{
   }
 }
 
-@include respond(portrait){
+@include responsive(portrait){
   .projects{
     display: none;
   }
