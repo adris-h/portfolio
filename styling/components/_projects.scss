@@ -133,17 +133,18 @@
             opacity: 0;
           }
 
-          i {
+          svg {
             position: absolute;
-            transform: rotate(-45deg);
             right: 0;
+            top: 0;
             margin: 1rem;
             transition: 300ms;
             opacity: 0;
+            color: white;
+            width: 2%;
           }
 
-          p.active,
-          i.active {
+          p.active, svg.active {
             opacity: 1;
           }
         }

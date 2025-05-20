@@ -18,10 +18,10 @@ const mobilePos = document.querySelector('.mobile-nav__position-span');
 const changingText = document.querySelector('.about___changing-interests');
 
 const projectImg1 = document.querySelector('.project_img-1');
-const projectIcon1 = document.querySelector('.project_img-1 i');
+const projectIcon1 = document.querySelector('.project_img-1 svg');
 const projectText1 = document.querySelector('.project_img-1 p');
 const projectImg2 = document.querySelector('.project_img-2');
-const projectIcon2 = document.querySelector('.project_img-2 i');
+const projectIcon2 = document.querySelector('.project_img-2 svg');
 const projectText2 = document.querySelector('.project_img-2 p');
 
 const projectsAnchor = document.querySelector('.a-projects a');
@@ -124,7 +124,6 @@ window.addEventListener("scroll", function () {
             introHeading.classList.add('active');
             introSubheading.classList.add('active');
             introText.classList.add('active');
-
 
             skillsHeading.classList.remove('active');
             skillsHeading.classList.add('inactive');

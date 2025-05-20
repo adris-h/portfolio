@@ -741,16 +741,17 @@ footer .contact__container .contact__info .contact__location-title, footer .cont
   transition: 300ms;
   opacity: 0;
 }
-#temporary-name .temporary-name__container > div .project_img a i {
+#temporary-name .temporary-name__container > div .project_img a svg {
   position: absolute;
-  transform: rotate(-45deg);
   right: 0;
+  top: 0;
   margin: 1rem;
   transition: 300ms;
   opacity: 0;
+  color: white;
+  width: 2%;
 }
-#temporary-name .temporary-name__container > div .project_img a p.active,
-#temporary-name .temporary-name__container > div .project_img a i.active {
+#temporary-name .temporary-name__container > div .project_img a p.active, #temporary-name .temporary-name__container > div .project_img a svg.active {
   opacity: 1;
 }
 #temporary-name .temporary-name__container > div .project_img > span:nth-child(3) {
@@ -858,6 +859,16 @@ footer .contact__container .contact__info .contact__location-title, footer .cont
   height: 100%;
   border: 1px solid rgb(29, 29, 29);
 }
+.navbar__content .navbar___logo {
+  width: 3.5rem;
+}
+.navbar__content .navbar___logo svg {
+  height: 3.5rem;
+}
+.navbar__content .navbar___logo svg .cls-1 {
+  fill: rgb(29, 29, 29);
+  stroke: none;
+}
 .navbar__content a {
   text-align: center;
   width: auto;
@@ -867,7 +878,7 @@ footer .contact__container .contact__info .contact__location-title, footer .cont
   position: relative;
   transition: 100ms;
 }
-.navbar__content a:hover {
+.navbar__content a:hover:not(.navbar___logo) {
   background-color: #DD4083;
   color: white;
 }
@@ -1289,6 +1300,7 @@ footer .contact__container .contact__email {
   justify-content: center;
   align-items: flex-start;
   gap: 0;
+  position: relative;
 }
 footer .contact__container .contact__email-button {
   border: none;

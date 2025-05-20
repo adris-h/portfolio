@@ -35,6 +35,17 @@
     width: 100%;
     height: 100%;
     border: 1px solid $dark-color;
+    .navbar___logo{
+      width: 3.5rem;
+
+      svg{
+        height: 3.5rem;
+        .cls-1 {
+          fill: $dark-color;
+          stroke: none;
+        }
+      }
+    }
     a{
       text-align: center;
       width: auto;
@@ -44,7 +55,7 @@
       position: relative;
       transition: 100ms;
 
-      &:hover{
+      &:hover:not(.navbar___logo){
         background-color: $main-color;
         color: white;
       }
