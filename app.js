@@ -128,6 +128,10 @@ window.addEventListener("scroll", function () {
             skillsHeading.classList.remove('active');
             skillsHeading.classList.add('inactive');
 
+            setTimeout(() => {
+                introText.classList.add('transition');
+            }, 1000);
+
         } else if (currentPosition < projectsPosition) {
             posSpan.textContent = 'skills';
 
@@ -161,6 +165,7 @@ window.addEventListener("scroll", function () {
         introHeading.classList.remove('active');
         introSubheading.classList.remove('active');
         introText.classList.remove('active');
+        introText.classList.remove('transition');
     }
 });
 //

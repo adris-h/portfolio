@@ -73,6 +73,10 @@
           transform: translateX(0);
         }
 
+        &.transition{
+          transition: 300ms;
+        }
+
         .outer {
           width: 1rem;
           height: 1rem;

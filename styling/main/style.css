@@ -296,6 +296,9 @@ footer .contact__container .contact__info .contact__location-title, footer .cont
   opacity: 1;
   transform: translateX(0);
 }
+#intro-section .intro_container .intro_bottom-container a.transition {
+  transition: 300ms;
+}
 #intro-section .intro_container .intro_bottom-container a .outer {
   width: 1rem;
   height: 1rem;
