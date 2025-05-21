@@ -163,7 +163,7 @@ u {
     @media (min-width: 700px) {
         :root {
             --medium-font: 6vw;
-            --big-font: 15vw;
+            --big-font: 12vw;
             --small-font: 1.8vw;
             --normal-font: 2vw;
         }
@@ -178,7 +178,7 @@ u {
 @include responsive(portrait) {
     :root {
         --medium-font: 9vw;
-        --big-font: 14.5vw;
+        --big-font: 10.5vw;
         --normal-font: 4vw;
         --small-font: 3vw;
         --small-heading: 5vw;

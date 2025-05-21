@@ -18,7 +18,7 @@
 
 :root {
   --medium-font: 6vw;
-  --big-font: 15vw;
+  --big-font: 12vw;
   --small-font: 1vw;
   --normal-font: 1.5vw;
   --small-heading: 2.5vw;
@@ -43,7 +43,7 @@ footer .contact__container .contact__title {
   font-weight: 800;
 }
 
-footer .contact__container .contact__info .contact__location-title, footer .contact__container .contact__email-button {
+footer .contact__container .contact__info .contact__location-title, footer .contact__container .contact__email-button, #hero-section .hero_title h2 {
   font-size: var(--small-heading);
   font-weight: 700;
 }
@@ -59,14 +59,21 @@ footer .contact__container .contact__info .contact__location-title, footer .cont
   position: relative;
   box-sizing: border-box;
 }
+#hero-section .hero_title {
+  animation: fade-in 500ms ease forwards, slide-in-left 1000ms ease forwards;
+}
 #hero-section .hero_title h1 {
   z-index: 2;
   font-size: var(--big-font);
   line-height: 80%;
   margin: 0;
-  text-shadow: 2px 0 0 white;
+  text-shadow: 2px 2px 0 white;
+  letter-spacing: -5px;
+  text-transform: uppercase;
+  font-weight: 1000;
 }
 #hero-section .hero_title h2 {
+  margin: 0;
   text-align: right;
   width: 100%;
 }
@@ -154,6 +161,8 @@ footer .contact__container .contact__info .contact__location-title, footer .cont
   line-height: 80%;
   margin: 0;
   text-shadow: 2px 0 0 white;
+  font-weight: 1000;
+  text-transform: uppercase;
 }
 #hero-section-mobile-tablet .hero_container .hero-mobile_bcg-line {
   position: absolute;
@@ -1503,7 +1512,7 @@ u::after {
 @media only screen and (max-width: 900px) and (min-width: 700px) {
   :root {
     --medium-font: 6vw;
-    --big-font: 15vw;
+    --big-font: 12vw;
     --small-font: 1.8vw;
     --normal-font: 2vw;
   }
@@ -1514,7 +1523,7 @@ u::after {
 @media (orientation: portrait) {
   :root {
     --medium-font: 9vw;
-    --big-font: 14.5vw;
+    --big-font: 10.5vw;
     --normal-font: 4vw;
     --small-font: 3vw;
     --small-heading: 5vw;

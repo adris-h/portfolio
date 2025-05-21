@@ -8,17 +8,23 @@
   box-sizing: border-box;
 
   .hero_title {
+    animation: fade-in 500ms ease forwards, slide-in-left 1000ms ease forwards;
     h1 {
       z-index: 2;
       font-size: $big;
       line-height: 80%;
       margin: 0;
-      text-shadow: 2px 0 0 white;
+      text-shadow: 2px 2px 0 white;
+      letter-spacing: -5px;
+      text-transform: uppercase;
+      font-weight: 1000;
     }
 
     h2 {
+      margin: 0;
       text-align: right;
       width: 100%;
+      @extend %small-heading;
     }
   }
 
@@ -101,6 +107,8 @@
         line-height: 80%;
         margin: 0;
         text-shadow: 2px 0 0 white;
+        font-weight: 1000;
+        text-transform: uppercase;
       }
     }
 
