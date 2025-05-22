@@ -6,14 +6,13 @@
   gap: $gap;
 }
 
+@mixin background-cover($img-url, $position: center, $size: cover) {
+  background: url($img-url) $position/$size no-repeat;
+}
+
 @mixin full-size {
   width: 100%;
   height: 100%;
-}
-
-
-@mixin background-cover($img-url, $position: center, $size: cover) {
-  background: url($img-url) $position/$size no-repeat;
 }
 
 @mixin responsive($breakpoint) {

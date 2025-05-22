@@ -20,30 +20,46 @@
       text-decoration: none;
       position: relative;
       transition: 300ms;
-
       transform: translateY(0);
+      @include flex($gap: .25rem);
+
+      &:hover {
+        transform: scale(1.1);
+
+        &::after {
+          width: 55%;
+        }
+      }
+
+      &::after {
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: 10%;
+        height: 3px;
+        border-radius: 10px;
+        width: 0;
+        background-color: $main-color;
+        transition: 300ms;
+      }
+      .outer {
+        width: 1rem;
+        height: 1rem;
+        background-color: rgba(221, 64, 131, 0.08);
+        border-radius: 50%;
+        @include flex();
+
+        .inner {
+          height: 50%;
+          width: 50%;
+          border-radius: 50%;
+          background-color: $main-color;
+        }
+      }
 
       &.inactive{
         transform: translateY(-500%);
         opacity: 0;
-      }
-
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0;
-        height: 3px;
-        background-color: $main-color;
-        border-radius: 5px;
-        transition: 300ms;
-      }
-      &:hover{
-        transform: scale(1.2);
-      }
-      &:hover::after{
-        width: 100%;
       }
     }
   }

@@ -113,7 +113,6 @@ u {
     background-color: $dark-color;
     color: white;
     border: $dark-color solid 2px;
-
     .moving-text__inner {
         width: max-content;
         @include flex();

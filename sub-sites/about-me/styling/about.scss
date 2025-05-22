@@ -1,0 +1,28 @@
+@import '../../../styling/base/variables';
+@import '../../../styling/base/mixins';
+@import '../../../styling/base/placeholders';
+@import '../../../styling/components/footer';
+@import 'about-components';
+
+::selection {
+  background: #dd4083;
+}
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  font-size: 20px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $main-font;
+  background-color: $dark-color;
+  color: $dark-color;
+  width: 100dvw;
+}
+
+* {
+  box-sizing: border-box;
+}

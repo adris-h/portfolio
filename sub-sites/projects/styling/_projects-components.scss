@@ -1,4 +1,8 @@
-
+main{
+  height: fit-content;
+  margin-bottom: 20vh;
+  background: $dark-color;
+}
 #projects-intro {
   @extend %screen-size;
   @include flex(column);
@@ -7,12 +11,32 @@
   padding: 0 2vw 0 2vw;
 
   .i_wrapper{
+    width: 100%;
     h1{
       @include flex(row);
+      flex-wrap: wrap;
       font-size: $medium;
       margin: 0;
+      width: 100%;
+      height: fit-content;
+      span{
+        opacity: 0;
+        animation: fade-in $transition ease forwards;
+      }
+      span:nth-child(2){
+        animation-delay: 100ms;
+      }
+      span:nth-child(3){
+        animation-delay: 200ms;
+      }
+      span:nth-child(4){
+        animation-delay: 300ms;
+      }
+      span:nth-child(5){
+        animation-delay: 400ms;
+      }
     }
-    span{
+    & > span{
       width: 100%;
       @include flex(row, flex-end, flex-start);
     }
@@ -26,6 +50,10 @@
   }
 }
 
+.projects-mobile{
+  display: none;
+}
+
 .projects{
   height: 300vh;
   @extend %light-background;
@@ -34,40 +62,6 @@
 
   position: relative;
   @include flex();
-
-  .projects__holder{
-    #project-1{
-      div{
-        @include background-cover("../../../img/projects/design.webp");
-      }
-    }
-    #project-2{
-      div{
-        @include background-cover("../../../img/projects/eeao.webp");
-      }
-    }
-    #project-3{
-      div{
-        @include background-cover("../../../img/projects/radianthq-sc.webp");
-      }
-    }
-
-    #project-4{
-      div{
-        @include background-cover("../../../img/projects/lucidify.webp");
-      }
-    }
-    #project-5{
-      div{
-        @include background-cover("../../../img/projects/gameoflife.webp");
-      }
-    }
-    #project-6{
-      div{
-        @include background-cover("../../../img/projects/maze-sc.png");
-      }
-    }
-  }
 
   .wrapper{
     z-index: 2;
@@ -112,7 +106,6 @@
         }
       }
     }
-
   }
 
   .projects__line{
@@ -153,9 +146,41 @@
   }
 }
 
-main{
-  height: 410vh;
-  background: $dark-color;
+
+
+
+.projects__holder{
+  .project-1{
+    div{
+      @include background-cover("../../../img/projects/design.webp");
+    }
+  }
+  .project-2{
+    div{
+      @include background-cover("../../../img/projects/eeao.webp");
+    }
+  }
+  .project-3{
+    div{
+      @include background-cover("../../../img/projects/radianthq-sc.webp");
+    }
+  }
+
+  .project-4{
+    div{
+      @include background-cover("../../../img/projects/lucidify.webp");
+    }
+  }
+  .project-5{
+    div{
+      @include background-cover("../../../img/projects/gameoflife.webp");
+    }
+  }
+  .project-6{
+    div{
+      @include background-cover("../../../img/projects/maze-sc.png");
+    }
+  }
 }
 
 header{
@@ -281,7 +306,52 @@ header{
 }
 
 @include responsive(portrait){
-  .projects{
+  .projects-desktop{
     display: none;
+  }
+  .projects-mobile{
+    @include flex(column);
+    background: $background;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    .projects__holder{
+      @include flex(column, $gap: 5rem);
+      figure{
+        & > div{
+          width: 100%;
+
+          @include flex();
+          & > div{
+            aspect-ratio: 16/9;
+            width: 100%;
+          }
+        }
+        figcaption{
+          h2{
+            margin: 0;
+            font-size: $small-heading;
+            font-weight: 700;
+          }
+          p{
+            margin: 0;
+            font-size: $normal;
+            font-weight: 400;
+            text-align: justify;
+          }
+          & > span{
+            margin-top: .5rem;
+            @include flex($justify: flex-start, $gap: 1rem);
+            span{
+              border-radius: 15px;
+              box-sizing: border-box;
+              padding: 5px 10px 5px 10px;
+              border: 1px solid $dark-color;
+              font-size: $small;
+              font-weight: 400;
+            }
+          }
+        }
+      }
+    }
   }
 }

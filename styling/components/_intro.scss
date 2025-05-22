@@ -63,8 +63,8 @@
         text-decoration: none;
         color: $dark-color;
         position: relative;
-        @include flex();
-        gap: .25rem;
+        @include flex($gap: .25rem);
+
         transition: $transition;
         transform: translateX(500%);
 
