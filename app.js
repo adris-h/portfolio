@@ -334,10 +334,6 @@ if (window.getComputedStyle(document.getElementById("hero-section")).display !==
             duration: 1,
             ease: "power2.out"
         }, "<")
-        .to("#hero-section h2", {
-            opacity: 0,
-            ease: "power2.out"
-        }, "<");
 }
 //
 

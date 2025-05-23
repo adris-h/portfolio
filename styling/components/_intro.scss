@@ -1,8 +1,10 @@
-
+// ---------------------- INTRODUCTION SECTION ----------------------
 #intro-section {
   border-top: 3px solid $dark-color;
   width: 100%;
   background-color: $dark-color;
+
+  // MAIN CONTAINER
   .intro_container {
     @include flex(column);
     padding: 10rem 0;
@@ -11,6 +13,7 @@
     border-radius: 20px;
     @extend %light-background;
 
+    // ----------------- TOP CONTAINER WITH HEADINGS --------------------
     .intro_top-container {
       @include flex(column, flex-end, flex-start);
       height: 60%;
@@ -21,6 +24,7 @@
         margin: 0;
       }
 
+      // HEADING
       h2 {
         margin: 0;
         font-size: $medium;
@@ -32,12 +36,14 @@
           text-transform: uppercase;
         }
 
+        // ANIMATION
         &.active {
           opacity: 1;
           transform: translateX(0);
         }
       }
 
+      // SUB HEADING
       h3 {
         margin: 0;
         font-size: $normal;
@@ -45,6 +51,7 @@
         transform: translateX(-120%);
         transition: $transition;
 
+        // ANIMATION
         &.active {
           opacity: 1;
           transform: translateX(0);
@@ -52,12 +59,14 @@
       }
     }
 
+    // BOTTOM CONTAINER
     .intro_bottom-container {
       @include flex(column);
       width: 80%;
       height: 5rem;
       border-top: 1px solid rgba(0, 0, 0, 0.07);
 
+      // LINK TO ANOTHER HTML FILE
       a {
         font-size: $normal;
         text-decoration: none;
@@ -68,15 +77,18 @@
         transition: $transition;
         transform: translateX(500%);
 
+        // ANIMATION
         &.active {
           opacity: 1;
           transform: translateX(0);
         }
 
+        // CHANGING TRANSITION TIMING AFTER ANIMATION
         &.transition{
           transition: 300ms;
         }
 
+        // CUSTOM BULLET POINT
         .outer {
           width: 1rem;
           height: 1rem;
@@ -92,6 +104,7 @@
           }
         }
 
+        // HOVER ANIMATON - SCALE AND UNDERLINE
         &:hover {
           transform: scale(1.1);
 
@@ -99,7 +112,7 @@
             width: 55%;
           }
         }
-
+        // UNDERLINE 0 WIDTH ON DEFAULT
         &::after {
           position: absolute;
           content: "";
@@ -116,6 +129,7 @@
   }
 }
 
+// RESPONSIVITY
 @include responsive(portrait){
   .intro_top-container {
     padding-left: 0;

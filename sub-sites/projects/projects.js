@@ -56,8 +56,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
 gsap.registerPlugin(ScrollTrigger);
 
-
-
 gsap.utils.toArray(".wrapper > div").forEach((section, i) => {
     ScrollTrigger.create({
         trigger: section,

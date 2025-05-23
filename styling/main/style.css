@@ -1,21 +1,3 @@
-.cherry-bomb-one-regular {
-  font-family: "Cherry Bomb One", system-ui;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.bagel-fat-one-regular {
-  font-family: "Bagel Fat One", system-ui;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.cal-sans-regular {
-  font-family: "Cal Sans", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
 :root {
   --medium-font: 6vw;
   --big-font: 12vw;
@@ -57,7 +39,6 @@ footer .contact__container .contact__info .contact__location-title, footer .cont
   height: 100vh;
   z-index: -100;
   position: relative;
-  box-sizing: border-box;
 }
 #hero-section .hero_title {
   animation: fade-in 500ms ease forwards, slide-in-left 1000ms ease forwards;
@@ -94,7 +75,7 @@ footer .contact__container .contact__info .contact__location-title, footer .cont
 #hero-section .hero_right-container .hero__photo {
   width: 50%;
   height: 60%;
-  background: url("../../img/c8bb9e7a2105ebb57e7a7638dcae825d.jpg") center/cover no-repeat;
+  background: url("../../img/my-photo.jpg") center/cover no-repeat;
 }
 #hero-section .hero_bcg-line {
   position: absolute;
@@ -127,9 +108,8 @@ footer .contact__container .contact__info .contact__location-title, footer .cont
   font-size: var(--normal-font);
   text-align: justify;
 }
-#hero-section.animated::after {
-  transform: rotate(45deg);
-  translate: 25% 25%;
+#hero-section .hero_left-container p a {
+  color: #DD4083;
 }
 
 #hero-section-mobile-tablet {
@@ -855,36 +835,34 @@ footer .contact__container .contact__info .contact__location-title, footer .cont
   justify-content: center;
   align-items: center;
   gap: 0;
+  height: 10vh;
   width: 100dvw;
   position: fixed;
   top: 0;
   left: 0;
-  height: 10vh;
-  transform: none;
   z-index: 10000;
   background-color: #f9f7f3;
   border-bottom: 1px solid rgb(29, 29, 29);
-  box-sizing: border-box;
-  transition: 500ms;
+  transition: 800ms;
   overflow: hidden;
 }
 .navbar_container {
-  box-sizing: border-box;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 0;
-  height: 100%;
   width: 100%;
+  height: 100%;
   padding: 1rem 1rem;
   position: relative;
 }
 .navbar__content {
   font-family: Poppins, sans-serif;
   font-weight: 300;
-  transition: 500ms;
+  transition: 800ms;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   gap: 0;
@@ -904,12 +882,12 @@ footer .contact__container .contact__info .contact__location-title, footer .cont
 }
 .navbar__content a {
   text-align: center;
-  width: auto;
   height: 100%;
+  width: auto;
+  position: relative;
   color: rgb(29, 29, 29);
   text-decoration: none;
-  position: relative;
-  transition: 100ms;
+  transition: 300ms;
 }
 .navbar__content a:hover:not(.navbar___logo) {
   background-color: #DD4083;
@@ -921,6 +899,9 @@ footer .contact__container .contact__info .contact__location-title, footer .cont
 .navbar__content a:nth-child(1):not(.navbar___logo) {
   border-left: 1px solid rgb(29, 29, 29);
 }
+.navbar__content a.navbar___contact-link {
+  border-left: 1px solid rgb(29, 29, 29);
+}
 .navbar__content a.navbar___logo, .navbar__content a.navbar___contact-link {
   padding: 10px;
   height: 100%;
@@ -929,9 +910,6 @@ footer .contact__container .contact__info .contact__location-title, footer .cont
   justify-content: center;
   align-items: center;
   gap: 0;
-}
-.navbar__content a.navbar___contact-link {
-  border-left: 1px solid rgb(29, 29, 29);
 }
 .navbar__content .navbar____links {
   display: flex;
@@ -956,14 +934,13 @@ footer .contact__container .contact__info .contact__location-title, footer .cont
   justify-content: space-between;
   align-items: center;
   gap: 0;
-  transition: 500ms;
+  width: 100vw;
+  transition: 800ms;
   position: absolute;
-  visibility: hidden;
   opacity: 0;
   transform: translateX(-20vw);
   color: rgb(29, 29, 29);
-  display: flex;
-  width: 100vw;
+  visibility: hidden;
   overflow: hidden;
 }
 .navbar__scroll-info a {
@@ -1429,14 +1406,36 @@ footer .contact__container .footer-info__socials li a:hover {
   color: #DD4083;
 }
 
-::selection {
-  background: #dd4083;
+@media only screen and (orientation: portrait) and (max-width: 700px) {
+  footer .contact__container .contact__info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  footer .contact__container .contact__info .contact__location {
+    align-items: flex-start;
+    width: 100%;
+  }
+  footer .contact__container .contact__info .contact__location-details {
+    align-items: flex-start;
+  }
+  footer .contact__container .footer-info {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    gap: 1rem;
+  }
+  footer .contact__container .footer-info__socials {
+    padding: 0;
+    margin: 0;
+  }
+  footer .contact__container .footer-info p {
+    margin: 0;
+  }
 }
-
-.bold-heading {
-  font-family: Poppins, sans-serif;
-  font-weight: 1000;
-  letter-spacing: -10px;
+::selection {
+  background: rgba(162, 162, 162, 0.54);
 }
 
 html {
@@ -1451,6 +1450,13 @@ body {
   background-color: rgb(29, 29, 29);
   color: rgb(29, 29, 29);
   width: 100dvw;
+  position: relative;
+  z-index: -1;
+}
+
+main {
+  position: relative;
+  z-index: -1;
 }
 
 * {
@@ -1471,21 +1477,6 @@ body {
 
 .overflow-hidden {
   overflow: hidden;
-}
-
-u {
-  text-decoration: none;
-  position: relative;
-}
-u::after {
-  content: "";
-  position: absolute;
-  bottom: 10%;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background-color: #DD4083;
-  border-radius: 5px;
 }
 
 .moving-text {
@@ -1560,32 +1551,6 @@ u::after {
 @media only screen and (orientation: portrait) and (max-width: 700px) {
   html {
     font-size: 16px;
-  }
-  footer .contact__container .contact__info {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  footer .contact__container .contact__info .contact__location {
-    align-items: flex-start;
-    width: 100%;
-  }
-  footer .contact__container .contact__info .contact__location-details {
-    align-items: flex-start;
-  }
-  footer .contact__container .footer-info {
-    flex-direction: column-reverse;
-    align-items: center;
-    justify-content: center;
-    padding-top: 2vh;
-    padding-bottom: 2vh;
-    gap: 1rem;
-  }
-  footer .contact__container .footer-info__socials {
-    padding: 0;
-    margin: 0;
-  }
-  footer .contact__container .footer-info p {
-    margin: 0;
   }
 }
 @keyframes infinitemove {

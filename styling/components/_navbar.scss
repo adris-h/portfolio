@@ -1,43 +1,57 @@
 
-// -NAVBAR
+// ----------------- NAVBAR - STANDARD FIXED ON TOP
 .navbar {
+  // FLEXBOX LAYOUT - CENTERED
   @include flex();
+
+  // SIZE
+  height: 10vh;
   width: 100dvw;
+
+  // FIXED ON TOP
   position: fixed;
   top: 0;
   left: 0;
-  height: 10vh;
-  transform: none;
 
+  // ON TOP OF ANY ELEMENT
   z-index: 10000;
+
+  // VISUALS
   background-color: $background;
   border-bottom: 1px solid $dark-color;
-  box-sizing: border-box;
-  transition: 500ms;
+
+  // EFFECTS
+  transition: $transition;
   overflow: hidden;
+
+  // -------------- MAIN NAVBAR CONTAINER
   &_container{
-    box-sizing: border-box;
+    // LAYOUT + SIZE
     @include flex();
-    height: 100%;
-    width: 100%;
+    @include full-size();
     padding: 1rem 1rem;
     position: relative;
   }
 
+  // ---------- MAIN CONTENT CONTAINER WITH LOGO AND NAV LINKS
   &__content{
+    // FONT STYLING
     font-family: Poppins, sans-serif;
     font-weight: 300;
-    transition: 500ms;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 0;
-    width: 100%;
-    height: 100%;
+
+    // TRANSITION
+    transition: $transition;
+
+    // LAYOUT + SIZE
+    @include flex($justify: space-between);
+    @include full-size();
+
+    // VISUALS
     border: 1px solid $dark-color;
+
+    // -------------- LOGO STYLING - SIZE AND FILL COLORS
     .navbar___logo{
       width: 3.5rem;
-
       svg{
         height: 3.5rem;
         .cls-1 {
@@ -46,36 +60,52 @@
         }
       }
     }
+
+    // ---------------NAV LINK STYLING
     a{
+      // LAYOUT + SIZE
       text-align: center;
-      width: auto;
       height: 100%;
+      width: auto;
+      position: relative;
+
+      // VISUALS
       color: $dark-color;
       text-decoration: none;
-      position: relative;
-      transition: 100ms;
 
+      // EFFECTS
+      transition: 300ms;
+
+      // HOVER ANIMATIONS
       &:hover:not(.navbar___logo){
         background-color: $main-color;
         color: white;
       }
+
+      // BORDERS
       &:not(.navbar___contact-link){
         border-right: 1px solid $dark-color;
       }
-
       &:nth-child(1):not(.navbar___logo){
         border-left: 1px solid $dark-color;
       }
+
+      &.navbar___contact-link{
+        border-left: 1px solid $dark-color;
+      }
+
+      // LINKS
       &.navbar___logo,
       &.navbar___contact-link{
         padding: 10px;
         height: 100%;
         @include flex();
       }
-      &.navbar___contact-link{
-        border-left: 1px solid $dark-color;
-      }
+
+
     }
+
+    // ---------------- LINK WRAPPER
     .navbar____links{
       @include flex();
       height: 100%;
@@ -87,22 +117,23 @@
     }
 
   }
-  &__scroll-info{
-    @include flex(row, space-between, center);
-    transition: 500ms;
-    position: absolute;
-    visibility: hidden;
 
+  // ------------------------------------- NAV SCROLLED
+  &__scroll-info{
+    // LAYOUT + POSITION
+    @include flex(row, space-between, center);
+    width: 100vw;
+    transition: $transition;
+    position: absolute;
+
+
+    // VISUALS
     opacity: 0;
     transform: translateX(-20vw);
     color: $dark-color;
-
-    display: flex;
-    width: 100vw;
+    visibility: hidden;
     overflow: hidden;
-
-
-
+    
     a{
       text-decoration: none;
       color: $dark-color;

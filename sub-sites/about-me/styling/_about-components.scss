@@ -1,6 +1,8 @@
-
+// MAIN SECTION
 #hero-section{
-  @extend %screen-size;
+  // SIZE OF THE SCREEN 100VW 100VH
+  @extend %screen-size; // FULL VIEWPORT SIZE
+  // MAIN CONTAINER
   .hero-container{
     width: 100%;
     height: 100%;
@@ -8,39 +10,49 @@
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     padding: 1rem;
-    *{
-      border: 1px solid red;
-    }
-    h1{
+    position: relative;
+
+    // TOP CONTAINER
+    .hero__top-content{
+      @include flex(column, flex-end, flex-start);
       width: 100%;
-      height: 20%;
-      margin: 0;
-      font-size: $medium;
-      @include flex($justify: flex-start, $align: flex-end);
+      height: 50%;
+      h1{
+        margin: 0;
+        font-size: $medium;
+      }
     }
-    .bottom{
+    // BOTTOM CONTAINER
+    .hero__bottom-content{
       @include flex();
       width: 100%;
-      height: 80%;
-      .left-container{
-        width: 40%;
-        height: 100%;
+      height: 20%;
+      position: relative;
+      #i1{
+        opacity: 0;
+        transform: translateX(80%) scale(0.5);
+        width: 50%;
         @include flex();
-        div{
-          height: 100%;
-          width: 100%;
-          background: $dark-color;
-        }
+        @extend %normal-font;
+        text-align: center;
       }
-      .right-container{
-        width: 60%;
-        height: 100%;
-        div{
-          font-size: $medium;
-          text-align: right;
-          margin-right: 1vw;
-        }
-      }
+    }
+  }
+}
+
+.other-work-section{
+  @extend %screen-size;
+  .work-container{
+    @include full-size();
+    @extend %light-background;
+    border-top: solid $dark-color 2px;
+    border-radius: 20px;
+    transform: translateY(20%);
+    transition: $transition;
+  }
+  &.active{
+    .work-container{
+      transform: translateY(0);
     }
   }
 }

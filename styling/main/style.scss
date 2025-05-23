@@ -1,34 +1,6 @@
 
 
-
-
-// --------------------------
-// FONTS
-// --------------------------
-
-
-
-.cherry-bomb-one-regular {
-    font-family: "Cherry Bomb One", system-ui;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.bagel-fat-one-regular {
-    font-family: "Bagel Fat One", system-ui;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.cal-sans-regular {
-    font-family: "Cal Sans", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-// --------------------------
-// BASE STYLING
-// --------------------------
+// ---------- IMPORTED SCSS FILES
 // BASE
 @import '../base/variables';
 @import '../base/mixins';
@@ -39,22 +11,18 @@
 @import '../components/intro';
 @import '../components/skills';
 @import '../components/projects';
-//@import '../components/contact';
-
 @import '../components/navbar';
 @import '../components/footer';
 
 
+// CUSTOM SELECTION STYLING
 ::selection {
-    //background: rgba(162, 162, 162, 0.54);
-    background: #dd4083;
+    background: rgba(162, 162, 162, 0.54);
+    //background: #dd4083;
 }
 
-.bold-heading{
-    font-family:$main-font;
-    font-weight: 1000;
-    letter-spacing: -10px;
-}
+
+// BASE STYLING
 html {
     overflow-x: hidden;
     scroll-behavior: smooth;
@@ -67,8 +35,16 @@ body {
     background-color: $dark-color;
     color: $dark-color;
     width: 100dvw;
+    position: relative;
+    z-index: -1;
 }
 
+main{
+    position: relative;
+    z-index: -1;
+}
+
+// BOX SIZING RULE TO EVERYTHING
 * {
     box-sizing: border-box;
 }
@@ -76,6 +52,7 @@ body {
 .change-content::after{
     content: "hover";
 }
+
 .mobile-only {
     display: none;
 }
@@ -88,23 +65,8 @@ body {
     overflow: hidden;
 }
 
-u {
-    text-decoration: none;
-    position: relative;
 
-    &::after {
-        content: "";
-        position: absolute;
-        bottom: 10%;
-        left: 0;
-        width: 100%;
-        height: 3px;
-        background-color: $main-color;
-        border-radius: 5px;
-    }
-}
-
-// -MOVING TEXT
+// INFINITE MOVING TEXT
 .moving-text {
     font-weight: $bold-weight;
     height: 3rem;
@@ -113,12 +75,15 @@ u {
     background-color: $dark-color;
     color: white;
     border: $dark-color solid 2px;
+
+    // INNER CONTAINER WITH ANIMATION
     .moving-text__inner {
         width: max-content;
         @include flex();
         animation: infinitemove 30s linear infinite;
         height: 100%;
 
+        // INDIVIDUAL SPANS WITHIN THE ANIMATED MOVING CONTAINER
         span {
             padding: 0 10px;
             display: inline-block;
@@ -128,9 +93,9 @@ u {
     }
 }
 
-// ---------------------
-// MEDIA QUERIES
-// ---------------------
+// --------------------------
+// MEDIA QUERIES - FONT SIZES
+// --------------------------
 
 @include responsive(xlarge) {
     html {
@@ -187,45 +152,9 @@ u {
         display: flex;
     }
 
-
-
     @media only screen and (max-width: 700px) {
         html {
             font-size: 16px;
-        }
-
-        footer{
-            .contact__container {
-                .contact{
-                    &__info{
-                        flex-direction: column;
-                        align-items: flex-start;
-                        .contact__location{
-                            align-items: flex-start;
-                            width: 100%;
-                            &-details{
-                                align-items: flex-start;
-                            }
-                        }
-                    }
-                }
-                .footer-info{
-                    flex-direction: column-reverse;
-                    align-items: center;
-                    justify-content: center;
-                    padding-top: 2vh;
-                    padding-bottom: 2vh;
-                    gap: 1rem;
-                    &__socials{
-                        padding: 0;
-                        margin: 0;
-                    }
-                    p{
-                        margin: 0;
-                    }
-                }
-            }
-
         }
     }
 }
@@ -234,9 +163,11 @@ u {
 
 
 
-// ---------------------
-// KEYFRAMES
-// ---------------------
+// ----------------------
+// KEYFRAMES - ANIMATIONS
+// ----------------------
+
+// HORIZONTAL MOVING ANIMATION FOR MOVING TEXT
 @keyframes infinitemove {
     0% {
         transform: translate3d(0, 0, 0);
@@ -246,6 +177,7 @@ u {
     }
 }
 
+// SLIDE IN FROM RIGHT TO LEFT
 @keyframes slide-in-left {
     0% {
         transform: translate3d(100%, 0, 0);
@@ -257,6 +189,7 @@ u {
     }
 }
 
+// SLIDE OUT FROM RIGHT TO LEFT
 @keyframes slide-out-left {
     0% {
         transform: translate3d(0, 0, 0);
@@ -268,6 +201,7 @@ u {
     }
 }
 
+// SLIDE IN FROM LEFT TO RIGHT
 @keyframes slide-in-right {
     0% {
         transform: translatex(-100%);
@@ -279,6 +213,7 @@ u {
     }
 }
 
+// BASIC SLIDE IN TO RIGHT WITH NO OPACITY CHANGES
 @keyframes slide-in {
     0% {
         transform: translatex(-100%);
@@ -288,7 +223,7 @@ u {
     }
 }
 
-
+// BASIC FADE IN
 @keyframes fade-in {
     0% {
         opacity: 0;
@@ -298,6 +233,7 @@ u {
     }
 }
 
+// BASIC FADE OUT
 @keyframes fade-out{
     0% {
         opacity: 1;
@@ -307,6 +243,7 @@ u {
     }
 }
 
+// SLIDE UP
 @keyframes slide-up {
     0% {
         transform: translateY(100%);
@@ -316,6 +253,7 @@ u {
     }
 }
 
+// SLIDE DOWN
 @keyframes slide-down {
     0% {
         transform: translateY(0);
@@ -325,6 +263,7 @@ u {
     }
 }
 
+// HEIGHT CHANGE
 @keyframes height-animation {
     0% {
         height: 0;
@@ -334,7 +273,7 @@ u {
     }
 }
 
-// ANIMATION
+// ANIMATION CLASSES
 .fade-animation {
     animation: fade-in 1000ms ease forwards;
 }

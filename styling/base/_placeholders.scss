@@ -1,12 +1,19 @@
+
+// ELEMENT SIZE
 %screen-size{
   height: $full-height;
   width: $full-width;
 }
 
+
+// COLOR
 %light-background {
   background-color: $background;
 }
 
+
+
+// DEFINED FONT SIZES
 %small-font{
   font-size: $small;
   font-weight: 400;

@@ -1,15 +1,18 @@
-
+// ------------------
+// MAIN HERO SECTION
+// ------------------
 #hero-section {
   @include flex(column);
-  @extend %light-background;
+  @extend %light-background; // SCSS PLACEHOLDER FOR LIGHT BACKGROUND
   height: $full-height;
-  z-index: -100;
+  z-index: -100; // TO APPEAR BELOW ANOTHER SECTION - INTRO SECTION
   position: relative;
-  box-sizing: border-box;
   .hero_title {
     animation: fade-in 500ms ease forwards, slide-in-left 1000ms ease forwards;
+
+    // MAIN HEADING
     h1 {
-      z-index: 2;
+      z-index: 2; // ABOVE BCG LINE
       font-size: $big;
       line-height: 80%;
       margin: 0;
@@ -19,6 +22,7 @@
       font-weight: 1000;
     }
 
+    // SUB HEADING
     h2 {
       margin: 0;
       text-align: right;
@@ -27,6 +31,7 @@
     }
   }
 
+  // RIGHT SIDE CONTAINER WITH A PHOTO
   .hero_right-container {
     @include flex(column);
     position: absolute;
@@ -40,10 +45,11 @@
     .hero__photo {
       width: 50%;
       height: 60%;
-      @include background-cover('../../img/c8bb9e7a2105ebb57e7a7638dcae825d.jpg');
+      @include background-cover('../../img/my-photo.jpg');
     }
   }
 
+  // DECORATIVE LINE IN THE BACKGROUND W ABSOLUTE POSITIONING
   .hero_bcg-line {
     position: absolute;
     top: -10;
@@ -55,6 +61,7 @@
     transform: rotate(60deg);
   }
 
+  // LEFT SIDE CONTAINER WITH TEXT CONTENT
   .hero_left-container {
     @include flex();
     position: absolute;
@@ -67,27 +74,24 @@
     @extend %light-background;
     border: $dark-color solid 1px;
 
+    // PARAGRAPH
     p {
       color: $dark-color;
       margin: .8rem 1rem;
       font-size: $normal;
       text-align: justify;
+
+      a{
+        color: $main-color;
+      }
     }
   }
-
-  &.animated::after {
-    transform: rotate(45deg);
-    translate: 25% 25%;
-  }
-
 }
 
-// Mobile hero section
+// HERO SECTION FOR MOBILE AND (SOME) TABLETS
 #hero-section-mobile-tablet {
   width: 100vw;
   height: 100vh;
-
-
   .hero_container {
     @extend %light-background;
     position: relative;
@@ -100,6 +104,7 @@
     .hero_title {
       @include flex(column);
 
+      // MAIN HEADING
       h1 {
         z-index: 2;
         font-size: $big;
@@ -111,6 +116,7 @@
       }
     }
 
+    // DECORATIVE LINE IN THE BACKGROUND
     .hero-mobile_bcg-line {
       position: absolute;
       top: 50vh;
@@ -122,6 +128,7 @@
       height: 150vh;
     }
 
+    // CONTAINER WITH TEXT CONTENT
     .hero_container {
       @extend %light-background;
       border: $dark-color solid 1px;
@@ -141,7 +148,11 @@
 }
 
 
+//-------------
 // RESPONSIVITY
+//-------------
+
+// FOR DESKTOP VERSION
 #hero-section{
   @include responsive(laptop){
     .hero_left-container {
@@ -172,7 +183,7 @@
   }
 }
 
-
+// FOR MOBILE/TABLET VERSION
 @include responsive(portrait) {
   #hero-section-mobile-tablet {
     height: 100vh;

@@ -98,40 +98,6 @@ body {
     html {
       font-size: 16px;
     }
-
-    footer{
-      .contact__container {
-        .contact{
-          &__info{
-            flex-direction: column;
-            align-items: flex-start;
-            .contact__location{
-              align-items: flex-start;
-              width: 100%;
-              &-details{
-                align-items: flex-start;
-              }
-            }
-          }
-        }
-        .footer-info{
-          flex-direction: column-reverse;
-          align-items: center;
-          justify-content: center;
-          padding-top: 2vh;
-          padding-bottom: 2vh;
-          gap: 1rem;
-          &__socials{
-            padding: 0;
-            margin: 0;
-          }
-          p{
-            margin: 0;
-          }
-        }
-      }
-
-    }
   }
 }
 
