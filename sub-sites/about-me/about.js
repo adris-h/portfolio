@@ -73,8 +73,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
-
         if (currentPosition >= infoPos3) {
             info3.classList.add("active");
 
@@ -88,7 +86,6 @@ document.addEventListener('DOMContentLoaded', function() {
             info1.classList.remove("active");
         }
     });
-
 
 });
 

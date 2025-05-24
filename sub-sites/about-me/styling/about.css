@@ -6,7 +6,7 @@
   --small-heading: 2.5vw;
 }
 
-#main-section .main-container {
+#work-section .work__top-container, #main-section .main-container {
   background-color: #f9f7f3;
 }
 
@@ -15,12 +15,12 @@ footer .contact__container .footer-info, footer .contact__container .contact__in
   font-weight: 400;
 }
 
-#main-section .main-container .main__bottom-container div p {
+#work-section .work__top-container h3, #main-section .main-container .main__bottom-container div p {
   font-size: var(--normal-font);
   font-weight: 400;
 }
 
-#main-section .main-container .main__top-container .main__title-container h1, footer .contact__container .contact__title {
+#work-section .work__top-container h2, #main-section .main-container .main__top-container .main__title-container h1, footer .contact__container .contact__title {
   font-size: var(--medium-font);
   font-weight: 800;
 }
@@ -96,7 +96,7 @@ footer .contact__container .contact__email-button {
   color: rgb(29, 29, 29);
 }
 footer .contact__container .contact__email-button:hover {
-  color: #DD4083;
+  color: rgb(108, 160, 211);
   transform: translateX(10%);
 }
 footer .contact__container .contact__info {
@@ -107,15 +107,14 @@ footer .contact__container .contact__info {
   gap: 10%;
   width: 100%;
   height: 60%;
-  margin-top: 3.5vw;
 }
 footer .contact__container .contact__info-logo {
   width: 50%;
   height: 18vw;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   gap: 0;
 }
 footer .contact__container .contact__info-logo img {
@@ -177,7 +176,7 @@ footer .contact__container .footer-info__socials li a {
   text-decoration: none;
 }
 footer .contact__container .footer-info__socials li a:hover {
-  color: #DD4083;
+  color: rgb(108, 160, 211);
 }
 
 @media only screen and (orientation: portrait) and (max-width: 700px) {
@@ -282,12 +281,48 @@ footer .contact__container .footer-info__socials li a:hover {
   height: 80%;
   text-align: center;
   padding: 0 1rem 0 1rem;
-  border: 1px #DD4083 dashed;
+  border: 1px rgb(108, 160, 211) dashed;
   border-radius: 20px;
 }
 #main-section .main-container .main__bottom-container div p {
   opacity: 0;
   margin: 0;
+}
+
+#work-section {
+  width: 100vw;
+  height: fit-content;
+}
+#work-section .work__top-container {
+  border-top: rgb(29, 29, 29) solid 2px;
+  border-radius: 20px;
+  height: 40%;
+  width: 100%;
+  padding: 5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0;
+}
+#work-section .work__top-container h2 {
+  margin: 0;
+  line-height: var(--medium-font);
+}
+#work-section .work__top-container h3 {
+  margin: 0;
+  text-align: justify;
+}
+#work-section .work__bottom-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 0;
+  padding: 5vw;
+}
+#work-section .work__bottom-container video {
+  width: 30vw;
 }
 
 @media only screen and (max-width: 900px) {
@@ -299,8 +334,10 @@ footer .contact__container .footer-info__socials li a:hover {
   }
 }
 @media (orientation: portrait) {
-  #main-section .main-container {
+  #main-section {
     height: fit-content;
+  }
+  #main-section .main-container {
     width: 100%;
     padding: 0 2vw 5vw 0;
   }
@@ -333,7 +370,7 @@ footer .contact__container .footer-info__socials li a:hover {
   #main-section .main-container .main__bottom-container {
     padding-top: 2vw;
     flex-direction: column;
-    gap: 4rem;
+    gap: 20vw;
   }
   #main-section .main-container .main__bottom-container div {
     border: none;
@@ -354,6 +391,13 @@ footer .contact__container .footer-info__socials li a:hover {
   }
   #main-section .main-container .main__bottom-container div:nth-child(odd) p {
     text-align: right;
+  }
+  #work-section .work__bottom-container {
+    flex-direction: column;
+    gap: 10vw;
+  }
+  #work-section .work__bottom-container video {
+    width: 50vw;
   }
 }
 header {

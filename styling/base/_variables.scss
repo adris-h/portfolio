@@ -26,7 +26,8 @@ $small: var(--small-font);
 $small-heading: var(--small-heading);
 
 // COLORS
-$main-color: #DD4083;
+$main-color: rgb(108, 160, 211); //#DD4083
+$main-color-low-opacity: rgba(89, 136, 183, 0.15);
 $dark-color: rgb(29, 29, 29);
 $blue: rgb(89, 136, 183);
 $text-b: black;

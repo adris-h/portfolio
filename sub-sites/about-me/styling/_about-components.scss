@@ -1,6 +1,7 @@
 // MAIN SECTION
 
 
+
 #main-section{
   height: 100vh;
   width: 100vw;
@@ -64,6 +65,39 @@
   }
 }
 
+
+#work-section{
+  width: 100vw;
+  height: fit-content;
+
+  .work__top-container{
+    border-top: $dark-color solid 2px;
+    border-radius: 20px;
+    height: 40%;
+    width: 100%;
+    padding: 5vw;
+    @extend %light-background;
+    @include flex(column, $align: flex-start);
+    h2{
+      margin: 0;
+      @extend %medium-font;
+      line-height: $medium;
+    }
+    h3{
+      margin: 0;
+      text-align: justify;
+      @extend %normal-font;
+    }
+  }
+  .work__bottom-container{
+    @include flex($justify: space-evenly);
+    padding: 5vw;
+    video{
+      width: 30vw;
+    }
+  }
+}
+
 @include responsive(mobile-tablet){
   #main-section{
     .main-container{
@@ -79,8 +113,8 @@
 
 @include responsive(portrait){
   #main-section{
+    height: fit-content;
     .main-container{
-      height: fit-content;
       width: 100%;
       padding: 0 2vw 5vw 0;
       .main__top-container{
@@ -104,7 +138,7 @@
       .main__bottom-container{
         padding-top: 2vw;
         flex-direction: column;
-        gap: 4rem;
+        gap: 20vw;
         div{
           border: none;
           width: 100%;
@@ -127,6 +161,17 @@
           }
 
         }
+      }
+    }
+  }
+
+  #work-section{
+    .work__bottom-container{
+      flex-direction: column;
+      gap: 10vw;
+
+      video{
+        width: 50vw;
       }
     }
   }
