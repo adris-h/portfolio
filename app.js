@@ -58,23 +58,12 @@ mobileMenuButton.addEventListener('click', () => {
 })
 //
 
-// MENU LINK CLICK HANDLING
-document.querySelectorAll('.menu-link').forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
+const menu = document.getElementById('menu');
+const menuLinks = document.querySelectorAll('.menu-link');
 
-        const targetId = link.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-
-        if (targetElement) {
-            bigMenu.classList.remove('active');
-            document.body.classList.remove('unscrollable');
-
-            // Delay smooth scrolling slightly so menu can close first
-            setTimeout(() => {
-                targetElement.scrollIntoView({ behavior: 'smooth' });
-            }, 50);
-        }
+menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        menu.classList.remove('active'); // OR WHATEVER CLASS SHOWS THE MENU
     });
 });
 
