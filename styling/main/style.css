@@ -7,7 +7,7 @@
 }
 
 #skills-section .skills__container, #intro-section .intro_container, #hero-section-mobile-tablet .hero_container .hero_container, #hero-section-mobile-tablet .hero_container, #hero-section .hero_left-container, #hero-section {
-  background-color: #f9f7f3;
+  background-color: #faf4ec;
 }
 
 footer .contact__container .footer-info, footer .contact__container .contact__info .contact__location-details strong, footer .contact__container .contact__email-label {
@@ -841,7 +841,7 @@ footer .contact__container .contact__info .contact__location-title, footer .cont
   top: 0;
   left: 0;
   z-index: 10000;
-  background-color: #f9f7f3;
+  background-color: #faf4ec;
   border-bottom: 1px solid rgb(29, 29, 29);
   transition: 800ms;
   overflow: hidden;
@@ -1075,7 +1075,7 @@ footer .contact__container .contact__info .contact__location-title, footer .cont
   width: 100vw;
   height: 100vh;
   z-index: -100;
-  background-color: #f9f7f3;
+  background-color: #faf4ec;
   transition: 400ms;
   top: 0;
   right: 0;
@@ -1093,7 +1093,7 @@ footer .contact__container .contact__info .contact__location-title, footer .cont
   width: 20%;
 }
 #menu .menu_right {
-  background-color: #f9f7f3;
+  background-color: #faf4ec;
   width: 80%;
   height: 100%;
 }
@@ -1149,7 +1149,7 @@ footer .contact__container .contact__info .contact__location-title, footer .cont
     top: 0;
     left: 0;
     right: 0;
-    background-color: #f9f7f3;
+    background-color: #faf4ec;
     border-bottom: rgb(29, 29, 29) 1px solid;
   }
   .mobile-nav a {
@@ -1273,7 +1273,7 @@ footer .contact__container {
   transition: 800ms;
   transform: translateY(100%);
   padding: 8vw 2vw 4vw 2vw;
-  background-color: #f9f7f3;
+  background-color: #faf4ec;
   width: 100%;
   height: 100%;
   z-index: 100;

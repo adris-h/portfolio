@@ -69,14 +69,15 @@
 #work-section{
   width: 100vw;
   height: fit-content;
-
+  border-top: $dark-color solid 2px;
+  border-radius: 20px;
+  @extend %light-background;
   .work__top-container{
-    border-top: $dark-color solid 2px;
-    border-radius: 20px;
+
     height: 40%;
     width: 100%;
     padding: 5vw;
-    @extend %light-background;
+
     @include flex(column, $align: flex-start);
     h2{
       margin: 0;
@@ -94,6 +95,69 @@
     padding: 5vw;
     video{
       width: 30vw;
+      transition: $transition;
+      opacity: 0;
+    }
+
+    &.active{
+      video{
+        opacity: 1;
+      }
+      video:nth-child(1){
+        transform: translateX(0);
+      }
+      video:nth-child(2){
+        transform: translateX(0);
+      }
+    }
+
+    video:nth-child(1){
+      transform: translateX(-100%);
+    }
+    video:nth-child(2){
+      transform: translateX(100%);
+    }
+  }
+}
+
+#bass-section{
+  height: 100vh;
+  border-top: $dark-color solid 2px;
+  border-radius: 20px;
+  @extend %light-background;
+  @include flex(column, $align: flex-end);
+  padding-right: 10vw;
+  position: relative;
+  .bass__top-container{
+    @include flex(column, flex-end, flex-end);
+    height: 60%;
+    width: 100%;
+    h2{
+      @extend %medium-font;
+      line-height: $medium;
+      margin: 0;
+    }
+  }
+  .bass__bottom-container{
+    height: 40%;
+    width: 60%;
+    border-top: rgba(0, 0, 0, 0.13) solid 2px;
+  }
+  img{
+    transform: rotate(-45deg) translateX(-50%);
+
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30vw;
+    transition: $transition;
+  }
+
+  &.active{
+    img{
+      transform: rotate(-20deg) translateX(-5%);
+      opacity: 1;
     }
   }
 }
