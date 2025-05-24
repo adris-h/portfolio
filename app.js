@@ -43,6 +43,10 @@ const skillHolder = document.querySelector(".skills__right-container");
 const interests = ["Development", "UX/UI", "Applications"];
 const intervalTime = 1000;
 
+window.addEventListener('resize', () => {
+    ScrollTrigger.refresh();
+});
+
 // MENU BUTTON TOGGLE
 mobileMenuButton.addEventListener('click', () => {
     bigMenu.classList.toggle('active');

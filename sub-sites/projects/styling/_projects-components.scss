@@ -2,6 +2,7 @@ main{
   height: fit-content;
   margin-bottom: 20vh;
   background: $dark-color;
+
 }
 #projects-intro {
   @extend %screen-size;
@@ -56,6 +57,7 @@ main{
 
 .projects{
   height: 300vh;
+
   @extend %light-background;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -100,7 +102,7 @@ main{
             border-radius: 15px;
             box-sizing: border-box;
             padding: 5px 10px 5px 10px;
-            border: 1px solid $dark-color;
+            border: 1px dashed $dark-color;
             @extend %small-font;
           }
         }
@@ -144,6 +146,16 @@ main{
     }
 
   }
+}
+
+@keyframes padding {
+  from{
+    width: 100%;
+  }
+  to{
+    width: 80%;
+  }
+
 }
 
 

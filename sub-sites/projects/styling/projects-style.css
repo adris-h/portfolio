@@ -328,7 +328,7 @@ main {
   border-radius: 15px;
   box-sizing: border-box;
   padding: 5px 10px 5px 10px;
-  border: 1px solid rgb(29, 29, 29);
+  border: 1px dashed rgb(29, 29, 29);
 }
 .projects .projects__line {
   width: 10%;
@@ -370,6 +370,14 @@ main {
   transform: rotate(45deg);
 }
 
+@keyframes padding {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 80%;
+  }
+}
 .projects__holder .project-1 div {
   background: url("../../../img/projects/design.webp") center/cover no-repeat;
 }

@@ -27,3 +27,96 @@ body {
 * {
   box-sizing: border-box;
 }
+
+@keyframes line-anim {
+  from{
+    width: 0;
+  }
+  to{
+    width: 50%;
+  }
+
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translate3d(80%, 0, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@include responsive(xlarge) {
+  html {
+    font-size: 25px;
+  }
+}
+
+@include responsive(desktop) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@include responsive(laptop) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@include responsive(tablet) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@include responsive(mobile-tablet) {
+
+  // oNLY TABLET
+  @media (min-width: 700px) {
+    :root {
+      --medium-font: 6vw;
+      --big-font: 12vw;
+      --small-font: 1.8vw;
+      --normal-font: 2vw;
+    }
+
+    html {
+      font-size: 16px;
+    }
+
+  }
+}
+
+@include responsive(portrait) {
+  :root {
+    --medium-font: 9vw;
+    --big-font: 10.5vw;
+    --normal-font: 4vw;
+    --small-font: 3vw;
+    --small-heading: 5vw;
+  }
+
+  .mobile-only {
+    display: flex;
+  }
+
+  @media only screen and (max-width: 700px) {
+    html {
+      font-size: 16px;
+    }
+  }
+}
