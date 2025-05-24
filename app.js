@@ -118,7 +118,7 @@ window.addEventListener('resize', setSectionPositions);
 window.addEventListener('load', setSectionPositions);
 //
 
-window.addEventListener("scroll", function () {
+window.addEventListener("scroll",  () => {
     const currentPosition = window.scrollY;
     if (currentPosition >= aboutmePosition) {
         navBar.classList.add("scrolled");
@@ -207,23 +207,23 @@ setInterval(updateText, intervalTime);
 // PROJECTS SHOWCASE ANIMATION
 
 
-projectImg1.addEventListener('mouseover', e => {
+projectImg1.addEventListener('mouseover', () => {
     projectIcon1.classList.add('active');
     projectText1.classList.add('active');
 })
 
-projectImg1.addEventListener('mouseout', e => {
+projectImg1.addEventListener('mouseout', () => {
     projectIcon1.classList.remove('active');
     projectText1.classList.remove('active');
 })
 
 
-projectImg2.addEventListener('mouseover', e => {
+projectImg2.addEventListener('mouseover', () => {
     projectIcon2.classList.add('active');
     projectText2.classList.add('active');
 })
 
-projectImg2.addEventListener('mouseout', e => {
+projectImg2.addEventListener('mouseout', () => {
     projectIcon2.classList.remove('active');
     projectText2.classList.remove('active');
 })
