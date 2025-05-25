@@ -1,3 +1,4 @@
+// MAIN FOOTER WRAPPER
 footer{
   position: relative;
   background-color: $dark-color;
@@ -6,8 +7,12 @@ footer{
   z-index: 10;
   width: 100vw;
   overflow: hidden;
+
+  // CONTACT FORM CONTAINER WITH SLIDE UP ANIMATION
   .contact__container{
     transition: $transition;
+
+    // HIDDEN BY DEFAULT
     transform: translateY(100%);
     padding: 8vw 2vw 4vw 2vw;
     background-color: $background;
@@ -16,13 +21,18 @@ footer{
     z-index: 100;
     border-radius: 20px;
     @include flex(column, $gap: 2rem);
+
+    // SHOW CONTACT WHEN ACTIVE
     &.active{
       transform: translateY(0%);
     }
+    // MAIN CONTACT SECTION
     .contact{
       width: 100%;
       height: 90%;
       @include flex(column);
+
+      // CONTACT TITLE
       &__title{
         width: 100%;
         height: 20%;
@@ -30,14 +40,20 @@ footer{
         line-height: $medium;
         margin-bottom: 1rem;
       }
+
+      // EMAIL SECTION
       &__email{
         width: 100%;
         height: 20%;
         @include flex(column, center, flex-start);
         position: relative;
+
+        // EMAIL LABEL
         &-label{
           @extend %small-font;
         }
+
+        // EMAIL BUTTON WITH HOVER EFFECT
         &-button{
           @extend %small-heading;
           border: none;
@@ -47,38 +63,54 @@ footer{
           padding: 0;
           transition: 300ms;
           color: $dark-color;
+
+          // HOVER ANIMATION
           &:hover{
             color: $main-color;
+            // SLIDE RIGHT ON HOVER
             transform: translateX(10%);
           }
         }
       }
+
+      // CONTACT INFO SECTION WITH LOGO AND LOCATION
       &__info{
         @include flex(row, space-between, center, 10%);
         width: 100%;
         height: 60%;
 
+        // LOGO CONTAINER
         &-logo{
           width: 50%;
           height: 18vw;
           @include flex();
+
+          // LOGO IMAGE
           img{
             min-width: 100%;
             min-height: 100%;
           }
         }
+
+        // LOCATION INFO SECTION
         .contact__location{
           font-style: normal;
           width: 40%;
           height: 100%;
           @include flex(column, flex-start, flex-end, 0);
+
+          // LOCATION TITLE
           &-title{
             @extend %small-heading;
             margin: 0;
             @include flex(column, flex-start, flex-end, 0);
           }
+
+          // LOCATION DETAILS
           &-details{
             @include flex(column, flex-start, flex-end, 0);
+
+            // REMOVE MARGINS FROM ALL CHILDREN
             & > *{
               margin: 0;
             }
@@ -91,20 +123,28 @@ footer{
         }
       }
     }
+
+    // FOOTER INFO WITH SOCIAL LINKS
     .footer-info{
       @include flex(row, space-between);
       width: 100%;
       height: 20%;
       border-top: 2px solid rgba(0, 0, 0, 0.1);
       @extend %small-font;
+
+      // SOCIAL MEDIA LINKS
       &__socials{
         list-style: none;
         @include flex(row, $gap: 1rem);
+
+        // SOCIAL LINK STYLING
         li a{
           transition: 300ms;
           color: $dark-color;
           text-decoration: none;
         }
+
+        // SOCIAL LINK HOVER EFFECT
         li a:hover{
           color: $main-color;
         }
@@ -114,11 +154,13 @@ footer{
 }
 
 
+// MOBILE RESPONSIVE STYLES
 @include responsive(portrait) {
   @media only screen and (max-width: 700px){
     footer{
       .contact__container {
         .contact{
+          // STACK INFO VERTICALLY ON MOBILE
           &__info{
             flex-direction: column;
             align-items: flex-start;

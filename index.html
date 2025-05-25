@@ -1,35 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- ENCODING + RESPONSIVE SETUP -->
         <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 ,user-scalable=no"/>
 
-        <!-- STYLESHEETS -->
+        <!-- MAIN STYLESHEET -->
         <link rel="stylesheet" href="styling/main/style.css">
 
-        <!-- META DESC FOR SEO -->
+        <!-- SEO STUFF DESCRIPTIONS FOR SEARCH ENGINES -->
         <meta name="description" content="Portfolio of Adriana Hanousková - Front End Developer"/>
 
         <!-- GOOGLE FONTS -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-        <!-- TITLE -->
+
+        <!-- TAB TITLE -->
         <title>Adriana Hanousková - Portfolio</title>
         <!-- ICON -->
-        <link rel="icon" type="image/x-icon" href="my-logo.ico">
+        <link rel="icon" type="image/x-icon" href="img/my-logo.ico">
 
 
-        <!-- SCRIPTS -->
+        <!-- JS SCRIPTS -->
         <script src="app.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+        <script src="current-time.js" ></script>
     </head>
-    <body class="light-mode body">
-        <!-- NAVIGATION -->
+    <body class="body">
+        <!-- MAIN DESKTOP NAVIGATION -->
         <nav class="navbar">
             <div class="navbar_container">
                 <div class="navbar__content">
-                    <!-- NAVIGATION LOGO LINK TO HERO PAGE -->
+                    <!-- NAVIGATION LOGO THAT LINKS TO THE TOP OF THE PAGE -->
                     <a class="navbar___logo text" href="#">
                         <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1255.51 1255.51" role="img" aria-label="Logo">
                             <path class="cls-1" d="M930.03,936.14l-210.27-577.02c-1.99-5.47-7.19-9.11-13.01-9.11h-199.29c-5.81,0-11,3.63-13,9.09l-211.09,577.03c-3.3,9.03,3.39,18.6,13.01,18.6h169.16c5.99,0,11.3-3.85,13.16-9.54l13.3-40.65,22.79-76.23c1.86-6.21-.35-12.91-5.54-16.8l-87.89-65.86c-11.9-8.92-5.58-27.85,9.28-27.84l110.13.06c6.96,0,13.06-4.64,14.91-11.35l34.7-125.82c4.15-15.03,25.41-15.17,29.76-.19l36.6,126.12c1.92,6.61,7.97,11.15,14.85,11.15h111.26c14.97,0,21.2,19.17,9.08,27.98l-90.31,65.61c-5.42,3.94-7.68,10.92-5.61,17.29l34.49,106.17c.15.47.28.94.39,1.4l2.93,8.96c1.86,5.69,7.17,9.54,13.16,9.54h170.04c9.61,0,16.3-9.56,13.01-18.59Z"/>
@@ -39,17 +42,21 @@
                     <div class="navbar____links">
                         <a href="#intro-section">about me</a>
                         <a href="#skills-section">skills</a>
-                        <a href="#temporary-name">projects</a>
+                        <a href="#projects-section">projects</a>
                     </div>
-                    <!-- CONTACT LINK -->
+                    <!-- CONTACT LINK LINKS TO CONTACT SECTION-->
                     <a href="#contact-section" class="navbar___contact-link">contact.</a>
                 </div>
+
+                <!-- EXTRA NAV INFO (SHOWS CURRENT SCROLL POSITION) -->
                 <div class="navbar__scroll-info disabled">
                     <span> you are here:
                         <span class="navbar___position-span"> about me </span>
                     </span>
                     <span>
+                        <!-- ANIMATED MENU BUTTONS WITH LETTER-BY-LETTER HOVER EFFECTS -->
                         <button class="navbar___menu-button">
+
                             <a href="#hero-section" class="navbar__menu-toggle navbar__menu-toggle--1"><span>h</span><span>o</span><span>m</span><span>e</span></a>
                             <a href="#hero-section" class="navbar__menu-toggle navbar__menu-toggle--2"><span>h</span><span>o</span><span>m</span><span>e</span></a>
                         </button>
@@ -58,8 +65,8 @@
                             <a href="#intro-section" class="navbar__menu-toggle navbar__menu-toggle--2"><span>a</span><span>b</span><span>o</span><span>u</span><span>t</span>&nbsp;<span>m</span><span>e</span></a>
                         </button>
                         <button class="navbar___menu-button">
-                            <a href="#temporary-name" class="navbar__menu-toggle navbar__menu-toggle--1"><span>p</span><span>r</span><span>o</span><span>j</span><span>e</span><span>c</span><span>t</span><span>s</span></a>
-                            <a href="#temporary-name" class="navbar__menu-toggle navbar__menu-toggle--2"><span>p</span><span>r</span><span>o</span><span>j</span><span>e</span><span>c</span><span>t</span><span>s</span></a>
+                            <a href="#projects-section" class="navbar__menu-toggle navbar__menu-toggle--1"><span>p</span><span>r</span><span>o</span><span>j</span><span>e</span><span>c</span><span>t</span><span>s</span></a>
+                            <a href="#projects-section" class="navbar__menu-toggle navbar__menu-toggle--2"><span>p</span><span>r</span><span>o</span><span>j</span><span>e</span><span>c</span><span>t</span><span>s</span></a>
                         </button>
                         <button class="navbar___menu-button">
                             <a href="#contact-section" class="navbar__menu-toggle navbar__menu-toggle--1"><span>c</span><span>o</span><span>n</span><span>t</span><span>a</span><span>c</span><span>t</span></a>
@@ -69,11 +76,15 @@
                 </div>
             </div>
         </nav>
+
+        <!-- MOBILE AND TABLET NAVIGATION - ONLY SHOWS ON SMALLER SCREENS -->
         <nav class="mobile-nav mobile-only">
+            <!-- CURRENT SCROLL POSITION FOR MOBILE -->
             <span> you are here: &nbsp;&nbsp;
                 <span class="mobile-nav__position-span"> home </span>
             </span>
             <span>
+                <!-- HAMBURGER MENU TOGGLE -->
                 <button class="mobile-nav__menu-button" id="menu-toggle">
                     <a  class="mobile-nav_menu-toggle mobile-nav_menu-toggle--1"><span>m</span><span>e</span><span>n</span><span>u</span></a>
                     <a  class="mobile-nav_menu-toggle mobile-nav_menu-toggle--2"><span>m</span><span>e</span><span>n</span><span>u</span></a>
@@ -83,6 +94,7 @@
         <!-- POP UP MENU ( when menu button is clicked )-->
         <aside id="menu">
             <div class="menu_left"></div>
+            <!-- RIGHT SIDE WITH ACTUAL MENU ITEMS -->
             <div class="menu_right">
                 <ul class="menu__list">
                     <li class="menu__items">
@@ -91,11 +103,11 @@
                     </li>
                     <li class="menu__items">
                         <div class="menu___number"> 2 </div>
-                        <div class="menu___link"> <a href="#intro-section" class="menu-link">MORE ABOUT ME</a> </div>
+                        <div class="menu___link"> <a href="sub-pages/about-me/aboutme.html" class="menu-link">MORE ABOUT ME</a> </div>
                     </li>
                     <li class="menu__items">
                         <div class="menu___number"> 3 </div>
-                        <div class="menu___link"> <a href="sub-sites/projects/projects.html" class="menu-link">ALL MY PROJECTS</a> </div>
+                        <div class="menu___link"> <a href="sub-pages/projects/projects.html" class="menu-link">ALL MY PROJECTS</a> </div>
                     </li>
                     <li class="menu__items">
                         <div class="menu___number"> 4 </div>
@@ -104,29 +116,31 @@
                 </ul>
             </div>
         </aside>
+
+        <!-- MAIN CONTENT WRAPPER -->
         <main>
-            <!-- HERO SECTION -->
+            <!-- SECTION: HERO - FIRST THING USERS SEE ON DESKTOP -->
             <section id="hero-section" class="overflow-hidden">
+                <!-- MAIN TITLE WITH NAME -->
                 <div class="hero_title">
-
                     <h1>Adriana <br> Hanousková</h1>
-
                 </div>
+                <!-- DECORATIVE LINE -->
                 <div class="hero_bcg-line height-change"></div>
                 <!-- CONTENT THAT APPEARS WITH SCROLL ANIMATION -->
                 <div class="hero_left-container">
-                    <p> Hi! I'm a seventeen-year-old a student at <a href="https://creativehill.cz/" target="_blank">CHC Zlín</a>, currently studying Game & Mobile Application Development. </p> <!--I like clean code, visually stunning interfaces and turning ideas into things that actually work.-->
+                    <p> Hi! I'm a seventeen-year-old student at <a href="https://creativehill.cz/" target="_blank">CHC Zlín</a>, currently studying Game & Mobile Application Development. </p> <!--I like clean code, visually stunning interfaces and turning ideas into things that actually work.-->
                 </div>
                 <div class="hero_right-container">
                     <div class="hero__photo"></div>
                 </div>
             </section>
-            <!-- HERO SECTION FOR MOBILE -->
+
+            <!-- SEPARATE HERO SECTION OPTIMIZED FOR MOBILE AND TABLET -->
             <section id="hero-section-mobile-tablet" class="mobile-only overflow-hidden">
                 <div class="hero_container">
                     <div class="hero_title">
                         <h1>Adriana <br> Hanousková</h1>
-
                     </div>
                     <div class="hero-mobile_bcg-line"></div>
                     <div class="hero_container">
@@ -134,57 +148,70 @@
                     </div>
                 </div>
             </section>
+
+            <!-- SECTION: ABOUT ME -->
             <section id="intro-section" class="overflow-hidden">
                 <div class="intro_container">
                         <div class="intro_top-container">
                             <p>* in progress</p>
+                            <!-- MAIN SECTION HEADING WITH CHANGING TEXT -->
                             <h2>DESIGN & <br> WEB <span class="about___changing-interests"></span> </h2>
+                            <!-- BIRTH DATE AND LOCATION WITH TIME ELEMENT FOR SEMANTIC HTML-->
                             <h3><time datetime="2007-08-31">31.08.2007</time> // Czech Republic</h3>
                         </div>
                         <div class="intro_bottom-container">
-                            <a href="sub-sites/about-me/aboutme.html"><span class="outer"><span class="inner"></span></span>get to know me</a>
+                            <a href="sub-pages/about-me/aboutme.html"><span class="outer"><span class="inner"></span></span>get to know me</a>
                         </div>
                 </div>
             </section>
 
-            <!-- MOVING TEXT ANIMATION -->
+            <!-- ENDLESS MOVING TEXT ANIMATION -->
             <div class="moving-text">
                 <div class="moving-text__inner">
+                    <!-- DUPLICATE TEXT SPANS FOR SEAMLESS LOOP ANIMATION -->
                     <span>my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience</span>
                     <span>my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience &nbsp;&nbsp;&nbsp;&nbsp; my experience</span>
                 </div>
             </div>
-            <!-- SKILL SECTION -->
+            <!-- SECTION: SKILLS -->
             <section id="skills-section">
+                <!-- LEFT SIDE - SECTION TITLE -->
                 <div class="skills__left-container skills__container">
                     <div class="skills__title">
                         <h2><span>skills</span> <span>that</span> <span>shape</span> <span>my</span> <span>work</span></h2>
                     </div>
                 </div>
+                <!-- RIGHT SIDE - SKILLS AND DESCRIPTIONS -->
                 <div class="skills__right-container skills__container">
                     <span class="skills__span"><span class="change-content"></span>&nbsp;for more info </span>
                     <div class="skills__items">
                         <div>
+                            <!-- HTML SKILL WITH LOGO AND NAME -->
                             <figure class="skills___item skill___item-1">
                                 <div class="skills___logo skills___logo-1"></div>
                                 <figcaption class="skills___name">html</figcaption>
                             </figure>
+                            <!-- CSS SKILL WITH LOGO AND NAME -->
                             <figure class="skills___item skill___item-2">
                                 <div class="skills___logo skills___logo-2"></div>
                                 <figcaption class="skills___name">css</figcaption>
                             </figure>
                         </div>
                         <div>
+                            <!-- JS SKILL WITH LOGO AND NAME -->
                             <figure class="skills___item skill___item-3">
                                 <div class="skills___logo skills___logo-3"></div>
                                 <figcaption class="skills___name">javascript</figcaption>
                             </figure>
+                            <!-- FIGMA SKILL WITH LOGO AND NAME -->
                             <figure class="skills___item skill___item-4">
                                 <div class="skills___logo skills___logo-4"></div>
                                 <figcaption class="skills___name">figma</figcaption>
                             </figure>
                         </div>
                     </div>
+
+                    <!-- SKILL DESCRIPTIONS THAT APPEAR ON HOVER -->
                     <div class="skills__descriptions">
                         <p class="skills___skill-1-desc">I’ve worked with HTML for over 2 years - building structured, accessible websites with code as clean and semantic as possible.</p>
                         <p class="skills___skill-2-desc">As well as HTML, CSS has been enriching my projects for over 2 years - allowing my designs to come to life.</p>
@@ -193,20 +220,24 @@
                     </div>
                 </div>
             </section>
-            <!-- MOVING TEXT ANIMATION -->
+
+            <!-- ANOTHER ANIMATED SCROLLING TEXT SECTION -->
             <div class="moving-text">
                 <div class="moving-text__inner">
                     <span>selected projects &nbsp;&nbsp;&nbsp;&nbsp; selected projects &nbsp;&nbsp;&nbsp;&nbsp; selected projects &nbsp;&nbsp;&nbsp;&nbsp; selected projects &nbsp;&nbsp;&nbsp;&nbsp; selected projects &nbsp;&nbsp;&nbsp;&nbsp; selected projects &nbsp;&nbsp;&nbsp;&nbsp; selected projects &nbsp;&nbsp;&nbsp;&nbsp; selected projects &nbsp;&nbsp;&nbsp;&nbsp; selected projects &nbsp;&nbsp;&nbsp;&nbsp; selected projects &nbsp;&nbsp;&nbsp;&nbsp; selected projects</span>
                     <span>selected projects &nbsp;&nbsp;&nbsp;&nbsp; selected projects &nbsp;&nbsp;&nbsp;&nbsp; selected projects &nbsp;&nbsp;&nbsp;&nbsp; selected projects &nbsp;&nbsp;&nbsp;&nbsp; selected projects &nbsp;&nbsp;&nbsp;&nbsp; selected projects &nbsp;&nbsp;&nbsp;&nbsp; selected projects &nbsp;&nbsp;&nbsp;&nbsp; selected projects &nbsp;&nbsp;&nbsp;&nbsp; selected projects &nbsp;&nbsp;&nbsp;&nbsp; selected projects &nbsp;&nbsp;&nbsp;&nbsp; selected projects</span>
                 </div>
             </div>
-            <section id="temporary-name">
-                <div class="temporary-name__container">
-                    <div class="temporary-name_left" >
+
+            <!-- SECTION: PROJECTS -->
+            <section id="projects-section">
+                <div class="projects-section__container">
+                    <!-- LEFT PROJECT CARD -->
+                    <div class="projects-section_left">
                         <div class="project_img project_img-1">
                             <span>RadiantHQ</span>
                             <a href="https://adris-h.github.io/radianthq/" target="_blank" class="project_img_1">
-                                <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330.86 369.99" role="img" aria-label="logo">
+                                <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330.86 369.99" role="img" aria-label="logo" aria-hidden="true">
                                     <defs>
                                         <style>
                                             .cls-1 {
@@ -227,11 +258,12 @@
                             <div></div>
                         </div>
                     </div>
-                    <div class="temporary-name_right">
+                    <!-- RIGHT PROJECT CARD -->
+                    <div class="projects-section_right">
                         <div class="project_img project_img-2">
                             <span>Lucidify</span>
                             <a href="https://adris-h.github.io/lucidifyWeb/" target="_blank" class="project_img_2">
-                                <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330.86 369.99" role="img" aria-label="logo">
+                                <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330.86 369.99" role="img" aria-label="logo" aria-hidden="true">
                                     <defs>
                                         <style>
                                             .cls-1 {
@@ -253,33 +285,42 @@
                         </div>
                     </div>
                 </div>
-               <span class="a-projects"><a href="sub-sites/projects/projects.html"><span class="outer"><span class="inner"></span></span>see all my projects</a></span>
+                <!-- LINK TO VIEW ALL PROJECTS PAGE -->
+               <span class="a-projects"><a href="sub-pages/projects/projects.html"><span class="outer"><span class="inner"></span></span>see all my projects</a></span>
             </section>
         </main>
-        <!-- CONTACT  -->
+        <!-- SECTION: CONTACT -->
         <footer id="contact-section" aria-labelledby="contact-heading">
+
             <div class="contact__container">
+                <!-- CONTACT INFORMATION SECTION -->
                 <section class="contact" aria-label="Contact information">
                     <h2 class="contact__title">Get in touch!</h2>
                     <span class="contact__email">
                         <span class="contact__email-label">copy to clipboard</span>
+                        <!-- EMAIL WITH COPY TO CLIPBOARD FUNCTIONALITY -->
                         <button id="copy-button" class="contact__email-button">adrianahanouskova2007@gmail.com</button>
                     </span>
                     <address class="contact__info">
-                        <div class="contact__info-logo" aria-hidden="true"><img src="my-logo.svg" alt=""></div>
+                        <div class="contact__info-logo" aria-hidden="true"><img src="img/my-logo.svg"  alt=""></div>
+                        <!-- LOCATION AND TIMEZONE INFO -->
                         <div class="contact__location">
                             <h3 class="contact__location-title">Location & Timezone</h3>
                             <div class="contact__location-details">
                                 <p><strong>Czech Republic, Zlín</strong></p>
                                 <p>UTC +2 </p>
                                 <p>Central European Time</p>
+                                <!-- LIVE CURRENT TIME -->
                                 <p><time id="current-time" datetime=""></time></p>
                             </div>
                         </div>
                     </address>
                 </section>
+                <!-- FOOTER INFORMATION SECTION -->
                 <section class="footer-info">
-                    <p class="footer-info__copyright">&copy; <span id="current-year"></span> Adriana Hanousková. All rights reserved.</p>
+                    <!-- COPYRIGHT WITH YEAR AND CREDITS LINK -->
+                    <p class="footer-info__copyright">&copy; <span id="current-year"></span> Adriana Hanousková. All rights reserved. + <a href="sub-pages/credits/credits.html">aditional credits</a></p>
+                    <!-- SOCIAL MEDIA LINKS LIST -->
                     <ul class="footer-info__socials" aria-label="Social media links">
                         <li><a href="https://www.instagram.com/adrriz_/" target="_blank" aria-label="Instagram">Instagram</a></li>
                         <li><a href="https://www.tiktok.com/@bqtopia" target="_blank" aria-label="TikTok">TikTok</a></li>

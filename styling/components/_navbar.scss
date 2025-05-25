@@ -127,13 +127,14 @@
     position: absolute;
 
 
-    // VISUALS
+    // HIDDEN BY DEFAULT - APPEARS ON SCROLL
     opacity: 0;
     transform: translateX(-20vw);
     color: $dark-color;
     visibility: hidden;
     overflow: hidden;
-    
+
+    // LINK STYLING
     a{
       text-decoration: none;
       color: $dark-color;
@@ -142,6 +143,8 @@
 
       @include flex();
       margin-left: 1vh;
+
+      // FANCY ANIMATED MENU BUTTONS
       .navbar___menu-button{
         @include flex();
         background-color: rgba(0, 0, 0, 0);
@@ -151,11 +154,13 @@
         position: relative;
         font-size: 1rem;
 
+        // HOVER TRIGGER FOR LETTER ANIMATION
         &:hover{
           .navbar__menu-toggle span{
             transform: translateY(-1.5em);
           }
         }
+        // FIRST LAYER OF MENU TEXT (VISIBLE BY DEFAULT)
         .navbar__menu-toggle--1{
           display: flex;
           overflow: hidden;
@@ -166,6 +171,8 @@
           span{
             color: $dark-color;
             transform: translateY(0);
+
+            // ANIMATION DELAYS FOR EACH LETTER
             &:nth-child(1) {
               transition: 0.2s;
             }
@@ -192,6 +199,7 @@
             }
           }
         }
+        // SECOND LAYER OF MENU TEXT (SLIDES UP ON HOVER)
         .navbar__menu-toggle--2{
           color: $dark-color;
           display: flex;
@@ -199,9 +207,10 @@
           overflow: hidden;
 
           span {
+            // START POSITION BELOW VISIBLE AREA
             transform: translateY(1.2em);
 
-            // MENU BUTTON ANIMATION
+            // SAME ANIMATION DELAYS AS FIRST LAYER
             &:nth-child(1) {
               transition: 0.2s;
             }
@@ -227,29 +236,38 @@
               transition: 0.9s;
             }
           }
+
+          // MOVE TO VISIBLE POSITION ON HOVER
           &:hover span {
             transform: translateY(0);
           }
         }
       }
+      // CURRENT SECTION POSITION SPACING
       .navbar___position-span{
         padding-left: 2vh
       }
     }
   }
+
+  // SCROLLED STATE OF NAVBAR
   &.scrolled {
+    // REDUCE NAVBAR HEIGHT WHEN SCROLLED
     height: $nav-height - 8vh;
 
+    // HIDE MAIN CONTENT BY MOVING UP
     .navbar__content {
       transform: translateY(-$nav-height - 1vh);
     }
 
+    // SHOW SCROLL INFO MENU
     .navbar__scroll-info {
       display: flex;
       visibility: visible;
       opacity: 1;
       transform: translateX(0);
 
+      // ENSURE MENU BUTTONS STAY ON TOP
       .navbar___menu-button {
         z-index: 10002;
       }
@@ -262,47 +280,57 @@
 }
 
 
-// -MENU
+// MOBILE HAMBURGER MENU OVERLAY THAT ROTATES IN FROM TOP RIGHT
 #menu{
   @include flex();
   position: fixed;
   font-weight: $bold-weight;
 
+  // FULL SCREEN
   width: 100vw;
   height: 100vh;
 
+  // HIDDEN BY DEFAULT
   z-index: -100;
 
   background-color: $background;
   transition: 400ms;
   top: 0;
   right: 0;
+
+  // ROTATE 90 DEGREES - CREATES SLIDING EFFECT
   transform: rotate(90deg);
   transform-origin: top right;
 
+  // ACTIVE STATE - VISIBLE AND ROTATED BACK TO NORMAL
   &.active{
     z-index: 100;
     opacity: 1;
     transform: rotate(0);
   }
 
+  // LEFT SIDE - DARK BACKGROUND PART
   .menu_left{
     background-color: $dark-color;
 
     height: 100%;
     width: 20%;
   }
+
+  // RIGHT SIDE W MENU ITEMS
   .menu_right{
     background-color: $background;
     width: calc(100% - 20%);
     height: 100%;
 
+    // MENU ITEMS LIST
     .menu__list{
       height: 100%;
       margin: 0;
       padding: 0;
       .menu__items{
         border-bottom: 1px solid $dark-color;
+        // EACH MENU ITEM TAKES UP 1/4 OF SCREEN HEIGHT
         height: calc(100%/4);
         @include flex();
         & > div{
@@ -328,10 +356,13 @@
 
 }
 
+// MOBILE NAVIGATION STYLES - ONLY SHOW ON PORTRAIT PHONES
 @media  only screen and (max-width: 600px) and (orientation: portrait){
+  // HIDE DESKTOP NAVBAR ON MOBILE
   .navbar{
     display: none;
   }
+  // SHOW MOBILE NAVIGATION BAR
   .mobile-nav{
     transition: 500ms;
     z-index: 10000;
@@ -340,6 +371,7 @@
     display: flex;
     justify-content: space-between;
     width: 100vw;
+
     height: 4vh;
     top: 0;
     left: 0;
@@ -353,8 +385,9 @@
       cursor: pointer;
       @include flex();
     }
-    & > span {
 
+    // MOBILE MENU BUTTON WITH SAME ANIMATION AS DESKTOP
+    & > span {
       display: flex;
       justify-content: center;
       align-items: center;

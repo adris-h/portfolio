@@ -10,7 +10,7 @@ const introText = document.querySelector('.intro_bottom-container a');
 
 const skillsHeading = document.querySelector('.skills__title');
 
-const projectsAnim = document.querySelectorAll('#temporary-name a');
+const projectsAnim = document.querySelectorAll('#projects-section a');
 const contactsAnim = document.querySelector('.contact__container');
 
 const mobilePos = document.querySelector('.mobile-nav__position-span');
@@ -76,7 +76,7 @@ function setSectionPositions(){
 
     const aboutme = document.getElementById('intro-section');
     const skills = document.getElementById('skills-section');
-    const projects = document.getElementById('temporary-name');
+    const projects = document.getElementById('projects-section');
     const contact = document.getElementById('contact-section');
 
     if (aboutme) {
@@ -329,31 +329,3 @@ if (window.getComputedStyle(document.getElementById("hero-section")).display !==
         }, "<")
 }
 //
-
-// CURRENT DATE AND TIME
-window.addEventListener('DOMContentLoaded', () => {
-    function updateTimeUTCPlus2() {
-        const now = new Date();
-
-        const options = {
-            timeZone: 'Europe/Prague',
-            year: 'numeric',
-            month: 'numeric',
-            day: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit',
-            hour12: false,
-        };
-        const formatter = new Intl.DateTimeFormat('cs-CZ', options);
-        const formatted = formatter.format(now).replace(',', '');
-        const isoString = now.toISOString();
-        const timeEl = document.getElementById('current-time');
-        if (timeEl) {
-            timeEl.textContent = formatted;
-            timeEl.setAttribute('datetime', isoString);
-        }
-    }
-
-    updateTimeUTCPlus2();
-    setInterval(updateTimeUTCPlus2, 60000);
-});

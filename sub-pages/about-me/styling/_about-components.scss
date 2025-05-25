@@ -1,0 +1,411 @@
+// MAIN SECTION
+#main-section{
+  height: 100vh;
+  width: 100vw;
+  .main-container{
+    @extend %light-background;
+    @include flex(column, $gap: 3vw);
+    padding: 0 5vw;
+    height: 100%;
+    width: 100%;
+    .main__top-container{
+      @include flex();
+      height: 50%;
+      width: 100%;
+      .photo-container{
+        @include flex($align: flex-end);
+        width: 30%;
+        div{
+          @include background-cover("../../../img/my-face.webp");
+          height: 26vw;
+          aspect-ratio: 1/1;
+        }
+      }
+      .main__title-container{
+        @include flex(column,flex-end, flex-start);
+        width: 70%;
+        height: 100%;
+        padding-left: 5vw;
+        z-index: 2;
+
+        h1{
+          height: 26.5vw;
+          @extend %medium-font;
+          margin: 0;
+          line-height: $medium;
+        }
+      }
+    }
+    .main__bottom-container{
+      @include flex($justify: space-between);
+      height: 30%;
+      width: 100%;
+      border-top: $dark-color solid .5px;
+
+      div{
+        @include flex();
+        width: 32%;
+        height: 80%;
+        text-align: center;
+        padding: 0 1rem 0 1rem ;
+        border: 1px $main-color dashed;
+        border-radius: 20px;
+        p{
+          opacity: 0;
+          margin: 0;
+          @extend %normal-font
+        }
+      }
+    }
+  }
+}
+
+
+#work-section{
+  overflow: hidden;
+  width: 100vw;
+  height: fit-content;
+  border-top: $dark-color solid 2px;
+  border-radius: 20px;
+  @extend %light-background;
+  .work__top-container{
+
+    height: 40%;
+    width: 100%;
+    padding: 5vw;
+
+    @include flex(column, $align: flex-start);
+    h2{
+      margin: 0;
+      @extend %medium-font;
+      line-height: $medium;
+    }
+    h3{
+      margin: 0;
+      text-align: justify;
+      @extend %normal-font;
+    }
+  }
+  .work__bottom-container{
+    @include flex($justify: space-evenly);
+    padding: 5vw;
+    video{
+      width: 30vw;
+      transition: $transition;
+      opacity: 0;
+    }
+
+    &.active{
+      video{
+        opacity: 1;
+      }
+      video:nth-child(1){
+        transform: translateX(0);
+      }
+      video:nth-child(2){
+        transform: translateX(0);
+      }
+    }
+
+    video:nth-child(1){
+      transform: translateX(-100%);
+    }
+    video:nth-child(2){
+      transform: translateX(100%);
+    }
+  }
+}
+
+#bass-section{
+  height: 80vh;
+  overflow: hidden;
+  margin-bottom: 20vh;
+  border-top: $dark-color solid 2px;
+  border-radius: 20px;
+  @extend %light-background;
+  @include flex(column, $align: flex-end);
+  padding-right: 5vw;
+  position: relative;
+  .bass__top-container{
+    @include flex(column, flex-end, flex-end);
+    height: 30%;
+    width: 100%;
+    h2{
+      @extend %medium-font;
+      line-height: $medium;
+      margin: 0;
+    }
+  }
+  .bass__bottom-container{
+    height: 70%;
+    width: 60%;
+    border-top: rgba(0, 0, 0, 0.13) solid 2px;
+    @include flex(column);
+    p{
+      text-align: justify;
+      @extend %normal-font;
+    }
+  }
+  img{
+    transform: translateX(-50%);
+
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30vw;
+    transition: $transition;
+  }
+
+  &.active{
+    img{
+      transform: rotate(-20deg) translateX(-5%);
+      opacity: 1;
+    }
+  }
+}
+
+@include responsive(mobile-tablet){
+  #main-section{
+    .main-container{
+      .main__top-container{
+        height: 40%;
+      }
+      .main__bottom-container{
+        height: 40%;
+      }
+    }
+  }
+}
+
+@include responsive(portrait){
+  #main-section{
+    height: fit-content;
+    .main-container{
+      width: 100%;
+      padding: 0 2vw 5vw 0;
+      .main__top-container{
+        @include flex(column-reverse, flex-start);
+        height: 70vh;
+        width: 100%;
+        .main__title-container{
+          width: 100%;
+          height: fit-content;
+        }
+        .photo-container{
+          width: 100%;
+          @include flex($justify: flex-end);
+          padding-right: 5vw;
+          transform: translateY(-5vw);
+          div{
+            height: 50vw;
+          }
+        }
+      }
+      .main__bottom-container{
+        padding-top: 2vw;
+        flex-direction: column;
+        gap: 20vw;
+        div{
+          border: none;
+          width: 100%;
+          height: 10rem;
+          p{
+            transition: $transition;
+            opacity: 0;
+            font-size: $small-heading;
+            font-weight: 700;
+
+            &.active{
+              opacity: 1;
+            }
+          }
+          &:nth-child(even) p{
+            text-align: left;
+          }
+          &:nth-child(odd) p{
+            text-align: right;
+          }
+
+        }
+      }
+    }
+  }
+
+  #work-section{
+    .work__bottom-container{
+      flex-direction: column;
+      gap: 10vw;
+
+      video{
+        width: 50vw;
+      }
+    }
+  }
+
+  #bass-section{
+    @include flex(column, flex-start, flex-start);
+    padding: 5vw;
+    height: fit-content;
+    img{
+      width: 75vw;
+      bottom: -4%;
+      visibility: hidden;
+      display: none;
+    }
+    .bass__top-container{
+      @include flex(column, flex-end, flex-end);
+      height: 20%;
+      margin-bottom: 20vw;
+    }
+    .bass__bottom-container{
+      width: 100%;
+      height: 80%;
+      border-top: none;
+      gap: 20vw;
+      p{
+        font-size: $small-heading;
+        font-weight: 700;
+        margin: 0;
+        &:nth-of-type(even){
+          text-align: right;
+        }
+      }
+    }
+
+  }
+}
+
+
+
+
+
+header{
+  position: fixed;
+  width: 100vw;
+  z-index: 100;
+  top: 0;
+  padding: 0 1vh 0 1vh;
+  border-bottom: 1px solid $dark-color;
+  background-color: $background;
+  transform: translateY(0);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 1;
+  &.hidden{
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  .navbar__scroll-info{
+    @include flex(row, space-between, center);
+    color: $dark-color;
+    display: flex;
+    width: 100%;
+
+
+    a{
+      text-decoration: none;
+      color: $dark-color;
+    }
+    & > span{
+      @include flex();
+      .navbar___menu-button{
+        display: grid;
+        background-color: rgba(0, 0, 0, 0);
+        font-family: $main-font;
+        cursor: pointer;
+        border: none;
+        position: relative;
+        font-size: 1rem;
+        a{
+          grid-row: 1;
+          grid-column: 1;
+        }
+
+        &:hover{
+          .navbar__menu-toggle span{
+            transform: translateY(-1.5em);
+          }
+        }
+        .navbar__menu-toggle--1{
+          display: flex;
+          overflow: hidden;
+
+          &:hover {
+            position: absolute;
+          }
+          span{
+            color: $dark-color;
+            transform: translateY(0);
+            &:nth-child(1) {
+              transition: 0.2s;
+            }
+            &:nth-child(2) {
+              transition: 0.3s;
+            }
+            &:nth-child(3) {
+              transition: 0.4s;
+            }
+            &:nth-child(4) {
+              transition: 0.5s;
+            }
+            &:nth-child(5) {
+              transition: 0.6s;
+            }
+            &:nth-child(6) {
+              transition: 0.7s;
+            }
+            &:nth-child(7) {
+              transition: 0.8s;
+            }
+            &:nth-child(8) {
+              transition: 0.9s;
+            }
+          }
+        }
+        .navbar__menu-toggle--2{
+          color: $dark-color;
+          display: flex;
+          position: absolute;
+          overflow: hidden;
+
+          span {
+            transform: translateY(1.2em);
+
+            // MENU BUTTON ANIMATION
+            &:nth-child(1) {
+              transition: 0.2s;
+            }
+            &:nth-child(2) {
+              transition: 0.3s;
+            }
+            &:nth-child(3) {
+              transition: 0.4s;
+            }
+            &:nth-child(4) {
+              transition: 0.5s;
+            }
+            &:nth-child(5) {
+              transition: 0.6s;
+            }
+            &:nth-child(6) {
+              transition: 0.7s;
+            }
+            &:nth-child(7) {
+              transition: 0.8s;
+            }
+            &:nth-child(8) {
+              transition: 0.9s;
+            }
+          }
+          &:hover span {
+            transform: translateY(0);
+          }
+        }
+      }
+      .navbar___position-span{
+        padding-left: 2vh
+      }
+    }
+  }
+}
+
