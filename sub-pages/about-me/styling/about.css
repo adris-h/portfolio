@@ -96,7 +96,7 @@ footer .contact__container .contact__email-button {
   color: rgb(29, 29, 29);
 }
 footer .contact__container .contact__email-button:hover {
-  color: rgb(108, 160, 211);
+  color: #DD4083;
   transform: translateX(10%);
 }
 footer .contact__container .contact__info {
@@ -176,7 +176,7 @@ footer .contact__container .footer-info__socials li a {
   text-decoration: none;
 }
 footer .contact__container .footer-info__socials li a:hover {
-  color: rgb(108, 160, 211);
+  color: #DD4083;
 }
 
 @media only screen and (orientation: portrait) and (max-width: 700px) {
@@ -279,7 +279,7 @@ footer .contact__container .footer-info__socials li a:hover {
   height: 80%;
   text-align: center;
   padding: 0 1rem 0 1rem;
-  border: 1px rgb(108, 160, 211) dashed;
+  border: 1px #DD4083 dashed;
   border-radius: 20px;
 }
 #main-section .main-container .main__bottom-container div p {
@@ -380,6 +380,15 @@ footer .contact__container .footer-info__socials li a:hover {
 }
 #bass-section .bass__bottom-container p {
   text-align: justify;
+  transition: 300ms;
+}
+@media only screen and (orientation: portrait) {
+  #bass-section .bass__bottom-container p {
+    opacity: 0;
+  }
+}
+#bass-section .bass__bottom-container p.active {
+  opacity: 1;
 }
 #bass-section img {
   transform: translateX(-50%);
@@ -637,7 +646,7 @@ header .navbar__scroll-info > span .navbar___position-span {
 }
 
 ::selection {
-  background: rgba(158, 197, 239, 0.38);
+  background: rgba(183, 182, 182, 0.38);
 }
 
 html {

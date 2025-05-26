@@ -101,7 +101,7 @@ footer .contact__container .contact__email-button {
   color: rgb(29, 29, 29);
 }
 footer .contact__container .contact__email-button:hover {
-  color: rgb(108, 160, 211);
+  color: #DD4083;
   transform: translateX(10%);
 }
 footer .contact__container .contact__info {
@@ -181,7 +181,7 @@ footer .contact__container .footer-info__socials li a {
   text-decoration: none;
 }
 footer .contact__container .footer-info__socials li a:hover {
-  color: rgb(108, 160, 211);
+  color: #DD4083;
 }
 
 @media only screen and (orientation: portrait) and (max-width: 700px) {
@@ -327,7 +327,7 @@ main {
   border-radius: 15px;
   box-sizing: border-box;
   padding: 5px 10px 5px 10px;
-  border: 1px dashed rgb(108, 160, 211);
+  border: 1px dashed #DD4083;
 }
 .projects .projects__line {
   width: 10%;
@@ -578,7 +578,7 @@ header .navbar__scroll-info > span .navbar___position-span {
   }
 }
 ::selection {
-  background: rgba(158, 197, 239, 0.38);
+  background: rgba(183, 182, 182, 0.38);
 }
 
 html {

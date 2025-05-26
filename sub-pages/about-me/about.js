@@ -62,8 +62,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const info2 = document.getElementById("i2");
         const info3 = document.getElementById("i3");
 
+        const par1 = document.getElementById("p1");
+        const par2 = document.getElementById("p2");
+        const par3 = document.getElementById("p3");
+
+
         // DECLARING VARIABLES FOR THE #i POSITIONS
-        let infoPos1, infoPos2, infoPos3;
+        let infoPos1, infoPos2, infoPos3, parPos1, parPos2, parPos3;
 
         // FINDING POSITIONS WITH OFFSET
         function getScrollPosition() {
@@ -79,6 +84,23 @@ document.addEventListener('DOMContentLoaded', () => {
             if (info3) {
                 infoPos3 = info3.getBoundingClientRect().top + window.scrollY - offset;
             }
+
+            if (par1) {
+                parPos1 = par1.getBoundingClientRect().top + window.scrollY - offset;
+            }
+            if (par2) {
+                parPos2 = par2.getBoundingClientRect().top + window.scrollY - offset;
+            }
+            if (par3) {
+                parPos3 = par3.getBoundingClientRect().top + window.scrollY - offset;
+            }
+
+            console.log("Calculated Positions (par):", {
+                parPos1,
+                parPos2,
+                parPos3
+            });
+
         }
 
         // THIS FUNCTION CHECKS SCROLL POSITION AND ADD/REMOVES "ACTIVE" CLASSES
@@ -97,6 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 info1.classList.remove("active"); // DEACTIVATE
             } else if (currentPosition >= infoPos1) {
                 // IF WE'RE PAST THE FIRST INFO SECTION
+                console.log("info1 active")
                 info1.classList.add("active"); // MAKE IT ACTIVE
                 info2.classList.remove("active"); // DEACTIVATE
                 info3.classList.remove("active"); // DEACTIVATE
@@ -108,10 +131,36 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
+        function bassParScrolls() {
+            const currentPosition = window.scrollY;
+
+            if (currentPosition >= parPos3) {
+                par3.classList.add("active");
+                par2.classList.remove("active");
+                par1.classList.remove("active");
+            } else if (currentPosition >= parPos2) {
+                par3.classList.remove("active");
+                par2.classList.add("active");
+                par1.classList.remove("active");
+            } else if (currentPosition >= parPos1) {
+                par1.classList.add("active");
+                par2.classList.remove("active");
+                par3.classList.remove("active");
+            } else {
+                par1.classList.remove("active");
+                par2.classList.remove("active");
+                par3.classList.remove("active");
+            }
+        }
+
         // REMOVE ANY OLD SCROLL LISTENERS TO PREVENT DUPLICATES
         window.removeEventListener('scroll', infoScrolls);
         getScrollPosition(); // GET THE INITIAL POSITIONS
         window.addEventListener('scroll', infoScrolls); // START LISTENING FOR SCROLLS
+
+        window.removeEventListener('scroll', bassParScrolls);
+        getScrollPosition();
+        window.addEventListener('scroll', bassParScrolls);
 
         window.addEventListener('resize', () => {
             // IF THE WINDOW RESIZES, RECALCULATE POSITIONS AFTER A BIT

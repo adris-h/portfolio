@@ -27,7 +27,7 @@ a{
 }
 
 ::selection {
-  background: rgba(158, 197, 239, 0.38);
+  background: rgba(183, 182, 182, 0.38);
 }
 
 
@@ -174,6 +174,7 @@ header{
       color: $dark-color;
     }
     & > span{
+      @extend %normal-font;
       @include flex();
       .navbar___menu-button{
         display: grid;
@@ -201,6 +202,7 @@ header{
             position: absolute;
           }
           span{
+            @extend %normal-font;
             color: $dark-color;
             transform: translateY(0);
             &:nth-child(1) {
@@ -270,7 +272,9 @@ header{
         }
       }
       .navbar___position-span{
-        padding-left: 2vh
+        padding-left: 2vh;
+
+
       }
     }
   }

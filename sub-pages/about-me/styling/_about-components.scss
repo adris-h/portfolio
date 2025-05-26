@@ -144,6 +144,16 @@
     p{
       text-align: justify;
       @extend %normal-font;
+
+      transition: 300ms;
+
+      @media only screen and (orientation: portrait) {
+        opacity: 0;
+      }
+
+      &.active{
+        opacity: 1;
+      }
     }
   }
   img{
