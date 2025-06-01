@@ -15,7 +15,7 @@ footer, .credits__container figure, .credits__title {
   font-weight: 400;
 }
 
-header .navbar__scroll-info > span .navbar___menu-button .navbar__menu-toggle--1 span, header .navbar__scroll-info > span, footer p, .credits__container figure figcaption p, .credits__container figure figcaption a, .credits__container figure div, .credits__title h2 {
+header .navbar__scroll-info > span .navbar___menu-button .navbar__menu-toggle--2, header .navbar__scroll-info > span .navbar___menu-button .navbar__menu-toggle--1 span, header .navbar__scroll-info > span, footer p, .credits__container figure figcaption p, .credits__container figure figcaption a, .credits__container figure div, .credits__title h2 {
   font-size: var(--normal-font);
   font-weight: 400;
 }

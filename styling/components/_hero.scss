@@ -1,6 +1,7 @@
 // ------------------
 // MAIN HERO SECTION
 // ------------------
+
 #hero-section {
   @include flex(column);
   @extend %light-background; // SCSS PLACEHOLDER FOR LIGHT BACKGROUND

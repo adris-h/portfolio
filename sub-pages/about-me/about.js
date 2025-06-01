@@ -158,6 +158,10 @@ document.addEventListener('DOMContentLoaded', () => {
         getScrollPosition(); // GET THE INITIAL POSITIONS
         window.addEventListener('scroll', infoScrolls); // START LISTENING FOR SCROLLS
 
+        window.addEventListener('DOMContentLoaded', infoScrolls);
+        window.addEventListener('resize', infoScrolls);
+        window.addEventListener('load', infoScrolls);
+
         window.removeEventListener('scroll', bassParScrolls);
         getScrollPosition();
         window.addEventListener('scroll', bassParScrolls);
@@ -166,6 +170,10 @@ document.addEventListener('DOMContentLoaded', () => {
             // IF THE WINDOW RESIZES, RECALCULATE POSITIONS AFTER A BIT
             setTimeout(getScrollPosition, 100);
         });
+        window.addEventListener('DOMContentLoaded', getScrollPosition);
+        window.addEventListener('resize', getScrollPosition);
+        window.addEventListener('load', getScrollPosition);
+
     }
 
     setupScrollTrigger(); // KICK OFF SCROLLTRIGGER WHEN THE PAGE LOADS
@@ -224,8 +232,9 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('load', setSectionPositions); // UPDATE ON LOAD
 
 
+
     // LISTEN FOR SCROLLS TO ADD "ACTIVE" CLASSES TO VIDEOS AND BASS SECTIONS
-    window.addEventListener("scroll",  () => {
+    function showContent(){
         const currentPosition = window.scrollY;
 
         if (currentPosition > bassPos) {
@@ -237,7 +246,12 @@ document.addEventListener('DOMContentLoaded', () => {
         } else{
             videos.classList.remove("active");
         }
-    });
+    }
+
+    window.addEventListener('DOMContentLoaded', showContent);
+    window.addEventListener('scroll', showContent);
+    window.addEventListener('resize', showContent);
+    window.addEventListener('load', showContent);
 });
 
 let contactPosition;

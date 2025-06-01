@@ -236,6 +236,7 @@ header{
           display: flex;
           position: absolute;
           overflow: hidden;
+          @extend %normal-font;
 
           span {
             transform: translateY(1.2em);

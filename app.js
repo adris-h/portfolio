@@ -1,53 +1,9 @@
-const bigMenu = document.getElementById("menu");
 const posSpan = document.querySelector('.navbar___position-span');
 
-const mobileMenuButton = document.querySelector('.mobile-nav_menu-toggle--2');
-const navBar = document.querySelector(".navbar");
-
-const introHeading = document.querySelector('.intro_top-container h2');
-const introSubheading = document.querySelector('.intro_top-container h3');
-const introText = document.querySelector('.intro_bottom-container a');
-
-const skillsHeading = document.querySelector('.skills__title');
-
-const projectsAnim = document.querySelectorAll('#projects-section a');
-const contactsAnim = document.querySelector('.contact__container');
-
-const mobilePos = document.querySelector('.mobile-nav__position-span');
-
-const changingText = document.querySelector('.about___changing-interests');
-
-const projectImg1 = document.querySelector('.project_img-1');
-const projectIcon1 = document.querySelector('.project_img-1 svg');
-const projectText1 = document.querySelector('.project_img-1 p');
-const projectImg2 = document.querySelector('.project_img-2');
-const projectIcon2 = document.querySelector('.project_img-2 svg');
-const projectText2 = document.querySelector('.project_img-2 p');
-
-const projectsAnchor = document.querySelector('.a-projects a');
-
-const copyButton = document.getElementById("copy-button");
-
-const firstSkill = document.querySelector(".skill___item-1");
-const secondSkill = document.querySelector(".skill___item-2");
-const thirdSkill = document.querySelector(".skill___item-3");
-const fourthSkill = document.querySelector(".skill___item-4");
-
-const firstDescription = document.querySelector(".skills___skill-1-desc");
-const secondDescription = document.querySelector(".skills___skill-2-desc");
-const thirdDescription = document.querySelector(".skills___skill-3-desc");
-const fourthDescription = document.querySelector(".skills___skill-4-desc");
-
-const skillHolder = document.querySelector(".skills__right-container");
-
-const interests = ["Development", "UX/UI", "Applications"];
-const intervalTime = 1000;
-
-window.addEventListener('resize', () => {
-    ScrollTrigger.refresh();
-});
-
 // MENU BUTTON TOGGLE
+const mobileMenuButton = document.querySelector('.mobile-nav_menu-toggle--2');
+const bigMenu = document.getElementById("menu");
+
 mobileMenuButton.addEventListener('click', () => {
     bigMenu.classList.toggle('active');
     if (bigMenu.classList.contains('active')) {
@@ -59,16 +15,16 @@ mobileMenuButton.addEventListener('click', () => {
 //
 
 const menu = document.getElementById('menu');
-const menuLinks = document.querySelectorAll('.menu-link');
+const menuLinks = document.querySelectorAll('.menu___link');
 
 menuLinks.forEach(link => {
     link.addEventListener('click', () => {
-        menu.classList.remove('active'); // OR WHATEVER CLASS SHOWS THE MENU
+        menu.classList.remove('active');
     });
 });
 
 
-// DEFINED POSITIONS
+// SET SECTION POSITIONS
 let aboutmePosition, skillsPosition, projectsPosition, contactPosition;
 function setSectionPositions(){
     const vh = window.innerHeight;
@@ -93,19 +49,24 @@ function setSectionPositions(){
     }
 }
 
+// ON RESIZE AND LOAD INITIALIZE SECTION POSITIONS
 window.addEventListener('DOMContentLoaded', () => {
     setSectionPositions();
     setTimeout(setSectionPositions, 100);
 });
-console.log({
-    aboutmePosition,
-    skillsPosition,
-    projectsPosition,
-    contactPosition
-});
 window.addEventListener('resize', setSectionPositions);
 window.addEventListener('load', setSectionPositions);
 //
+
+// NAVBAR SCROLL ANIMATION
+const navBar = document.querySelector(".navbar");
+const introHeading = document.querySelector('.intro_top-container h2');
+const introSubheading = document.querySelector('.intro_top-container h3');
+const introText = document.querySelector('.intro_bottom-container a');
+const skillsHeading = document.querySelector('.skills__title');
+const projectsAnim = document.querySelectorAll('#projects-section a');
+const contactsAnim = document.querySelector('.contact__container');
+const projectsAnchor = document.querySelector('.a-projects a');
 
 window.addEventListener("scroll",  () => {
     const currentPosition = window.scrollY;
@@ -132,6 +93,7 @@ window.addEventListener("scroll",  () => {
             skillsHeading.classList.add('active');
 
 
+            // SHOW ANIMATION ONLY ON DESKTOP
             if (window.matchMedia("(min-width: 900px)").matches) {
                 projectsAnim.forEach(link => link.classList.remove('active'));
                 projectsAnim.forEach(link => link.classList.add('inactive'));
@@ -143,6 +105,7 @@ window.addEventListener("scroll",  () => {
             contactsAnim.classList.remove('active');
             projectsAnchor.classList.remove('inactive');
 
+            // SHOW ANIMATION ONLY ON DESKTOP
             if (window.matchMedia("(min-width: 900px)").matches) {
                 projectsAnim.forEach(link => link.classList.add('active'));
                 projectsAnim.forEach(link => link.classList.remove('inactive'));
@@ -163,7 +126,9 @@ window.addEventListener("scroll",  () => {
 });
 //
 
-// -MOBILE POS
+//
+const mobilePos = document.querySelector('.mobile-nav__position-span');
+
 window.addEventListener("scroll", function() {
     if (bigMenu.classList.contains('active')) return;
     const currentPosition = window.scrollY;
@@ -182,7 +147,9 @@ window.addEventListener("scroll", function() {
 //
 
 // CHANGING TEXT
-
+const changingText = document.querySelector('.about___changing-interests');
+const interests = ["Development", "UX/UI", "Applications"];
+const intervalTime = 1000;
 let i = 0;
 
 function updateText() {
@@ -194,6 +161,14 @@ setInterval(updateText, intervalTime);
 
 
 // PROJECTS SHOWCASE ANIMATION
+
+const projectImg1 = document.querySelector('.project_img-1');
+const projectIcon1 = document.querySelector('.project_img-1 svg');
+const projectText1 = document.querySelector('.project_img-1 p');
+
+const projectImg2 = document.querySelector('.project_img-2');
+const projectIcon2 = document.querySelector('.project_img-2 svg');
+const projectText2 = document.querySelector('.project_img-2 p');
 
 
 projectImg1.addEventListener('mouseover', () => {
@@ -220,6 +195,7 @@ projectImg2.addEventListener('mouseout', () => {
 
 
 // COPY EMAIL
+const copyButton = document.getElementById("copy-button");
 
 copyButton.addEventListener('click', () =>{
     const email = "adrianahanouskova2007@gmail.com"
@@ -229,7 +205,17 @@ copyButton.addEventListener('click', () =>{
 
 
 // SKILLS SECTION - HOVER - DESCRIPTIONS
+const firstSkill = document.querySelector(".skill___item-1");
+const secondSkill = document.querySelector(".skill___item-2");
+const thirdSkill = document.querySelector(".skill___item-3");
+const fourthSkill = document.querySelector(".skill___item-4");
 
+const firstDescription = document.querySelector(".skills___skill-1-desc");
+const secondDescription = document.querySelector(".skills___skill-2-desc");
+const thirdDescription = document.querySelector(".skills___skill-3-desc");
+const fourthDescription = document.querySelector(".skills___skill-4-desc");
+
+const skillHolder = document.querySelector(".skills__right-container");
 
 firstSkill.addEventListener('mouseover', () => {
     skillHolder.classList.add('active');
@@ -289,6 +275,10 @@ fourthSkill.addEventListener('mouseover', () => {
 });
 //
 
+window.addEventListener('resize', () => {
+    ScrollTrigger.refresh();
+});
+
 // HERO SECTION ANIMAITON WITH GSAP
 if (window.getComputedStyle(document.getElementById("hero-section")).display !== "none") {
     gsap.registerPlugin(ScrollTrigger);
@@ -329,3 +319,6 @@ if (window.getComputedStyle(document.getElementById("hero-section")).display !==
         }, "<")
 }
 //
+
+
+

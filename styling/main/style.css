@@ -1079,56 +1079,38 @@ footer .contact__container .contact__info .contact__location-title, footer .cont
   transition: 400ms;
   top: 0;
   right: 0;
-  transform: rotate(90deg);
-  transform-origin: top right;
+  transform: translateY(-100%);
 }
 #menu.active {
   z-index: 100;
   opacity: 1;
   transform: rotate(0);
 }
-#menu .menu_left {
-  background-color: rgb(29, 29, 29);
-  height: 100%;
-  width: 20%;
-}
-#menu .menu_right {
-  background-color: #faf7f5;
-  width: 80%;
-  height: 100%;
-}
-#menu .menu_right .menu__list {
+#menu .menu__list {
   height: 100%;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
 }
-#menu .menu_right .menu__list .menu__items {
-  border-bottom: 1px solid rgb(29, 29, 29);
-  height: 25%;
+#menu .menu__list .menu__items {
+  list-style: none;
+}
+#menu .menu__list .menu__items > div {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 0;
 }
-#menu .menu_right .menu__list .menu__items > div {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 0;
-}
-#menu .menu_right .menu__list .menu__items .menu___number {
-  width: 20%;
-  height: 100%;
-  border-right: 1px rgb(29, 29, 29) solid;
-}
-#menu .menu_right .menu__list .menu__items .menu___link {
+#menu .menu__list .menu__items .menu___link {
   width: 80%;
   justify-content: flex-start;
-  padding-left: 3rem;
 }
-#menu .menu_right .menu__list .menu__items a {
+#menu .menu__list .menu__items a {
   text-decoration: none;
   color: rgb(29, 29, 29);
 }

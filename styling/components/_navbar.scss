@@ -298,9 +298,8 @@
   top: 0;
   right: 0;
 
-  // ROTATE 90 DEGREES - CREATES SLIDING EFFECT
-  transform: rotate(90deg);
-  transform-origin: top right;
+
+  transform: translateY(-100%);
 
   // ACTIVE STATE - VISIBLE AND ROTATED BACK TO NORMAL
   &.active{
@@ -309,51 +308,27 @@
     transform: rotate(0);
   }
 
-  // LEFT SIDE - DARK BACKGROUND PART
-  .menu_left{
-    background-color: $dark-color;
-
+  // MENU ITEMS LIST
+  .menu__list{
     height: 100%;
-    width: 20%;
-  }
-
-  // RIGHT SIDE W MENU ITEMS
-  .menu_right{
-    background-color: $background;
-    width: calc(100% - 20%);
-    height: 100%;
-
-    // MENU ITEMS LIST
-    .menu__list{
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      .menu__items{
-        border-bottom: 1px solid $dark-color;
-        // EACH MENU ITEM TAKES UP 1/4 OF SCREEN HEIGHT
-        height: calc(100%/4);
-        @include flex();
-        & > div{
-          @include flex()
-        }
-        .menu___number{
-          width: 20%;
-          height: 100%;
-          border-right: 1px $dark-color solid;
-        }
-        .menu___link{
-          width: 80%;
-          justify-content: flex-start;
-          padding-left: 3rem;
-        }
-        a{
-          text-decoration: none;
-          color: $dark-color;
-        }
+    margin: 0;
+    padding: 0;
+    @include flex(column);
+    .menu__items{
+      list-style: none;
+      & > div{
+        @include flex()
+      }
+      .menu___link{
+        width: 80%;
+        justify-content: flex-start;
+      }
+      a{
+        text-decoration: none;
+        color: $dark-color;
       }
     }
   }
-
 }
 
 // MOBILE NAVIGATION STYLES - ONLY SHOW ON PORTRAIT PHONES
