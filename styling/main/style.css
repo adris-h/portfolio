@@ -74,8 +74,8 @@ footer .contact__container .contact__info .contact__location-title, footer .cont
 }
 #hero-section .hero_right-container .hero__photo {
   width: 50%;
-  height: 60%;
-  background: url("../../img/my-photo.jpg") center/cover no-repeat;
+  height: 70%;
+  background: url("../../img/my-photo.jpg") left/cover no-repeat;
 }
 #hero-section .hero_bcg-line {
   position: absolute;

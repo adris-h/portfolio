@@ -45,8 +45,8 @@
 
     .hero__photo {
       width: 50%;
-      height: 60%;
-      @include background-cover('../../img/my-photo.jpg');
+      height: 70%;
+      @include background-cover('../../img/my-photo.jpg', $position: left);
     }
   }
 
